@@ -1,0 +1,32 @@
+{
+  "name": "langgraph-investigator",
+  "version": "1.0.0",
+  "description": "CLI tool for interacting with LangGraph servers and inspecting their PostgreSQL data",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "lagent-cli": "dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "tsx test_scripts/test-e2e.ts",
+    "test:config": "tsx test_scripts/test-config.ts",
+    "test:utils": "tsx test_scripts/test-utils.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "pg": "^8.13.0",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "tsx": "^4.19.0",
+    "@types/pg": "^8.11.0",
+    "@types/node": "^22.0.0"
+  }
+}

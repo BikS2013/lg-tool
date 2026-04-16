@@ -12,7 +12,7 @@ interface ExtractOptions {
 }
 
 /**
- * Handler for: langgraph-investigator extract --thread <id> [--output <file>] [--include-blobs]
+ * Handler for: lg-tool extract --thread <id> [--output <file>] [--include-blobs]
  *
  * 1. Load DB config
  * 2. Validate --thread UUID

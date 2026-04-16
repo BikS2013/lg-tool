@@ -1,8 +1,17 @@
-# LangGraph Investigator - Technical Investigation
+# lg-tool - Technical Investigation
+
+> **Snapshot disclaimer**: This document captures the technical investigation that
+> preceded implementation. It describes a tool with **four** commands (`agents`,
+> `thread-create`, `run`, `extract`). A fifth command, `documents` (FR-5), was
+> added later and is **not** reflected anywhere in this file. For the current
+> command set and architecture, see `docs/design/project-design.md` and
+> `docs/design/project-functions.md`. References here to "four commands" /
+> "four REST calls" / "four command handlers" should be read as
+> "four-at-investigation-time", not as the current state.
 
 ## 1. Executive Summary
 
-The LangGraph Investigator is a straightforward TypeScript CLI tool with four commands that interact with a LangGraph server via REST API and directly query its backing PostgreSQL database. After investigating the architecture options, API patterns, database access strategies, and CLI frameworks, the recommendation is:
+The lg-tool is a straightforward TypeScript CLI tool with four commands that interact with a LangGraph server via REST API and directly query its backing PostgreSQL database. After investigating the architecture options, API patterns, database access strategies, and CLI frameworks, the recommendation is:
 
 **Use a modular multi-file architecture with raw HTTP calls (native `fetch`), the `pg` library for PostgreSQL access, and `commander` for CLI parsing.** The official `@langchain/langgraph-sdk` TypeScript package exists but adds unnecessary abstraction for our four simple REST calls. Raw `fetch` keeps the tool lightweight, transparent, and debuggable.
 
@@ -101,7 +110,7 @@ src/
 **Decision**: Modular multi-file layout as described in Approach B.
 
 **Config validation pattern**: A single `loadConfig()` function in `config.ts` that:
-- Calls `dotenv.config()` to load `.env` files (CWD first, then `~/.langgraph-investigator/.env`)
+- Calls `dotenv.config()` to load `.env` files (CWD first, then `~/.lg-tool/.env`)
 - Reads `LANGGRAPH_SERVER_URL` and `LANGGRAPH_POSTGRES_URL` from `process.env`
 - Throws immediately with a descriptive error if any required variable is missing
 - Returns a typed `Config` object
@@ -116,7 +125,7 @@ interface Config {
 function loadConfig(): Config {
   // Load .env files
   dotenv.config({ path: path.join(process.cwd(), '.env') });
-  dotenv.config({ path: path.join(os.homedir(), '.langgraph-investigator', '.env') });
+  dotenv.config({ path: path.join(os.homedir(), '.lg-tool', '.env') });
 
   const serverUrl = process.env.LANGGRAPH_SERVER_URL;
   if (!serverUrl) {
@@ -291,7 +300,7 @@ import { Command } from 'commander';
 const program = new Command();
 
 program
-  .name('langgraph-investigator')
+  .name('lg-tool')
   .description('CLI tool for interacting with LangGraph servers and inspecting their PostgreSQL data')
   .version('1.0.0');
 

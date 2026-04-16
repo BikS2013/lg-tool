@@ -1,8 +1,8 @@
-# Plan 001 - LangGraph Investigator Implementation
+# Plan 001 - lg-tool Implementation
 
 ## Overview
 
-This plan breaks the LangGraph Investigator CLI tool into six sequential phases with clearly defined deliverables, dependencies, and verification steps. The tool is a TypeScript CLI that interacts with a LangGraph server via REST API and queries its backing PostgreSQL database.
+This plan breaks the lg-tool CLI tool into six sequential phases with clearly defined deliverables, dependencies, and verification steps. The tool is a TypeScript CLI that interacts with a LangGraph server via REST API and queries its backing PostgreSQL database.
 
 **Architecture**: Modular multi-file (Approach B from investigation document)  
 **HTTP**: Native `fetch` (Node 18+)  
@@ -39,14 +39,14 @@ This plan breaks the LangGraph Investigator CLI tool into six sequential phases 
 
 - [ ] `npm install` completes without errors
 - [ ] `npx tsx src/cli.ts --version` prints the version number
-- [ ] `npx tsx src/cli.ts --help` prints the help text with all four subcommands listed
+- [ ] `npx tsx src/cli.ts --help` prints the help text with all five subcommands listed (`agents`, `thread-create`, `run`, `extract`, `documents`)
 - [ ] `npx tsc --noEmit` passes with zero errors
 - [ ] Directory structure matches the modular layout from the investigation document
 
 ### Verification Steps
 
 ```bash
-cd langgraph-investigator
+cd lg-tool
 npm install
 npx tsx src/cli.ts --version
 npx tsx src/cli.ts --help
@@ -57,7 +57,7 @@ npx tsc --noEmit
 
 ## Phase 2: Configuration Module
 
-**Objective**: Implement environment variable loading with strict validation (no defaults, no fallbacks). Support `.env` files in CWD and `~/.langgraph-investigator/.env`, with env vars taking precedence.
+**Objective**: Implement environment variable loading with strict validation (no defaults, no fallbacks). Support `.env` files in CWD and `~/.lg-tool/.env`, with env vars taking precedence.
 
 **Dependencies**: Phase 1 (needs package.json, tsconfig, types)
 
@@ -79,7 +79,7 @@ npx tsc --noEmit
 
 - Two separate config loaders: `loadServerConfig()` returns `{ serverUrl: string }`, `loadDbConfig()` returns `{ postgresUrl: string }`
 - Lazy loading: each command calls only the config it needs (API commands need `serverUrl`, extract needs `postgresUrl`)
-- `.env` loading order: CWD `.env` first, then `~/.langgraph-investigator/.env`
+- `.env` loading order: CWD `.env` first, then `~/.lg-tool/.env`
 - Environment variables override `.env` values (this is the default `dotenv` behavior since it does not overwrite existing env vars)
 - Missing required variables throw immediately with descriptive messages
 
@@ -163,7 +163,7 @@ formatAgentsTable(assistants) -> string
 
 ```bash
 # With valid server URL
-LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.westeurope-01.azurewebsites.net" \
+LANGGRAPH_SERVER_URL="https://<langgraph-server-host>" \
   npx tsx -e "
     import { searchAssistants } from './src/api-client.js';
     const result = await searchAssistants('$LANGGRAPH_SERVER_URL');
@@ -175,7 +175,7 @@ LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.w
 
 ## Phase 4: CLI Commands
 
-**Objective**: Wire up all four CLI commands (`agents`, `thread-create`, `run`, `extract`) using commander, connecting them to the API client and DB client modules.
+**Objective**: Wire up all five CLI commands (`agents`, `thread-create`, `run`, `extract`, `documents`) using commander, connecting them to the API client and DB client modules.
 
 **Dependencies**: Phase 2 (config), Phase 3 (API client). The `extract` command also depends on Phase 5 (DB client).
 
@@ -189,12 +189,13 @@ LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.w
 | `src/commands/thread-create.ts` | `thread-create` command handler |
 | `src/commands/run.ts` | `run` command handler |
 | `src/commands/extract.ts` | `extract` command handler (depends on Phase 5) |
+| `src/commands/documents.ts` | `documents` command handler (depends on Phase 5) |
 
 ### Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/cli.ts` | Import and register all four command handlers with commander |
+| `src/cli.ts` | Import and register all five command handlers with commander |
 
 ### Command Details
 
@@ -224,15 +225,25 @@ LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.w
 - Pretty-prints JSON to stdout or writes to `--output` file
 - Properly closes the DB pool after extraction
 
+#### `documents` command
+- Calls `loadDbConfig()`
+- Validates `--thread` UUID via `validateUuid()`
+- Calls `queryRetrievedDocuments(pool, threadId)` from `db-client.ts`
+- Wraps the result with `thread_id`, `extracted_at`, `document_count`
+- Writes pretty JSON to `--output` file or prints a numbered, human-readable list to stdout
+- Properly closes the DB pool after extraction; wraps errors in `DbError` with masked connection string
+
 ### Acceptance Criteria
 
-- [ ] `langgraph-investigator agents` displays formatted table of assistants
-- [ ] `langgraph-investigator thread-create` creates a thread and displays its details
-- [ ] `langgraph-investigator thread-create --metadata '{"key":"value"}'` creates a thread with metadata
-- [ ] `langgraph-investigator run --thread <id> --assistant <id> --message "Hello"` returns agent response
-- [ ] `langgraph-investigator extract --thread <id>` returns JSON with all table data
-- [ ] `langgraph-investigator extract --thread <id> --output result.json` writes to file
-- [ ] `langgraph-investigator extract --thread <id> --include-blobs` includes base64 blob data
+- [ ] `lg-tool agents` displays formatted table of assistants
+- [ ] `lg-tool thread-create` creates a thread and displays its details
+- [ ] `lg-tool thread-create --metadata '{"key":"value"}'` creates a thread with metadata
+- [ ] `lg-tool run --thread <id> --assistant <id> --message "Hello"` returns agent response
+- [ ] `lg-tool extract --thread <id>` returns JSON with all table data
+- [ ] `lg-tool extract --thread <id> --output result.json` writes to file
+- [ ] `lg-tool extract --thread <id> --include-blobs` includes base64 blob data
+- [ ] `lg-tool documents --thread <id>` lists retrieved documents (or an info message if none)
+- [ ] `lg-tool documents --thread <id> --output docs.json` writes JSON to file
 - [ ] All commands fail clearly when required env vars are missing
 - [ ] All commands fail clearly when required flags are missing (commander enforces this)
 - [ ] Invalid UUID arguments produce clear error messages before any network/DB calls
@@ -244,10 +255,12 @@ LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.w
 npx tsx src/cli.ts agents
 npx tsx src/cli.ts thread-create
 npx tsx src/cli.ts thread-create --metadata '{"purpose":"test"}'
-npx tsx src/cli.ts run --thread <id> --assistant fe096781-5601-53d2-b2f6-0d3403f7e9ca --message "Hello"
+npx tsx src/cli.ts run --thread <id> --assistant <assistant-uuid> --message "Hello"
 npx tsx src/cli.ts extract --thread <id>
 npx tsx src/cli.ts extract --thread <id> --output /tmp/extract-test.json
 npx tsx src/cli.ts extract --thread <id> --include-blobs
+npx tsx src/cli.ts documents --thread <id>
+npx tsx src/cli.ts documents --thread <id> --output /tmp/docs-test.json
 ```
 
 ---
@@ -336,20 +349,18 @@ LANGGRAPH_POSTGRES_URL="postgresql://..." npx tsx -e "
 
 ### Test Script: test-e2e.ts
 
-The end-to-end test performs:
+The end-to-end test performs (assertion counts reflect the current implementation):
 
-1. **List agents**: Verify at least one assistant is returned, verify known assistant ID `fe096781-5601-53d2-b2f6-0d3403f7e9ca` is present
+1. **List agents**: Verify at least one assistant is returned; verify the assistant whose UUID is provided via the `LANGGRAPH_TEST_ASSISTANT_ID` env var is present (no hardcoded UUIDs)
 2. **Create thread**: Verify thread_id is a valid UUID, status is "idle"
-3. **Send request**: Send "Hello" to the known assistant within the created thread, verify response contains messages and run_id
+3. **Send request**: Send "Hello" to the configured assistant within the created thread, verify response contains a `messages` array; capture run_id (informational, not asserted)
 4. **Extract data**: Extract all data for the thread, verify:
-   - `thread` section contains the thread record with matching thread_id
-   - `runs` section contains at least one run
-   - `checkpoints` section contains checkpoint records
-   - `checkpoint_blobs` section contains blob metadata
-   - `checkpoint_writes` section contains write records
-   - Run IDs in checkpoints match runs in the runs array
+   - `thread` is not null and `thread_id` matches
+   - `runs` contains at least one record
+   - `checkpoints` contains at least one record
+   (Assertions for `checkpoint_blobs`/`checkpoint_writes` row counts and run_id cross-checks are intentionally not made — they depend on agent state and would produce flaky tests against arbitrary deployments.)
 5. **File output**: Test `--output` flag writes valid JSON to a file
-6. **Blob inclusion**: Test `--include-blobs` flag includes base64 data
+6. **Blob inclusion**: Test `--include-blobs` flag includes `blob_base64` fields when checkpoint_blobs rows exist (skipped if none)
 
 ### Test Script: test-config.ts
 
@@ -377,9 +388,11 @@ The end-to-end test performs:
 ### Verification Steps
 
 ```bash
-# Run all test scripts
-LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.westeurope-01.azurewebsites.net" \
-LANGGRAPH_POSTGRES_URL="postgresql://directusersadmin:0ePsTCsosV7vhZGq@direct-users-postgres.postgres.database.azure.com:5432/langgraph_rag_handoff?sslmode=require" \
+# Run all test scripts. Real values for the env vars below must be supplied
+# locally (e.g. via ~/.lg-tool/.env or shell exports) — never committed.
+LANGGRAPH_SERVER_URL="https://<langgraph-server-host>" \
+LANGGRAPH_POSTGRES_URL="postgresql://<db-user>:<redacted>@<db-host>:5432/<db-name>?sslmode=require" \
+LANGGRAPH_TEST_ASSISTANT_ID="<assistant-uuid>" \
 npx tsx test_scripts/test-e2e.ts
 
 npx tsx test_scripts/test-config.ts
@@ -410,6 +423,7 @@ npx tsx test_scripts/test-utils.ts
 - `src/commands/thread-create.ts`
 - `src/commands/run.ts`
 - `src/commands/extract.ts`
+- `src/commands/documents.ts`
 
 ### Phase 5
 - `src/db-client.ts`
@@ -420,7 +434,7 @@ npx tsx test_scripts/test-utils.ts
 - `test_scripts/test-utils.ts`
 - `.env.example`
 
-**Total new files**: 16
+**Total new files**: 17
 
 ---
 
@@ -467,7 +481,7 @@ Phase 1 (Scaffolding)
 | Phase 1: Scaffolding | Small | Config files and stubs |
 | Phase 2: Config | Small | Two functions with validation |
 | Phase 3: API Client | Medium | HTTP wrapper + formatters + utils |
-| Phase 4: CLI Commands | Medium | Four command handlers + commander wiring |
+| Phase 4: CLI Commands | Medium | Five command handlers + commander wiring |
 | Phase 5: DB Client | Medium | Six concurrent queries + blob handling + SSL |
 | Phase 6: Testing | Medium | Three test scripts covering all scenarios |
 

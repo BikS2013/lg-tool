@@ -60,14 +60,14 @@
 - If I ask you to make an exception to the configuration setting rule, you must write this exception in the projects memory file, before you implement it.
 </structure-and-conventions>
 
-# LangGraph Investigator
+# lg-tool
 
 ## Project Overview
 A TypeScript CLI tool for interacting with LangGraph servers and inspecting their underlying PostgreSQL data.
 
 ## Tools
 
-<LangGraphInvestigator>
+<LgTool>
     <objective>
         CLI tool that provides five operations against a LangGraph deployment: listing agents, creating threads, sending requests to agents, extracting all thread-related data from the backing PostgreSQL database, and identifying the documents used in a thread's RAG pipeline.
     </objective>
@@ -75,7 +75,7 @@ A TypeScript CLI tool for interacting with LangGraph servers and inspecting thei
         npx tsx src/cli.ts [command] [options]
     </command>
     <info>
-        LangGraph Investigator is a TypeScript CLI tool that interacts with LangGraph servers
+        lg-tool is a TypeScript CLI tool that interacts with LangGraph servers
         via REST API and directly queries the backing PostgreSQL database for deep inspection
         of agent execution data.
 
@@ -93,7 +93,7 @@ A TypeScript CLI tool for interacting with LangGraph servers and inspecting thei
         Configuration priority (highest to lowest):
             1. Shell environment variables
             2. .env file in current working directory
-            3. ~/.langgraph-investigator/.env
+            3. ~/.lg-tool/.env
 
         Build:
             npx tsc                    # Compile to dist/
@@ -103,9 +103,16 @@ A TypeScript CLI tool for interacting with LangGraph servers and inspecting thei
             npx tsx src/cli.ts [command]
 
         Tests:
-            npx tsx test_scripts/test-config.ts    # Config module tests (5 tests)
-            npx tsx test_scripts/test-utils.ts     # Utils and formatters tests (8 tests)
-            npx tsx test_scripts/test-e2e.ts       # End-to-end test against live server (11 tests)
+            npx tsx test_scripts/test-config.ts      # Config module tests (5 test cases)
+            npx tsx test_scripts/test-utils.ts       # Utils and formatters tests (8 test cases)
+            npx tsx test_scripts/test-documents.ts   # documents-command unit tests (2 test cases, no DB)
+            npx tsx test_scripts/test-e2e.ts         # End-to-end test against live server (11 assertions)
+              # test-e2e.ts requires, in addition to LANGGRAPH_SERVER_URL and
+              # LANGGRAPH_POSTGRES_URL: LANGGRAPH_TEST_ASSISTANT_ID (UUID of a
+              # known assistant deployed on the server).
+              # Note: test-config.ts and test-documents.ts set "missing" env vars
+              # to '' (empty string) rather than undefined, so dotenv.config() in
+              # src/config.ts does not silently re-populate them from a CWD .env.
 
         Examples:
             # List agents
@@ -124,13 +131,13 @@ A TypeScript CLI tool for interacting with LangGraph servers and inspecting thei
             npx tsx src/cli.ts extract --thread <uuid> --include-blobs
 
             # List documents retrieved during a thread's RAG pipeline
-            lagent-cli documents --thread <uuid>
+            lg-tool documents --thread <uuid>
 
             # Export documents to JSON
-            lagent-cli documents --thread <uuid> --output docs.json
+            lg-tool documents --thread <uuid> --output docs.json
 
         Prerequisites:
             Node.js >= 18
             npm install (to install dependencies: pg, commander, dotenv)
     </info>
-</LangGraphInvestigator>
+</LgTool>

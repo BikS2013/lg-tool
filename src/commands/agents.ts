@@ -3,7 +3,7 @@ import { searchAssistants } from '../api-client.js';
 import { formatAgentsTable } from '../formatters.js';
 
 /**
- * Handler for: langgraph-investigator agents
+ * Handler for: lg-tool agents
  *
  * 1. Load server config (throws if LANGGRAPH_SERVER_URL not set)
  * 2. Call POST /assistants/search with limit 100

@@ -10,7 +10,7 @@ interface RunOptions {
 }
 
 /**
- * Handler for: langgraph-investigator run --thread <id> --assistant <id> --message <text>
+ * Handler for: lg-tool run --thread <id> --assistant <id> --message <text>
  *
  * 1. Load server config
  * 2. Validate --thread UUID (--assistant can be UUID or graph_id)

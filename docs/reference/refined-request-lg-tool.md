@@ -1,10 +1,10 @@
-# LangGraph Investigator - Refined Specification
+# lg-tool - Refined Specification
 
 ## Title
-**LangGraph Investigator** - A TypeScript CLI tool for interacting with LangGraph servers and inspecting their underlying PostgreSQL data.
+**lg-tool** - A TypeScript CLI tool for interacting with LangGraph servers and inspecting their underlying PostgreSQL data.
 
 ## Summary
-LangGraph Investigator is a TypeScript CLI tool that provides four core operations against a LangGraph deployment: (1) listing available agents/assistants, (2) creating new threads, (3) sending requests to a specific agent within a thread, and (4) directly querying the PostgreSQL database backing the LangGraph server to extract all data related to a specific thread, including thread records, runs, checkpoints, checkpoint blobs, checkpoint writes, and store entries. The tool enables developers to both interact with LangGraph agents and deeply inspect the internal data structures that LangGraph creates, facilitating debugging, testing, and understanding of agent execution flows.
+lg-tool is a TypeScript CLI tool that provides five core operations against a LangGraph deployment: (1) listing available agents/assistants, (2) creating new threads, (3) sending requests to a specific agent within a thread, (4) directly querying the PostgreSQL database backing the LangGraph server to extract all data related to a specific thread, including thread records, runs, checkpoints, checkpoint blobs, checkpoint writes, and store entries, and (5) extracting the documents retrieved by a thread's RAG pipeline from the `retrieved_docs` channel writes. The tool enables developers to both interact with LangGraph agents and deeply inspect the internal data structures that LangGraph creates, facilitating debugging, testing, and understanding of agent execution flows.
 
 ---
 
@@ -14,6 +14,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 2. **Create Thread**: Create a new thread on the LangGraph server and return the thread ID and metadata.
 3. **Send Request**: Submit a user message to a specific agent within the context of a specific thread, wait for the response, and display the agent's output.
 4. **Extract Thread Data**: Connect directly to the PostgreSQL database used by LangGraph and extract all data related to a specific thread, covering the following tables: `thread`, `run`, `checkpoints`, `checkpoint_blobs`, `checkpoint_writes`, and `store`.
+5. **Extract Retrieved Documents**: Connect to the same PostgreSQL database and extract the documents retrieved by a RAG agent during a thread's execution, parsing the `retrieved_docs` channel from `checkpoint_writes` and surfacing the title, original_title, link, and a content preview for each document.
 
 ---
 
@@ -21,7 +22,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 
 ### FR-1: List Available Agents
 
-**Command**: `langgraph-investigator agents`
+**Command**: `lg-tool agents`
 
 **Behavior**:
 - Send a `POST /assistants/search` request to the LangGraph server with `{"limit": 100}`.
@@ -40,7 +41,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 
 ### FR-2: Create a New Thread
 
-**Command**: `langgraph-investigator thread-create [--metadata <json>]`
+**Command**: `lg-tool thread-create [--metadata <json>]`
 
 **Behavior**:
 - Send a `POST /threads` request to the LangGraph server.
@@ -59,7 +60,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 
 ### FR-3: Send a Request to an Agent
 
-**Command**: `langgraph-investigator run --thread <thread_id> --assistant <assistant_id> --message <text>`
+**Command**: `lg-tool run --thread <thread_id> --assistant <assistant_id> --message <text>`
 
 **Behavior**:
 - Send a `POST /threads/{thread_id}/runs/wait` request to the LangGraph server with the user's message as input.
@@ -91,7 +92,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 
 ### FR-4: Extract Thread Data from PostgreSQL
 
-**Command**: `langgraph-investigator extract --thread <thread_id> [--output <file>]`
+**Command**: `lg-tool extract --thread <thread_id> [--output <file>]`
 
 **Behavior**:
 - Connect directly to the PostgreSQL database that backs the LangGraph server.
@@ -147,6 +148,40 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 **Additional flags**:
 - `--include-blobs`: When specified, include base64-encoded blob data from `checkpoint_blobs` and `checkpoint_writes`. Default behavior is to include only metadata and blob size.
 
+### FR-5: Extract Retrieved Documents from a Thread's RAG Pipeline
+
+**Command**: `lg-tool documents --thread <thread_id> [--output <file>]`
+
+**Behavior**:
+- Connect directly to the PostgreSQL database that backs the LangGraph server.
+- Query `checkpoint_writes` rows whose channel is `retrieved_docs` for the specified `thread_id`.
+- Decode each row's payload and parse `<document title='…' original_title='…' link='…'>…</document>` blocks.
+- Compile the documents into a structured JSON document with a per-document `content_preview` (first line, truncated to 200 chars).
+- If `--output` is supplied, write the JSON to that file; otherwise print a numbered, human-readable list to stdout.
+- If no documents are found, print an informational message and exit successfully.
+
+**Input**:
+- `--thread` (required): UUID of the thread to extract documents for (validated).
+- `--output` (optional): File path to write the JSON output to.
+
+**Output**: A JSON document structured as:
+
+```json
+{
+  "thread_id": "<uuid>",
+  "extracted_at": "<ISO datetime>",
+  "document_count": <number>,
+  "documents": [
+    {
+      "title": "<string>",
+      "original_title": "<string>",
+      "link": "<string>",
+      "content_preview": "<string>"
+    }
+  ]
+}
+```
+
 ---
 
 ## Non-Functional Requirements
@@ -155,7 +190,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 - **Server URL**: Must be provided via environment variable `LANGGRAPH_SERVER_URL`. No default value. If not set, the tool must raise a clear error: `"LANGGRAPH_SERVER_URL environment variable is required"`.
 - **PostgreSQL Connection String**: Must be provided via environment variable `LANGGRAPH_POSTGRES_URL`. No default value. If not set, the tool must raise a clear error: `"LANGGRAPH_POSTGRES_URL environment variable is required"`.
 - **No fallback values**: Per project conventions, configuration values must never have defaults or fallbacks. Missing configuration must always result in an exception with a descriptive error message.
-- **Configuration file**: Optionally support a `.env` file in the current working directory or `~/.langgraph-investigator/.env` for storing configuration. Environment variables take precedence over the file.
+- **Configuration file**: Optionally support a `.env` file in the current working directory or `~/.lg-tool/.env` for storing configuration. Environment variables take precedence over the file.
 
 ### NFR-2: Error Handling
 - All HTTP requests must have proper error handling: network errors, non-2xx status codes, malformed JSON responses.
@@ -196,7 +231,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 
 ### LangGraph Server API
 - **Base URL**: Configurable via `LANGGRAPH_SERVER_URL`
-- **Validation URL**: `https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.westeurope-01.azurewebsites.net`
+- **Validation URL**: `https://<langgraph-server-host>`
 - **API Version**: LangGraph Platform v0.7.89, LangGraph Python v1.1.3
 - **Authentication**: Currently no authentication required (self-hosted deployment)
 - **Key Endpoints Used**:
@@ -209,8 +244,8 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 
 ### PostgreSQL Database
 - **Connection String**: Configurable via `LANGGRAPH_POSTGRES_URL`
-- **Validation URL**: `postgresql://directusersadmin:0ePsTCsosV7vhZGq@direct-users-postgres.postgres.database.azure.com:5432/langgraph_rag_handoff?sslmode=require`
-- **Database Name**: `langgraph_rag_handoff`
+- **Validation URL**: `postgresql://<db-user>:<redacted>@<db-host>:5432/<db-name>?sslmode=require`
+- **Database Name**: `<db-name>`
 - **Relevant Tables**:
   - `thread` - Thread metadata and state
   - `run` - Run execution records
@@ -218,7 +253,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
   - `checkpoint_blobs` - Binary checkpoint data (channel states)
   - `checkpoint_writes` - Individual checkpoint write operations
   - `store` - Key-value store for agent long-term memory
-- **Known Assistants on Server**: 1 assistant with graph_id `"agent"`, assistant_id `fe096781-5601-53d2-b2f6-0d3403f7e9ca`
+- **Known Assistants on Server**: 1 assistant with graph_id `"agent"`, assistant_id `<assistant-uuid>`
 
 ### npm Packages Required
 - `pg` - PostgreSQL client
@@ -234,24 +269,24 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 ## Acceptance Criteria
 
 ### AC-1: List Agents
-- [ ] Running `langgraph-investigator agents` against the validation server returns at least the "agent" assistant (ID: `fe096781-5601-53d2-b2f6-0d3403f7e9ca`).
+- [ ] Running `lg-tool agents` against the validation server returns at least the "agent" assistant (ID: `<assistant-uuid>`).
 - [ ] Output displays assistant_id, graph_id, name, version, and timestamps.
 - [ ] Running without `LANGGRAPH_SERVER_URL` set produces a clear error message.
 
 ### AC-2: Create Thread
-- [ ] Running `langgraph-investigator thread-create` creates a new thread and returns a valid UUID thread_id.
+- [ ] Running `lg-tool thread-create` creates a new thread and returns a valid UUID thread_id.
 - [ ] The created thread is visible in the database `thread` table.
 - [ ] The created thread status is "idle".
 - [ ] Optional `--metadata '{"key":"value"}'` is persisted in the thread's metadata.
 
 ### AC-3: Send Request
-- [ ] Running `langgraph-investigator run --thread <id> --assistant fe096781-5601-53d2-b2f6-0d3403f7e9ca --message "Hello"` produces an agent response.
+- [ ] Running `lg-tool run --thread <id> --assistant <assistant-uuid> --message "Hello"` produces an agent response.
 - [ ] The response includes the agent's message content and the run_id.
 - [ ] The run is recorded in the database `run` table with status "success".
 - [ ] Invalid thread_id or assistant_id produces a clear error.
 
 ### AC-4: Extract Thread Data
-- [ ] Running `langgraph-investigator extract --thread <id>` after AC-3 returns a JSON document with all sections populated.
+- [ ] Running `lg-tool extract --thread <id>` after AC-3 returns a JSON document with all sections populated.
 - [ ] The `thread` section contains the thread record.
 - [ ] The `runs` section contains at least one run record.
 - [ ] The `checkpoints` section contains checkpoint records created during the run.
@@ -261,10 +296,18 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 - [ ] Running without `LANGGRAPH_POSTGRES_URL` set produces a clear error message.
 - [ ] The `--include-blobs` flag includes base64-encoded binary data.
 
-### AC-5: End-to-End Validation
+### AC-5: Extract Retrieved Documents
+- [ ] Running `lg-tool documents --thread <id>` for a thread that exercised a RAG pipeline lists the retrieved documents with title, original_title, link, and a content preview.
+- [ ] Running for a thread with no `retrieved_docs` channel writes prints an informational message and exits 0.
+- [ ] The `--output <file>` flag writes the wrapped JSON shape (`{ thread_id, extracted_at, document_count, documents[] }`) to the specified file.
+- [ ] Running without `LANGGRAPH_POSTGRES_URL` set produces a clear error message (ConfigError).
+- [ ] An invalid `--thread` UUID produces a clear ValidationError before any DB call.
+
+### AC-6: End-to-End Validation
 - [ ] A test script performs the full flow: list agents -> create thread -> send request -> extract data.
 - [ ] The extracted data is internally consistent: the thread_id matches across all tables, run_ids in checkpoints match runs, etc.
 - [ ] The tool works correctly against both the provided validation server and database.
+- [ ] (Optional, requires a thread with `retrieved_docs` writes) `lg-tool documents` against that thread returns the expected document set.
 
 ---
 
@@ -286,13 +329,14 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 ## CLI Interface Summary
 
 ```
-langgraph-investigator <command> [options]
+lg-tool <command> [options]
 
 Commands:
   agents                          List all available agents/assistants
   thread-create [--metadata <json>]  Create a new thread
   run --thread <id> --assistant <id> --message <text>  Send a request to an agent
   extract --thread <id> [--output <file>] [--include-blobs]  Extract all thread data from PostgreSQL
+  documents --thread <id> [--output <file>]  Extract retrieved RAG documents for a thread
 
 Environment Variables (required, no defaults):
   LANGGRAPH_SERVER_URL     Base URL of the LangGraph server
@@ -306,11 +350,11 @@ Environment Variables (required, no defaults):
 For development and testing, use the following values:
 
 ```bash
-export LANGGRAPH_SERVER_URL="https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.westeurope-01.azurewebsites.net"
-export LANGGRAPH_POSTGRES_URL="postgresql://directusersadmin:0ePsTCsosV7vhZGq@direct-users-postgres.postgres.database.azure.com:5432/langgraph_rag_handoff?sslmode=require"
+export LANGGRAPH_SERVER_URL="https://<langgraph-server-host>"
+export LANGGRAPH_POSTGRES_URL="postgresql://<db-user>:<redacted>@<db-host>:5432/<db-name>?sslmode=require"
 ```
 
 Known available assistant for testing:
-- **assistant_id**: `fe096781-5601-53d2-b2f6-0d3403f7e9ca`
+- **assistant_id**: `<assistant-uuid>`
 - **graph_id**: `agent`
 - **name**: `agent`

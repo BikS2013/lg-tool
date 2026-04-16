@@ -12,11 +12,11 @@ import { ConfigError } from './errors.js';
  * Load order:
  *   1. process.env (already set, highest priority)
  *   2. .env in current working directory
- *   3. ~/.langgraph-investigator/.env
+ *   3. ~/.lg-tool/.env
  */
 function loadEnvFiles(): void {
   dotenv.config({ path: path.join(process.cwd(), '.env') });
-  dotenv.config({ path: path.join(os.homedir(), '.langgraph-investigator', '.env') });
+  dotenv.config({ path: path.join(os.homedir(), '.lg-tool', '.env') });
 }
 
 /**

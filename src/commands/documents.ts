@@ -11,7 +11,7 @@ interface DocumentsOptions {
 }
 
 /**
- * Handler for: lagent-cli documents --thread <id> [--output <file>]
+ * Handler for: lg-tool documents --thread <id> [--output <file>]
  *
  * Connects to the PostgreSQL database and extracts the retrieved documents
  * used in a thread's RAG pipeline. Documents are parsed from the 'retrieved_docs'

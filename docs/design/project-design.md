@@ -1,13 +1,14 @@
-# LangGraph Investigator - Project Design
+# lg-tool - Project Design
 
 ## Overview
 
-LangGraph Investigator is a TypeScript CLI tool that provides four core operations against a LangGraph deployment:
+lg-tool is a TypeScript CLI tool that provides five core operations against a LangGraph deployment:
 
 1. **List agents** - Query and display available assistants/agents
 2. **Create thread** - Create a new conversation thread
 3. **Send request** - Submit a message to an agent and wait for a response
 4. **Extract data** - Query the backing PostgreSQL database to extract all data related to a thread
+5. **Extract documents** - Parse the `retrieved_docs` channel writes for a thread and list the documents used by its RAG pipeline
 
 ## Architecture
 
@@ -30,7 +31,7 @@ LangGraph Investigator is a TypeScript CLI tool that provides four core operatio
 ## 1. File Structure
 
 ```
-langgraph-investigator/
+lg-tool/
   package.json                    # Project metadata, scripts, dependencies, engines
   tsconfig.json                   # TypeScript config (ES2022, NodeNext, strict)
   .gitignore                      # node_modules, dist, .env, *.js in src
@@ -51,23 +52,27 @@ langgraph-investigator/
       thread-create.ts            # "thread-create" command handler
       run.ts                      # "run" command handler
       extract.ts                  # "extract" command handler
+      documents.ts                # "documents" command handler (FR-5)
   test_scripts/
     test-e2e.ts                   # Full flow: list agents -> create thread -> run -> extract
     test-config.ts                # Config module validation tests
     test-utils.ts                 # UUID validation, masking, formatting tests
+    test-documents.ts             # documents-command unit tests (no live DB)
   docs/
     design/
       project-design.md           # This document
       project-functions.md        # Functional requirements registry
-      plan-001-langgraph-investigator-implementation.md  # Implementation plan
+      plan-001-lg-tool-implementation.md  # Implementation plan
     reference/
-      refined-request-langgraph-investigator.md          # Full requirements specification
-      investigation-langgraph-investigator.md            # Technical investigation
+      refined-request-lg-tool.md          # Full requirements specification
+      investigation-lg-tool.md            # Technical investigation
+      langgraph-server-api-spec.md        # LangGraph Platform REST API reference
+      samples/                            # Captured fixtures for regression
 ```
 
-**Total source files**: 11 (in `src/`)
-**Total test files**: 3 (in `test_scripts/`)
-**Total project files**: 16 (including config files)
+**Total source files**: 13 (in `src/` — 8 root modules + 5 command handlers)
+**Total test files**: 4 (in `test_scripts/`)
+**Total project files**: 19 (including config files)
 
 ---
 
@@ -113,12 +118,17 @@ export interface Thread {
 }
 
 export interface Message {
-  role: 'human' | 'ai' | 'system' | 'tool';
+  // Both fields are optional because LangGraph responses use `type`
+  // (e.g. "ai") while the LangGraph REST request format uses `role`.
+  // Consumers (see formatters.ts) read `m.type ?? m.role`.
+  role?: 'human' | 'ai' | 'system' | 'tool';
+  type?: 'human' | 'ai' | 'system' | 'tool';
   content: string;
   id?: string;
   name?: string;
   tool_calls?: unknown[];
   additional_kwargs?: Record<string, unknown>;
+  response_metadata?: Record<string, unknown>;
 }
 
 export interface RunResult {
@@ -197,6 +207,15 @@ export interface StoreRecord {
   [key: string]: unknown;     // Schema may vary
 }
 
+// ─── Retrieved Document Type (FR-5) ───
+
+export interface RetrievedDocument {
+  title: string;
+  original_title: string;
+  link: string;
+  content_preview: string;    // first 200 chars of the document body
+}
+
 // ─── Extract Result Type ───
 
 export interface ThreadExtraction {
@@ -215,13 +234,13 @@ export interface ThreadExtraction {
 
 ```typescript
 /**
- * Base error class for LangGraph Investigator.
+ * Base error class for lg-tool.
  * All custom errors extend this.
  */
-export class InvestigatorError extends Error {
+export class LgToolError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = 'InvestigatorError';
+    this.name = 'LgToolError';
   }
 }
 
@@ -229,7 +248,7 @@ export class InvestigatorError extends Error {
  * Thrown when a required configuration variable is missing.
  * Never catches or provides fallback. Exits the CLI immediately.
  */
-export class ConfigError extends InvestigatorError {
+export class ConfigError extends LgToolError {
   public readonly variableName: string;
 
   constructor(variableName: string) {
@@ -243,7 +262,7 @@ export class ConfigError extends InvestigatorError {
  * Thrown on HTTP errors from the LangGraph REST API.
  * Includes status code and response body for debugging.
  */
-export class ApiError extends InvestigatorError {
+export class ApiError extends LgToolError {
   public readonly statusCode: number;
   public readonly responseBody: string;
   public readonly url: string;
@@ -262,7 +281,7 @@ export class ApiError extends InvestigatorError {
  * The message MUST NOT contain credentials. Use maskConnectionString()
  * before including any connection URL in the message.
  */
-export class DbError extends InvestigatorError {
+export class DbError extends LgToolError {
   public readonly originalError: Error;
   public readonly table?: string;
 
@@ -277,7 +296,7 @@ export class DbError extends InvestigatorError {
 /**
  * Thrown when user input fails validation (e.g., invalid UUID, malformed JSON).
  */
-export class ValidationError extends InvestigatorError {
+export class ValidationError extends LgToolError {
   public readonly field: string;
   public readonly value: string;
 
@@ -299,7 +318,7 @@ export class ValidationError extends InvestigatorError {
 **Design rules**:
 - No default values. No fallback values. Ever.
 - Each function loads only the variables it needs.
-- `.env` loading order: CWD first, then `~/.langgraph-investigator/.env`. Environment variables override both.
+- `.env` loading order: CWD first, then `~/.lg-tool/.env`. Environment variables override both.
 - Throws `ConfigError` immediately on missing variable.
 
 ```typescript
@@ -317,11 +336,11 @@ import { ConfigError } from './errors.js';
  * Load order:
  *   1. process.env (already set, highest priority)
  *   2. .env in current working directory
- *   3. ~/.langgraph-investigator/.env
+ *   3. ~/.lg-tool/.env
  */
 function loadEnvFiles(): void {
   dotenv.config({ path: path.join(process.cwd(), '.env') });
-  dotenv.config({ path: path.join(os.homedir(), '.langgraph-investigator', '.env') });
+  dotenv.config({ path: path.join(os.homedir(), '.lg-tool', '.env') });
 }
 
 /**
@@ -472,13 +491,16 @@ export function formatRunResult(result: RunResult, runId: string): string {
   lines.push(`  run_id: ${runId}`);
   lines.push('');
 
-  // Extract AI messages from the result
+  // Extract AI messages from the result.
+  // LangGraph uses "type" field (e.g. "ai"), while the REST request format uses "role".
+  // getRole() prefers `type` and falls back to `role` so both shapes are handled.
   if (result.messages && Array.isArray(result.messages)) {
-    const aiMessages = result.messages.filter((m: Message) => m.role === 'ai');
+    const getRole = (m: Message): string => m.type ?? m.role ?? 'unknown';
+    const aiMessages = result.messages.filter((m: Message) => getRole(m) === 'ai');
     if (aiMessages.length > 0) {
       lines.push('Agent Response:');
       for (const msg of aiMessages) {
-        lines.push(`  [${msg.role}] ${msg.content}`);
+        lines.push(`  [${getRole(msg)}] ${msg.content}`);
       }
     } else {
       lines.push('No AI messages in response.');
@@ -545,7 +567,7 @@ const RUN_WAIT_TIMEOUT_MS = 300_000;   // 5 minutes for /runs/wait
  * @param options - HTTP method, optional body, optional timeout
  * @returns Parsed JSON response typed as T
  * @throws ApiError on non-2xx response
- * @throws InvestigatorError on network/timeout error
+ * @throws ApiError on network/timeout error (wrapped with status 0)
  */
 export async function apiRequest<T>(
   serverUrl: string,
@@ -689,7 +711,13 @@ export async function runAndWait(
 - `queryCheckpointBlobs(pool: Pool, threadId: string, includeBlobs: boolean): Promise<CheckpointBlobRecord[]>`
 - `queryCheckpointWrites(pool: Pool, threadId: string, includeBlobs: boolean): Promise<CheckpointWriteRecord[]>`
 - `queryStore(pool: Pool, threadId: string): Promise<StoreRecord[]>`
+- `queryRetrievedDocuments(pool: Pool, threadId: string): Promise<RetrievedDocument[]>` *(FR-5)*
 - `extractThreadData(pool: Pool, threadId: string, includeBlobs: boolean): Promise<ThreadExtraction>`
+
+**FR-5 query notes**:
+- SQL: `SELECT encode(blob, 'base64') as blob_b64 FROM checkpoint_writes WHERE thread_id = $1 AND channel = 'retrieved_docs' ORDER BY checkpoint_id, idx`.
+- For each returned row, the base64 blob is decoded to UTF-8 and scanned with the regex `/<document:\s+title='([^']*)'\s+original_title='([^']*)'\s+link='([^']*)'>/g`. Body content is captured between each opening match and the next `</document>` tag, then truncated to 200 chars for `content_preview`.
+- The function does not throw on empty results; an empty array is a valid outcome (no RAG documents were retrieved during the thread).
 
 **Design**:
 
@@ -698,7 +726,7 @@ import { Pool, PoolConfig } from 'pg';
 import {
   ThreadRecord, RunRecord, CheckpointRecord,
   CheckpointBlobRecord, CheckpointWriteRecord,
-  StoreRecord, ThreadExtraction
+  StoreRecord, ThreadExtraction, RetrievedDocument
 } from './types.js';
 import { DbError } from './errors.js';
 import { maskConnectionString } from './formatters.js';
@@ -751,6 +779,9 @@ const SQL_CHECKPOINT_WRITES_FULL =
   "SELECT thread_id, checkpoint_id, task_id, idx, channel, type, length(blob) as blob_size, encode(blob, 'base64') as blob_base64, checkpoint_ns FROM checkpoint_writes WHERE thread_id = $1 ORDER BY checkpoint_id, idx";
 
 const SQL_STORE = 'SELECT * FROM store WHERE prefix LIKE $1';
+
+const SQL_RETRIEVED_DOCS =
+  "SELECT encode(blob, 'base64') as blob_b64 FROM checkpoint_writes WHERE thread_id = $1 AND channel = 'retrieved_docs' ORDER BY checkpoint_id, idx";
 
 // ─── Individual Query Functions ───
 
@@ -816,6 +847,44 @@ export async function queryCheckpointWrites(
 export async function queryStore(pool: Pool, threadId: string): Promise<StoreRecord[]> {
   const result = await pool.query(SQL_STORE, [`${threadId}%`]);
   return result.rows as StoreRecord[];
+}
+
+/**
+ * Extract retrieved RAG documents from checkpoint_writes for a thread (FR-5).
+ *
+ * LangGraph RAG agents store retrieved documents in the 'retrieved_docs' channel
+ * as msgpack-encoded text containing <document: title='...' original_title='...' link='...'>
+ * XML-like blocks. This function decodes the blobs and parses out document metadata.
+ *
+ * An empty result array is a valid outcome — it simply means no RAG documents
+ * were retrieved during this thread's execution.
+ */
+export async function queryRetrievedDocuments(
+  pool: Pool,
+  threadId: string
+): Promise<RetrievedDocument[]> {
+  const result = await pool.query(SQL_RETRIEVED_DOCS, [threadId]);
+  const documents: RetrievedDocument[] = [];
+
+  for (const row of result.rows) {
+    const decoded = Buffer.from(row.blob_b64, 'base64').toString('utf-8');
+    const docRegex = /<document:\s+title='([^']*)'\s+original_title='([^']*)'\s+link='([^']*)'>/g;
+    let match;
+    while ((match = docRegex.exec(decoded)) !== null) {
+      const endTag = decoded.indexOf('</document>', match.index);
+      const content = endTag > 0
+        ? decoded.substring(match.index + match[0].length, endTag).trim()
+        : '';
+      documents.push({
+        title: match[1],
+        original_title: match[2],
+        link: match[3],
+        content_preview: content.substring(0, 200),
+      });
+    }
+  }
+
+  return documents;
 }
 
 // ─── Aggregate Extraction ───
@@ -893,7 +962,7 @@ import { searchAssistants } from '../api-client.js';
 import { formatAgentsTable } from '../formatters.js';
 
 /**
- * Handler for: langgraph-investigator agents
+ * Handler for: lg-tool agents
  *
  * 1. Load server config (throws if LANGGRAPH_SERVER_URL not set)
  * 2. Call POST /assistants/search with limit 100
@@ -920,7 +989,7 @@ interface ThreadCreateOptions {
 }
 
 /**
- * Handler for: langgraph-investigator thread-create [--metadata <json>]
+ * Handler for: lg-tool thread-create [--metadata <json>]
  *
  * 1. Load server config
  * 2. Parse --metadata JSON (if provided)
@@ -963,7 +1032,7 @@ interface RunOptions {
 }
 
 /**
- * Handler for: langgraph-investigator run --thread <id> --assistant <id> --message <text>
+ * Handler for: lg-tool run --thread <id> --assistant <id> --message <text>
  *
  * 1. Load server config
  * 2. Validate --thread UUID (--assistant can be UUID or graph_id)
@@ -1010,7 +1079,7 @@ interface ExtractOptions {
 }
 
 /**
- * Handler for: langgraph-investigator extract --thread <id> [--output <file>] [--include-blobs]
+ * Handler for: lg-tool extract --thread <id> [--output <file>] [--include-blobs]
  *
  * 1. Load DB config
  * 2. Validate --thread UUID
@@ -1054,7 +1123,90 @@ export async function extractCommand(options: ExtractOptions): Promise<void> {
 }
 ```
 
-### 2.12 `src/cli.ts` - Entry Point
+### 2.12 `src/commands/documents.ts` - Documents Command Handler (FR-5)
+
+**Exports**: `documentsCommand(options: { thread: string; output?: string }): Promise<void>`
+
+**Behavior**:
+1. Load DB config (throws `ConfigError` if `LANGGRAPH_POSTGRES_URL` missing)
+2. Validate `--thread` is a UUID
+3. Open a `pg` pool, call `queryRetrievedDocuments(pool, threadId)` from `db-client.ts`
+4. The query reads `checkpoint_writes` rows whose channel is `retrieved_docs`,
+   parses each payload's `<document title='…' original_title='…' link='…'>…</document>`
+   blocks, and returns `{ title, original_title, link, content_preview }[]`
+5. If `--output` is supplied, write `{ thread_id, extracted_at, document_count, documents }`
+   as pretty JSON; otherwise print a numbered list to stdout
+6. If no documents found, print an informational message and return
+7. Always close the pool in `finally`. Errors get wrapped in `DbError` with the
+   connection string masked via `maskConnectionString()`
+
+```typescript
+import fs from 'fs/promises';
+import { loadDbConfig } from '../config.js';
+import { createPool, queryRetrievedDocuments } from '../db-client.js';
+import { validateUuid } from '../utils.js';
+import { maskConnectionString } from '../formatters.js';
+import { DbError } from '../errors.js';
+
+interface DocumentsOptions {
+  thread: string;
+  output?: string;
+}
+
+export async function documentsCommand(options: DocumentsOptions): Promise<void> {
+  const config = loadDbConfig();
+
+  validateUuid(options.thread, '--thread');
+
+  const pool = createPool(config.postgresUrl);
+
+  try {
+    const documents = await queryRetrievedDocuments(pool, options.thread);
+
+    if (documents.length === 0) {
+      console.log('No retrieved documents found for this thread.');
+      return;
+    }
+
+    const result = {
+      thread_id: options.thread,
+      extracted_at: new Date().toISOString(),
+      document_count: documents.length,
+      documents,
+    };
+
+    if (options.output) {
+      const json = JSON.stringify(result, null, 2);
+      await fs.writeFile(options.output, json, 'utf-8');
+      console.log(`${documents.length} documents extracted to ${options.output}`);
+    } else {
+      console.log(`Found ${documents.length} retrieved documents for thread ${options.thread}:\n`);
+      for (let i = 0; i < documents.length; i++) {
+        const doc = documents[i];
+        console.log(`  ${i + 1}. ${doc.title}`);
+        if (doc.link)           console.log(`     link: ${doc.link}`);
+        if (doc.original_title) console.log(`     original_title: ${doc.original_title}`);
+        const firstLine = doc.content_preview.split('\n')[0].trim();
+        if (firstLine) {
+          console.log(`     preview: ${firstLine.substring(0, 100)}${firstLine.length > 100 ? '...' : ''}`);
+        }
+        console.log('');
+      }
+    }
+  } catch (error) {
+    if (error instanceof DbError) throw error;
+    const err = error as Error;
+    throw new DbError(
+      `Database error: ${err.message} (connection: ${maskConnectionString(config.postgresUrl)})`,
+      err
+    );
+  } finally {
+    await pool.end();
+  }
+}
+```
+
+### 2.13 `src/cli.ts` - Entry Point
 
 ```typescript
 #!/usr/bin/env node
@@ -1064,12 +1216,13 @@ import { agentsCommand } from './commands/agents.js';
 import { threadCreateCommand } from './commands/thread-create.js';
 import { runCommand } from './commands/run.js';
 import { extractCommand } from './commands/extract.js';
-import { InvestigatorError } from './errors.js';
+import { documentsCommand } from './commands/documents.js';
+import { LgToolError } from './errors.js';
 
 const program = new Command();
 
 program
-  .name('langgraph-investigator')
+  .name('lg-tool')
   .description('CLI tool for interacting with LangGraph servers and inspecting their PostgreSQL data')
   .version('1.0.0');
 
@@ -1108,6 +1261,15 @@ program
     await extractCommand(options);
   });
 
+program
+  .command('documents')
+  .description('Extract retrieved documents used in a thread')
+  .requiredOption('--thread <id>', 'Thread ID (UUID)')
+  .option('--output <file>', 'Output file path for JSON')
+  .action(async (options) => {
+    await documentsCommand(options);
+  });
+
 // ─── Global Error Handler ───
 
 /**
@@ -1121,7 +1283,7 @@ program
  * - Unknown errors: prints the stack trace for debugging
  */
 program.parseAsync().catch((error: unknown) => {
-  if (error instanceof InvestigatorError) {
+  if (error instanceof LgToolError) {
     console.error(`Error: ${error.message}`);
     process.exit(1);
   }
@@ -1140,13 +1302,13 @@ program.parseAsync().catch((error: unknown) => {
 | Variable | Required By | Purpose | Example |
 |----------|------------|---------|---------|
 | `LANGGRAPH_SERVER_URL` | agents, thread-create, run | Base URL of LangGraph server | `https://host.azurewebsites.net` |
-| `LANGGRAPH_POSTGRES_URL` | extract | PostgreSQL connection string | `postgresql://user:pass@host:5432/db?sslmode=require` |
+| `LANGGRAPH_POSTGRES_URL` | extract, documents | PostgreSQL connection string | `postgresql://user:pass@host:5432/db?sslmode=require` |
 
 ### Loading Priority (highest to lowest)
 
 1. Shell environment variables (e.g., `export LANGGRAPH_SERVER_URL=...`)
 2. `.env` file in the current working directory
-3. `~/.langgraph-investigator/.env` file
+3. `~/.lg-tool/.env` file
 
 This priority is achieved automatically by `dotenv.config()`, which does NOT overwrite existing `process.env` values. Files loaded later also do not overwrite earlier ones.
 
@@ -1164,7 +1326,7 @@ This priority is achieved automatically by `dotenv.config()`, which does NOT ove
 
 ```
 Error
-  InvestigatorError           (base class for all project errors)
+  LgToolError           (base class for all project errors)
     ConfigError               (missing environment variable)
     ValidationError           (invalid UUID, malformed JSON)
     ApiError                  (HTTP error, timeout, network failure)
@@ -1188,7 +1350,7 @@ Command Handler
   v
 cli.ts parseAsync().catch()
   |
-  +-- InvestigatorError -> console.error(message), exit(1)
+  +-- LgToolError -> console.error(message), exit(1)
   +-- Unknown error -> console.error(stack), exit(2)
 ```
 
@@ -1296,6 +1458,12 @@ User CLI Input
   pool.end()  (always, in finally block)
 ```
 
+### Documents Command
+
+Follows the same shape as the Extract Command, with two differences:
+- A single query (`queryRetrievedDocuments`) instead of `Promise.all` over six tables. The query selects from `checkpoint_writes` where `channel = 'retrieved_docs'`, decodes the base64 blob, and runs a regex over `<document title='…' original_title='…' link='…'>…</document>` blocks to produce `RetrievedDocument[]`.
+- Output formatting differs: with `--output` the command writes the same wrapped JSON shape (`{ thread_id, extracted_at, document_count, documents[] }`); without `--output` it prints a numbered, human-readable list (title, link, original_title, content preview).
+
 ---
 
 ## 6. CLI Command Design
@@ -1303,7 +1471,7 @@ User CLI Input
 ### Commander Program Structure
 
 ```
-langgraph-investigator
+lg-tool
   |
   +-- agents                                    (no options)
   |
@@ -1316,9 +1484,13 @@ langgraph-investigator
   |     --message <text>                        (required, text string)
   |
   +-- extract
+  |     --thread <id>                           (required, UUID)
+  |     --output <file>                         (optional, file path)
+  |     --include-blobs                         (optional, boolean flag)
+  |
+  +-- documents
         --thread <id>                           (required, UUID)
         --output <file>                         (optional, file path)
-        --include-blobs                         (optional, boolean flag)
 ```
 
 ### Output Formats
@@ -1329,6 +1501,7 @@ langgraph-investigator
 | `thread-create` | Key-value text | stdout |
 | `run` | Key-value text + agent message content | stdout |
 | `extract` | Pretty-printed JSON (`JSON.stringify(data, null, 2)`) | stdout or `--output` file |
+| `documents` | Numbered human-readable list (stdout) **or** pretty JSON (`{ thread_id, extracted_at, document_count, documents[] }`) | stdout or `--output` file |
 
 ### Exit Codes
 
@@ -1341,6 +1514,11 @@ langgraph-investigator
 ---
 
 ## 7. Database Schema (LangGraph tables, read-only access)
+
+The `extract` command reads from all six tables below. The `documents` command (FR-5)
+reuses the **`checkpoint_writes`** table — it filters rows where `channel = 'retrieved_docs'`
+and parses the base64-decoded `blob` column for `<document>` blocks (see Section 2.7
+`queryRetrievedDocuments`). No additional tables are introduced for FR-5.
 
 ### Thread Table
 
@@ -1436,13 +1614,13 @@ CREATE TABLE store (
 
 ```json
 {
-  "name": "langgraph-investigator",
+  "name": "lg-tool",
   "version": "1.0.0",
   "description": "CLI tool for interacting with LangGraph servers and inspecting their PostgreSQL data",
   "type": "module",
   "main": "dist/cli.js",
   "bin": {
-    "langgraph-investigator": "dist/cli.js"
+    "lg-tool": "dist/cli.js"
   },
   "scripts": {
     "dev": "tsx src/cli.ts",
@@ -1450,7 +1628,8 @@ CREATE TABLE store (
     "typecheck": "tsc --noEmit",
     "test:e2e": "tsx test_scripts/test-e2e.ts",
     "test:config": "tsx test_scripts/test-config.ts",
-    "test:utils": "tsx test_scripts/test-utils.ts"
+    "test:utils": "tsx test_scripts/test-utils.ts",
+    "test:documents": "tsx test_scripts/test-documents.ts"
   },
   "engines": {
     "node": ">=18"
@@ -1498,7 +1677,7 @@ All tests reside in `test_scripts/` per project convention.
 
 ### test_scripts/test-config.ts
 
-Tests the configuration module in isolation:
+Tests the configuration module in isolation (5 `test()` cases):
 
 | Test | Input | Expected Outcome |
 |------|-------|-----------------|
@@ -1506,16 +1685,15 @@ Tests the configuration module in isolation:
 | Missing LANGGRAPH_POSTGRES_URL | unset env var | Throws ConfigError with specific message |
 | loadServerConfig does not require DB config | only SERVER_URL set | Returns ServerConfig successfully |
 | loadDbConfig does not require server config | only POSTGRES_URL set | Returns DbConfig successfully |
-| Env var overrides .env file | both set | Env var value used |
 | Trailing slash stripped | URL with trailing / | serverUrl has no trailing slash |
 
 ### test_scripts/test-utils.ts
 
-Tests utility and formatting functions:
+Tests utility and formatting functions (8 `test()` cases):
 
 | Test | Input | Expected Outcome |
 |------|-------|-----------------|
-| Valid UUID accepted | `"fe096781-5601-53d2-b2f6-0d3403f7e9ca"` | Returns the UUID |
+| Valid UUID accepted | `"550e8400-e29b-41d4-a716-446655440000"` | Returns the UUID |
 | Invalid UUID rejected | `"not-a-uuid"` | Throws ValidationError |
 | Empty string rejected | `""` | Throws ValidationError |
 | maskConnectionString masks password | `"postgresql://user:secret@host/db"` | `"postgresql://user:***@host/db"` |
@@ -1524,29 +1702,37 @@ Tests utility and formatting functions:
 | formatAgentsTable with data | Array of Assistants | Formatted table string |
 | formatAgentsTable empty | Empty array | `"No assistants found."` |
 
+### test_scripts/test-documents.ts
+
+Unit tests for the `documents` command (no live DB required). 2 `test()` cases:
+
+| Test | Input | Expected Outcome |
+|------|-------|-----------------|
+| Missing LANGGRAPH_POSTGRES_URL throws ConfigError | `LANGGRAPH_POSTGRES_URL=''` (empty, so dotenv won't repopulate from `.env`) | `documentsCommand` throws `ConfigError` with `variableName === 'LANGGRAPH_POSTGRES_URL'` |
+| Invalid `--thread` UUID throws ValidationError before any DB call | `--thread = "not-a-uuid"`, valid POSTGRES_URL set | `documentsCommand` throws `ValidationError` with `field === '--thread'` |
+
+A live-DB integration test for the documents command is intentionally out of scope here — it would require a thread that actually exercised a RAG pipeline with `retrieved_docs` channel writes. See AC-5 in `docs/reference/refined-request-lg-tool.md` for that case.
+
 ### test_scripts/test-e2e.ts
 
-End-to-end test against the live validation server and database:
+End-to-end test against a live LangGraph server and its PostgreSQL backing store. Requires three env vars: `LANGGRAPH_SERVER_URL`, `LANGGRAPH_POSTGRES_URL`, and `LANGGRAPH_TEST_ASSISTANT_ID` (UUID of an assistant known to be deployed on the server). Total: 11 `assert()` calls.
 
-1. **List agents**: Verify at least 1 assistant returned; verify `fe096781-5601-53d2-b2f6-0d3403f7e9ca` is present
+1. **List agents**: Verify at least 1 assistant returned; verify the assistant whose UUID matches `LANGGRAPH_TEST_ASSISTANT_ID` is present
 2. **Create thread**: Verify returned thread_id is valid UUID; verify status is `"idle"`
-3. **Send request**: Send `"Hello"` to the known assistant; verify response has messages; capture run_id
+3. **Send request**: Send `"Hello"` to the configured assistant; verify response has a `messages` array; capture run_id (informational only)
 4. **Extract data**: Extract thread data from PostgreSQL; verify:
-   - `thread` is not null and thread_id matches
+   - `thread` is not null and `thread_id` matches
    - `runs` has at least one record
    - `checkpoints` has at least one record
-   - `checkpoint_blobs` has at least one record
-   - `checkpoint_writes` has at least one record
-   - run_id from step 3 appears in the runs array
 5. **File output**: Write to temp file, verify valid JSON
-6. **Include blobs**: Re-extract with `--include-blobs`, verify `blob_base64` fields present
+6. **Include blobs**: Re-extract with `--include-blobs`, verify `blob_base64` fields present (skipped if no `checkpoint_blobs` rows exist for the thread)
 
 ---
 
 ## 10. Security Considerations
 
 1. **Credential masking**: `maskConnectionString()` is used in ALL error paths that might include a connection URL. The password is replaced with `***`.
-2. **Parameterized queries**: All 6 SQL queries use `$1` parameter syntax. Zero string interpolation in SQL.
+2. **Parameterized queries**: All 9 SQL constants in `src/db-client.ts` use `$1` parameter syntax — zero string interpolation in SQL. (The 9 are: `SQL_THREAD`, `SQL_RUNS`, `SQL_CHECKPOINTS`, `SQL_CHECKPOINT_BLOBS_META`, `SQL_CHECKPOINT_BLOBS_FULL`, `SQL_CHECKPOINT_WRITES_META`, `SQL_CHECKPOINT_WRITES_FULL`, `SQL_STORE`, `SQL_RETRIEVED_DOCS`.)
 3. **No credential logging**: The tool never logs, prints, or includes credentials in stdout output. Connection strings appear only in `.env` files (which are `.gitignored`).
 4. **SSL**: Azure PostgreSQL connections use `ssl: { rejectUnauthorized: false }` because Azure uses Microsoft-managed certificates. This is documented for environments requiring strict certificate validation.
 
@@ -1554,7 +1740,7 @@ End-to-end test against the live validation server and database:
 
 ## References
 
-- [Refined Specification](../reference/refined-request-langgraph-investigator.md)
-- [Technical Investigation](../reference/investigation-langgraph-investigator.md)
-- [Implementation Plan](plan-001-langgraph-investigator-implementation.md)
+- [Refined Specification](../reference/refined-request-lg-tool.md)
+- [Technical Investigation](../reference/investigation-lg-tool.md)
+- [Implementation Plan](plan-001-lg-tool-implementation.md)
 - [Functional Requirements](project-functions.md)

@@ -1,5 +1,5 @@
 /**
- * End-to-end test for LangGraph Investigator.
+ * End-to-end test for lg-tool.
  *
  * Runs against the LIVE validation server and database.
  * Test flow: list agents -> create thread -> send request -> extract data -> file output -> include blobs

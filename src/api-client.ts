@@ -19,7 +19,7 @@ const RUN_WAIT_TIMEOUT_MS = 300_000;   // 5 minutes for /runs/wait
  * @param options - HTTP method, optional body, optional timeout
  * @returns Parsed JSON response typed as T
  * @throws ApiError on non-2xx response
- * @throws InvestigatorError on network/timeout error
+ * @throws ApiError on network/timeout error (wrapped with status 0)
  */
 export async function apiRequest<T>(
   serverUrl: string,

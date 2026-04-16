@@ -64,8 +64,11 @@ console.log('test-config.ts');
 console.log('==============');
 
 // ── Test 1: Missing LANGGRAPH_SERVER_URL throws ConfigError ──
+// NOTE: env vars are set to '' (not undefined) so that dotenv.config() in
+// src/config.ts does NOT silently re-populate them from a CWD `.env` file.
+// dotenv writes a key only when `process.env[key] === undefined`.
 test('Missing LANGGRAPH_SERVER_URL throws ConfigError', () => {
-  withEnv({ LANGGRAPH_SERVER_URL: undefined, LANGGRAPH_POSTGRES_URL: undefined }, () => {
+  withEnv({ LANGGRAPH_SERVER_URL: '', LANGGRAPH_POSTGRES_URL: '' }, () => {
     let threw = false;
     try {
       loadServerConfig();
@@ -83,7 +86,7 @@ test('Missing LANGGRAPH_SERVER_URL throws ConfigError', () => {
 
 // ── Test 2: Missing LANGGRAPH_POSTGRES_URL throws ConfigError ──
 test('Missing LANGGRAPH_POSTGRES_URL throws ConfigError', () => {
-  withEnv({ LANGGRAPH_SERVER_URL: undefined, LANGGRAPH_POSTGRES_URL: undefined }, () => {
+  withEnv({ LANGGRAPH_SERVER_URL: '', LANGGRAPH_POSTGRES_URL: '' }, () => {
     let threw = false;
     try {
       loadDbConfig();
@@ -101,7 +104,7 @@ test('Missing LANGGRAPH_POSTGRES_URL throws ConfigError', () => {
 
 // ── Test 3: loadServerConfig does not require POSTGRES_URL ──
 test('loadServerConfig does not require LANGGRAPH_POSTGRES_URL', () => {
-  withEnv({ LANGGRAPH_SERVER_URL: 'http://localhost:8000', LANGGRAPH_POSTGRES_URL: undefined }, () => {
+  withEnv({ LANGGRAPH_SERVER_URL: 'http://localhost:8000', LANGGRAPH_POSTGRES_URL: '' }, () => {
     const config = loadServerConfig();
     assert(config.serverUrl === 'http://localhost:8000', `Unexpected serverUrl: ${config.serverUrl}`);
   });
@@ -109,7 +112,7 @@ test('loadServerConfig does not require LANGGRAPH_POSTGRES_URL', () => {
 
 // ── Test 4: loadDbConfig does not require SERVER_URL ──
 test('loadDbConfig does not require LANGGRAPH_SERVER_URL', () => {
-  withEnv({ LANGGRAPH_SERVER_URL: undefined, LANGGRAPH_POSTGRES_URL: 'postgresql://user:pass@host:5432/db' }, () => {
+  withEnv({ LANGGRAPH_SERVER_URL: '', LANGGRAPH_POSTGRES_URL: 'postgresql://user:pass@host:5432/db' }, () => {
     const config = loadDbConfig();
     assert(
       config.postgresUrl === 'postgresql://user:pass@host:5432/db',
@@ -120,7 +123,7 @@ test('loadDbConfig does not require LANGGRAPH_SERVER_URL', () => {
 
 // ── Test 5: Trailing slash is stripped from server URL ──
 test('Trailing slash is stripped from server URL', () => {
-  withEnv({ LANGGRAPH_SERVER_URL: 'http://localhost:8000///', LANGGRAPH_POSTGRES_URL: undefined }, () => {
+  withEnv({ LANGGRAPH_SERVER_URL: 'http://localhost:8000///', LANGGRAPH_POSTGRES_URL: '' }, () => {
     const config = loadServerConfig();
     assert(config.serverUrl === 'http://localhost:8000', `Expected no trailing slash, got: ${config.serverUrl}`);
   });

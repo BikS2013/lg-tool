@@ -6,12 +6,12 @@ import { threadCreateCommand } from './commands/thread-create.js';
 import { runCommand } from './commands/run.js';
 import { extractCommand } from './commands/extract.js';
 import { documentsCommand } from './commands/documents.js';
-import { InvestigatorError } from './errors.js';
+import { LgToolError } from './errors.js';
 
 const program = new Command();
 
 program
-  .name('lagent-cli')
+  .name('lg-tool')
   .description('CLI tool for interacting with LangGraph servers and inspecting their PostgreSQL data')
   .version('1.0.0');
 
@@ -61,7 +61,7 @@ program
 
 // Global error handler
 program.parseAsync().catch((error: unknown) => {
-  if (error instanceof InvestigatorError) {
+  if (error instanceof LgToolError) {
     console.error(`Error: ${error.message}`);
     process.exit(1);
   }

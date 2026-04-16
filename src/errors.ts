@@ -1,11 +1,11 @@
 /**
- * Base error class for LangGraph Investigator.
+ * Base error class for lg-tool.
  * All custom errors extend this.
  */
-export class InvestigatorError extends Error {
+export class LgToolError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = 'InvestigatorError';
+    this.name = 'LgToolError';
   }
 }
 
@@ -13,7 +13,7 @@ export class InvestigatorError extends Error {
  * Thrown when a required configuration variable is missing.
  * Never catches or provides fallback. Exits the CLI immediately.
  */
-export class ConfigError extends InvestigatorError {
+export class ConfigError extends LgToolError {
   public readonly variableName: string;
 
   constructor(variableName: string) {
@@ -27,7 +27,7 @@ export class ConfigError extends InvestigatorError {
  * Thrown on HTTP errors from the LangGraph REST API.
  * Includes status code and response body for debugging.
  */
-export class ApiError extends InvestigatorError {
+export class ApiError extends LgToolError {
   public readonly statusCode: number;
   public readonly responseBody: string;
   public readonly url: string;
@@ -46,7 +46,7 @@ export class ApiError extends InvestigatorError {
  * The message MUST NOT contain credentials. Use maskConnectionString()
  * before including any connection URL in the message.
  */
-export class DbError extends InvestigatorError {
+export class DbError extends LgToolError {
   public readonly originalError: Error;
   public readonly table?: string;
 
@@ -61,7 +61,7 @@ export class DbError extends InvestigatorError {
 /**
  * Thrown when user input fails validation (e.g., invalid UUID, malformed JSON).
  */
-export class ValidationError extends InvestigatorError {
+export class ValidationError extends LgToolError {
   public readonly field: string;
   public readonly value: string;
 

@@ -8,7 +8,7 @@ interface ThreadCreateOptions {
 }
 
 /**
- * Handler for: langgraph-investigator thread-create [--metadata <json>]
+ * Handler for: lg-tool thread-create [--metadata <json>]
  *
  * 1. Load server config
  * 2. Parse --metadata JSON (if provided)

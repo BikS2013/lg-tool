@@ -1,8 +1,8 @@
-# LangGraph Investigator - Functional Requirements
+# lg-tool - Functional Requirements
 
 ## FR-1: List Available Agents
 
-**Command**: `langgraph-investigator agents`
+**Command**: `lg-tool agents`
 
 **Description**: Query a LangGraph server and display all available assistants/agents with their metadata.
 
@@ -20,7 +20,7 @@
 
 ## FR-2: Create a New Thread
 
-**Command**: `langgraph-investigator thread-create [--metadata <json>]`
+**Command**: `lg-tool thread-create [--metadata <json>]`
 
 **Description**: Create a new thread on the LangGraph server and return the thread ID and metadata.
 
@@ -38,7 +38,7 @@
 
 ## FR-3: Send a Request to an Agent
 
-**Command**: `langgraph-investigator run --thread <thread_id> --assistant <assistant_id> --message <text>`
+**Command**: `lg-tool run --thread <thread_id> --assistant <assistant_id> --message <text>`
 
 **Description**: Submit a user message to a specific agent within the context of a specific thread, wait for the response, and display the agent's output.
 
@@ -60,7 +60,7 @@
 
 ## FR-4: Extract Thread Data from PostgreSQL
 
-**Command**: `langgraph-investigator extract --thread <thread_id> [--output <file>] [--include-blobs]`
+**Command**: `lg-tool extract --thread <thread_id> [--output <file>] [--include-blobs]`
 
 **Description**: Connect directly to the PostgreSQL database that backs the LangGraph server and extract all data related to a specific thread ID.
 
@@ -101,7 +101,7 @@
 
 ## FR-5: Extract Retrieved Documents from a Thread's RAG Pipeline
 
-**Command**: `langgraph-investigator documents --thread <thread_id> [--output <file>]`
+**Command**: `lg-tool documents --thread <thread_id> [--output <file>]`
 
 **Description**: Connect directly to the PostgreSQL database backing the LangGraph server and extract the documents retrieved by a RAG agent during a thread's execution. Documents are read from the `retrieved_docs` channel stored in `checkpoint_writes` and parsed from `<document title='…' original_title='…' link='…'>…</document>` blocks.
 
@@ -141,7 +141,7 @@
 ### NFR-1: Configuration
 - `LANGGRAPH_SERVER_URL` required via environment variable (no default)
 - `LANGGRAPH_POSTGRES_URL` required via environment variable (no default)
-- Optional `.env` file support (CWD and `~/.langgraph-investigator/.env`)
+- Optional `.env` file support (CWD and `~/.lg-tool/.env`)
 - Environment variables take precedence over `.env` values
 - Missing configuration must always raise an exception with a descriptive error
 
@@ -154,6 +154,7 @@
 ### NFR-3: Output Formatting
 - Table output for agent listing (readable in terminal)
 - Pretty-printed JSON for extract output
+- Numbered human-readable list for `documents` stdout output, or pretty JSON when `--output` is supplied
 - ISO 8601 timestamps
 - Binary data as base64 strings (when included) or `{ size, type }` metadata (default)
 

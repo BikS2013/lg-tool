@@ -8,6 +8,17 @@ _No pending items at this time._
 
 ## Completed Items
 
+### [2026-04-16] Repository Consolidation: merged from `sofia-test`
+
+After comparing this repo against the sibling `sofia-test` repo (same scope, smaller and less mature), the decision was made to keep `langgraph-investigator` as the primary repository. The following migrations and fixes were applied:
+
+- **Migrated reference material from sofia-test**:
+  - `docs/reference/langgraph-server-api-spec.md` — full LangGraph Platform REST API reference (~1,200 lines, dated April 2026), including the `X-Api-Key` auth scheme that may be needed for hosted deployments.
+  - `docs/reference/samples/thread-69d46eea-extract.json` — real captured Sofia/NBG (Greek banking) thread extract; useful as a regression fixture for the `extract` and `documents` commands.
+- **Removed hardcoded production credentials** from `test_scripts/test-e2e.ts:18-22`. The Azure Postgres URL with embedded password (`postgresql://directusersadmin:…@direct-users-postgres.postgres.database.azure.com…`) and the live server URL were replaced with strict env-var reads (`LANGGRAPH_SERVER_URL`, `LANGGRAPH_POSTGRES_URL`, `LANGGRAPH_TEST_ASSISTANT_ID`). The leaked password should be rotated on the Azure Postgres instance.
+- **Registered `documents` command as FR-5** in `docs/design/project-functions.md` (was implemented in code but missing from the functional requirements doc).
+- **Fixed naming inconsistency** in `CLAUDE.md`: configuration priority list now shows `~/.langgraph-investigator/.env` (matches `src/config.ts:17-20`) instead of the stale `~/.lagent-cli/.env`.
+
 ### [2026-04-15] Code Review - Phase 7
 
 Full code review of all 11 source files completed. Findings:

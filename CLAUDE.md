@@ -93,7 +93,7 @@ A TypeScript CLI tool for interacting with LangGraph servers and inspecting thei
         Configuration priority (highest to lowest):
             1. Shell environment variables
             2. .env file in current working directory
-            3. ~/.lagent-cli/.env
+            3. ~/.langgraph-investigator/.env
 
         Build:
             npx tsc                    # Compile to dist/

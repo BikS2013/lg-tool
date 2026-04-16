@@ -15,14 +15,21 @@ import { UUID_REGEX } from '../src/utils.js';
 import type { Pool } from 'pg';
 import type { ThreadExtraction } from '../src/types.js';
 
-// ─── Set env vars programmatically ───
-process.env.LANGGRAPH_SERVER_URL =
-  'https://nbg-webapp-cc-lg-test-we-dev-02-fthxhdbcegbredh3.westeurope-01.azurewebsites.net';
-process.env.LANGGRAPH_POSTGRES_URL =
-  'postgresql://directusersadmin:0ePsTCsosV7vhZGq@direct-users-postgres.postgres.database.azure.com:5432/langgraph_rag_handoff?sslmode=require';
-
-// ─── Constants ───
-const KNOWN_ASSISTANT_ID = 'fe096781-5601-53d2-b2f6-0d3403f7e9ca';
+// ─── Required env vars (must be set in shell or .env) ───
+// LANGGRAPH_SERVER_URL    - base URL of the live LangGraph server to test against
+// LANGGRAPH_POSTGRES_URL  - Postgres connection string for the LangGraph database
+// LANGGRAPH_TEST_ASSISTANT_ID - UUID of an assistant known to exist on that server
+//
+// Per project rule: configuration must never be defaulted in code. The test loads
+// these via loadServerConfig() / loadDbConfig() below; missing values throw ConfigError.
+const KNOWN_ASSISTANT_ID =
+  process.env.LANGGRAPH_TEST_ASSISTANT_ID ??
+  (() => {
+    throw new Error(
+      'LANGGRAPH_TEST_ASSISTANT_ID env var is required to run the e2e test ' +
+        '(UUID of an assistant deployed on LANGGRAPH_SERVER_URL).'
+    );
+  })();
 
 // ─── Test helpers ───
 let passed = 0;

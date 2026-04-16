@@ -1,0 +1,1046 @@
+{
+  "thread": [
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "created_at": "2026-04-16T13:50:56.461Z",
+      "updated_at": "2026-04-16T13:51:08.837Z",
+      "metadata": {
+        "graph_id": "agent",
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca"
+      },
+      "status": "idle",
+      "config": {
+        "configurable": {
+          "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+          "user_id": "",
+          "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+          "__after_seconds__": 0,
+          "langgraph_auth_user": null,
+          "langgraph_request_id": "9dd7cc09-321f-4e3c-a653-3fae7fadb329",
+          "langgraph_auth_user_id": "",
+          "__request_start_time_ms__": 1776347461627,
+          "langgraph_auth_permissions": []
+        }
+      },
+      "values": {
+        "role": [],
+        "queries": [
+          "πως να βγάλω πιστωτική κάρτα"
+        ],
+        "user_id": "",
+        "messages": [
+          {
+            "id": "4b4b42d9-873b-4ab8-b3ad-6cfec648008a",
+            "name": null,
+            "type": "human",
+            "content": "πως να βγάλω πιστωτική κάρτα",
+            "additional_kwargs": {},
+            "response_metadata": {}
+          },
+          {
+            "id": "lc_run--019d968f-4708-7930-ab72-60ce3a5cbd8e-0",
+            "name": null,
+            "type": "ai",
+            "content": "Μπορείτε να αιτηθείτε την έκδοση πιστωτικής κάρτας της Εθνικής Τράπεζας εύκολα και γρήγορα, όπου και να βρίσκεστε, με τους παρακάτω τρόπους:\n\n• Μέσω των υπηρεσιών Digital Banking (Internet ή Mobile Banking), εφόσον είστε εγγεγραμμένος χρήστης. Απλά επιλέγετε την ενότητα \"Κάρτες\" και ακολουθείτε τα βήματα για \"Απόκτηση νέας κάρτας\".\n• Τηλεφωνικά, καλώντας στο 2104848484, από Δευτέρα έως Παρασκευή 08:00 έως 16:00. Στη συνέχεια, θα χρειαστεί να υπογράψετε τη σύμβαση είτε σε κατάστημα είτε μέσω courier.\n• Σε κατάστημα της Εθνικής Τράπεζας, όπου οι συνάδελφοι θα σας εξυπηρετήσουν άμεσα.\n\nΓια online αίτηση μπορείτε να επισκεφτείτε:\n- Αποκτήστε Πιστωτική Κάρτα Online - https://www.nbg.gr/el/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/pistwtiki-karta-online\n\nΘα χρειαστείτε:\n- Δελτίο ταυτότητας ή διαβατήριο (εν ισχύ)\n- Το πιο πρόσφατο εκκαθαριστικό σημείωμα\n\nΜπορώ να σας βοηθήσω με κάτι άλλο;",
+            "tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 28766,
+              "total_tokens": 29093,
+              "output_tokens": 327,
+              "input_token_details": {
+                "audio": 0,
+                "cache_read": 13952
+              },
+              "output_token_details": {
+                "audio": 0,
+                "reasoning": 0
+              }
+            },
+            "additional_kwargs": {
+              "refusal": null
+            },
+            "response_metadata": {
+              "id": "chatcmpl-DVHPVEeFvW2e9MuKvEcZ7QnqFhbsf",
+              "logprobs": null,
+              "model_name": "gpt-4.1-2025-04-14",
+              "token_usage": {
+                "total_tokens": 29093,
+                "prompt_tokens": 28766,
+                "completion_tokens": 327,
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cached_tokens": 13952
+                },
+                "completion_tokens_details": {
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "accepted_prediction_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                }
+              },
+              "service_tier": "default",
+              "finish_reason": "stop",
+              "model_provider": "openai",
+              "system_fingerprint": "fp_7a7fd0eb44",
+              "prompt_filter_results": [
+                {
+                  "prompt_index": 0,
+                  "content_filter_results": {}
+                }
+              ],
+              "content_filter_results": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "protected_material_code": {
+                  "detected": false,
+                  "filtered": false
+                },
+                "protected_material_text": {
+                  "detected": false,
+                  "filtered": false
+                }
+              }
+            },
+            "invalid_tool_calls": []
+          }
+        ],
+        "system_time": "2026-04-16T16:51:08.797517+03:00",
+        "banking_type": "",
+        "customer_code": "",
+        "latest_request": "πως να βγάλω πιστωτική κάρτα",
+        "retrieved_docs": "<document:   title='0d60c22e-3cf0-4192-9925-361d429fffd0.txt' original_title='' link=''>\nΠιστωτική κάρτα - Πως επηρεάζεται το διαθέσιμο υπόλοιπο από τις δόσεις;\n\n<div class=\"ExternalClass9227B3AEB8D04DEC80A0376D8B6BF40F\"><p>Σας ενημερώνουμε ότι το ποσό μελλοντικών δόσεων δεσμεύει αντίστοιχα&#160;το διαθέσιμο υπόλοιπο της πιστωτικής σας κάρτας.&#160;<br></p></div>\n</document>\n\n<document:   title='128.md' original_title='' link=''>\nΣυγκρίνω\n\n### Πιστωτική κάρτα Black\n\nΞεχωρίστε με την κάρτα που σας προσφέρει μοναδικές εμπειρίες και αποκλειστικά προνόμια.\n\nΚατάλληλη για\n\nεσάς που θέλετε αποκλειστικά προνόμια, προσωποποιημένη εξυπηρέτηση, και μεγαλύτερη επιβράβευση με το πρόγραμμα **Premium Go For More**.\n\n[Μαθαίνω περισσότερα](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/black)\n\nΣυγκρίνω\n\n\\+ Επιλέγω κάρτα\n\n\\+ Επιλέγω κάρτα\n\n\\+ Επιλέγω κάρτα\n\nΣυγκρίνωκάρτες\n\n\\+ Επιλέγω κάρτα\n\n### Κάρτα Dual\n\nΜπορείτε τώρα να επιλέγετε κάθε φορά τη χρήση της χρεωστικής ή πιστωτικής λειτουργικότητάς της, χαρίζοντάς σας ελευθερία και ευελιξία στην πραγματοποίηση συναλλαγών. \n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/karta-dual)\n\n## Γνωρίζατε ότι μπορείτε να εξοφλήσετε τα τέλη κυκλοφορίας και τις οφειλές δημοσίου σε έως και 12 άτοκες δόσεις;\n\n### \n\nΗ πιστωτική σας κάρτα δεν είναι απλώς ένα μέσο πληρωμής, αλλά κι ένας έξυπνος τρόπος να διαχειρίζεστε τα οικονομικά σας ακόμα πιο εύκολα. \n\nΜε τη δυνατότητα εξόφλησης τελών κυκλοφορίας και οφειλών δημοσίου σε έως και 12* άτοκες δόσεις, απολαμβάνετε την ευελιξία να προγραμματίζετε τις πληρωμές σας και να διευκολύνετε την καθημερινότητά σας!\n\n[Πληρώνω με δόσεις](https://ibank.nbg.gr/identity/login?ReturnUrl=https%3A%2F%2Fibank.nbg.gr%2Fidentity%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DECE343FC-EE83-430C-97DA-7BB07764390F%26redirect_uri%3Dhttps%253A%252F%252Fibank.nbg.gr%252Fweb%252F%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520ibank_profile%2520ibank-proxy-api-v1%26code_challenge%3DL97imST5TbSh4IcavcbxajAMousP5yP2EUKac5PMhnw%26code_challenge_method%3DS256%26response_mode%3Dform_post%26nonce%3D638689115959158433.\n</document>\n\n<document:   title='131.md' original_title='' link=''>\nπου δημιουργήσαμε για εσάς.\n\nTι να κάνω αν ξεχάσω ή αν μπλοκάρω το PIN της κάρτας μου;\n\nΣε περίπτωση που ξεχάσατε ή μπλοκάρατε το PIN σας μπορείτε εύκολα να το ανακτήσετε:  \n\n  * Μέσω Internet Banking, από τη Διαχείριση ΡΙΝ επιλέγοντας Ξεκλείδωμα ΡΙΝ\n  * Μέσω Μobile Βanking, από τη Διαχείριση Κάρτας επιλέγοντας Ξεκλείδωμα ΡΙΝ\n  * Καλώντας στο 210 48 48 484  \n\nΤι να κάνω αν μου κλέψουν ή χάσω την κάρτα μου;\n\nΑν είστε χρήστης τουDigital Banking μπορείτε να:  \n\n  * «Παγώσετε» την κάρτα σας για προσωρινή διακοπή της λειτουργίας της και σε περίπτωση που βρεθεί να την επαναφέρετε επιλέγοντας «Ξεπάγωμα κάρτας»\n  * Δηλώσετε απώλεια/κλοπή  \n\nΕναλλακτικά, θα πρέπει να επικοινωνήσετε άμεσα με το κέντρο τηλεφωνικής εξυπηρέτησης της τράπεζας στο 210 48 48 484, 24 ώρες το 24ωρο. \n\nΠώς μπορώ να διαχειριστώ την κάρτα μου μέσω Digital Banking;\n\nΜπορείτε εύκολα να διαχειριστείτε την πιστωτική σας κάρτα μέσω Digital Banking και να κάνετε τις παρακάτω ενέργειες:\n\n  * Ενεργοποίηση/απενεργοποίηση ανάληψης μετρητών, διενέργεια ανέπαφων ή/και online συναλλαγών, συναλλαγές στο εξωτερικό κτλ.\n  * Πάγωμα/ξεπάγωμα\n  * Δήλωση απώλειας/κλοπής\n  * Αλλαγή τρόπου πληρωμής (μερική ή ολική)\n  * Σύνδεση λογαριασμού εξόφλησης\n\nΠόσες πρόσθετες κάρτες μπορώ να έχω ταυτόχρονα;\n\nΈχετε τη δυνατότητα να εκδώσετε έως και 3 δωρεάν πρόσθετες κάρτες και να μοιράζεστε τα προνόμια της κάρτας σας με τους δικούς σας ανθρώπους.\n\nΠερισσότερα\n\n## Υπηρεσία Mastercard Concierge\n\n### \n\nΞεκλειδώστε έναν κόσμο μοναδικών προνομίων και ζήστε αξέχαστες εμπειρίες, μέσα από την προσωποποιημένη εξυπηρέτηση της υπηρεσίας Mastercard Concierge και τις κάρτες της Εθνικής Τράπεζας!\n\n[Μαθαίνω περισσότερα.](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/mastercard-concierge)\n\n[Περισσότερα]()[Λιγότερα]()\n\n### Πρόγραμμα Μεταφοράς Υπολοίπου\n</document>\n\n<document:   title='133.md' original_title='' link=''>\n---\n            url: https://www.nbg.gr/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/silver\n            title: Πιστωτική Κάρτα Silver  | Εθνική Τράπεζα\n            description: Ανακαλύψτε την πιστωτική κάρτα Silver και όλα τα προνόμια που σας προσφέρει. Μπείτε στο site της Εθνικής Τράπεζας για περισσότερες πληροφορίες!\n            scraped_at: 2026-02-13T07:31:01.957812\n            status_code: 200\n            ---\n\n            # Πιστωτική Κάρτα Silver  | Εθνική Τράπεζα\n\n![Jumbo image background](https://www.nbg.gr/-/jssmedia/Images/idiwtes/kathimerines-sunallages/trapezikes-kartes/new-credit-cards/2560x600-silver.png?h=600&iar=0&w=2560&hash=867484A5B49B4F21249EA4F5F1169FCE)\n\nΠιστωτικές κάρτες\n\n# Πιστωτική κάρτα Silver\n\nΗ κάρτα για όλες σας τις στιγμές.\n\n  * [Ιδιώτες](/el/idiwtes)\n  * [Καθημερινές Συναλλαγές](/el/idiwtes/kathimerines-sunallages)\n  * [Τραπεζικές Κάρτες](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes)\n  * [Πιστωτικές Κάρτες](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes)\n  * Πιστωτική κάρτα Silver \n\nΜε χαμηλή συνδρομή και εύκολη online απόκτηση και διαχείριση, μπορείτε να κάνετε τις αγορές σας σε φυσικά και ηλεκτρονικά καταστήματα με μια πιστωτική κάρτα που σας προσφέρει καθημερινή επιβράβευση, ανεκτίμητες εμπειρίες και σειρά από μοναδικά προνόμια! \n\n**Συγκεκριμένα μπορείτε να:**\n\n  * Διαχειρίζεστε έξυπνα τις αγορές σας με άτοκες δόσεις σε χιλιάδες επιχειρήσεις σε όλη την Ελλάδα\n  * Έχετε ευελιξία στην αποπληρωμή των οφειλών σας στο Δημόσιο με έως και 12 άτοκες δόσεις.\n  * Κάνετε αναλήψεις μετρητών εάν έχετε άμεση ανάγκη από μετρητά\n  * Απολαμβάνετε πρόσθετες συναλλαγές, όπως πάγιες εντολές για την εξόφληση των λογαριασμών σας \n  * Χτίζετε το αφορολόγητό σας \n\n## Με 2 λόγια:\n\n  * Δώρο 500 πόντοι **Go For More**\n  * Δωρεάν ταξιδιωτική ασφάλιση\n  * Επιβράβευση **Go For More**   \n\nΕτήσια συνδρομή\n\n### €12\n\n**Δωρεάν συνδρομή τον 1 ο χρόνο**\n\n[Αποκτώ κάρτα Silver](https://ibank.nbg.gr/)\n</document>\n\n<document:   title='0d77d302-7e63-45a9-b1e6-3b661d72ea45.txt' original_title='' link=''>\nΈκδοση Skroutz Plus Mastercard\n\n<div class=\"ExternalClassE8D57698965347C8BA406BC5EF2FE710\"><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(0, 0, 0);\"><span style=\"background-color&#58;rgb(250, 249, 248);color&#58;rgb(0, 0, 0);font-size&#58;11pt;font-family&#58;&quot;segoe ui&quot;;\">Σας ενημερώνουμε ότι μπορείτε να εκδώσετε την άυλη πιστωτική κάρτα Skroutz Plus Mastercard μέσω του Internet Banking, επιλέγοντας το μενού &quot;Κάρτες&quot; και την ενότητα &quot;Διαλέξτε την κατάλληλη κάρτα για εσάς&quot;.&#160;</span></div></div>\n</document>\n\n<document:   title='793e1d06-64d7-40ad-9d57-cfd3b3b1edc0.txt' original_title='' link=''>\nΑίτηση για πιστωτική κάρτα - Είμαι στο εξωτερικό!\n\n<div class=\"ExternalClass8A132220B1F146D8B50D8DA485CE309A\"><p class=\"ExternalClass9B66CCDA7523431DADD29C075F6A7CB3\"><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Η</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\"> αίτηση&#160;για πιστωτική&#160;κάρτα,&#160;μπορεί να υποβληθεί&#58;</span></p><div class=\"ExternalClass9B66CCDA7523431DADD29C075F6A7CB3\"><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω των υπηρεσιών Digital&#160;Banking (εφόσον έχετε δηλώσει στην Τράπεζα τη διεύθυνση εξωτερικού) ή</span></li><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">τηλεφωνικά καλώντας στο +30 210 48 48 48 4, καθημερινά 8&#58;00-16&#58;00. Λάβετε υπόψη σε αυτή την περίπτωση θα πρέπει να παρευρεθείτε σε ένα κατάστημά μας στην Ελλάδα προκειμένου να υπογράψετε την αίτησή σας.</span></li></ul></div><p><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Σημειώνουμε ότι&#160;</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">για να καταχ</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">ωρηθεί αίτηση για πιστωτική κάρτα, θα πρέπει να δηλώνετε εισόδημα στη</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">ν Ελλάδα.</span></p><p><br></p></div>\n</document>\n\n<document:   title='79d2e131-15d6-4887-bc5b-6e922dadf0a9.txt' original_title='' link=''>\nΠρόσθετο μέλος σε πιστωτική κάρτα - Δεν θέλω πλέον να είμαι πρόσθετο μέλος\n\n<div class=\"ExternalClassD1F22102731440608411ED1249EB7DD8\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><p><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\">​Εφόσον δεν επιθυμείτε πλέον να είστε κάτοχος πιστωτικής κάρτας ως&#160;πρόσθετο&#160;μέλος, παρακαλούμε όπως&#160;προχωρήσετε σε καταγραφή του&#160;αιτήματος για την απεμπλοκή σας από το προϊόν,&#160;μέσω της&#160;<a href=\"https&#58;//www.nbg.gr/el/footer/epikoinwnia\">φόρμας επικοινωνίας</a>.&#160;<br></span></p><p><br></p><p><span style=\"color&#58;#ff0000;font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><strong>ΣΗΜΕΙΩΣΗ&#58;</strong></span></p><p><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\">Εάν επιμένει προχωρούμε σε καταχώρηση αιτήματος CMT<br></span></p><p><br></p><p><br></p></span></div>\n</document>\n\n<document:   title='813f0ef6-0a10-4082-9cfc-8d6955a7698b.txt' original_title='' link=''>\nΠως κάνω πληρωμή πιστωτικής κάρτας μέσω ATM με χρεωστική;\n\n<div class=\"ExternalClass205791FDB3134F59BCD26538720995C7\"><p>​Σας ενημερώνουμε ότι υπάρχει δυνατότητα πληρωμής της πιστωτικής σας κάρτας με χρήση της χρεωστικής κάρτας&#160;που διαθέτετε.&#160;<br></p><p>Προκειμένου να μπορείτε να εκτελέσετε την παραπάνω διαδικασία θα πρέπει να απευθυνθείτε σε Κατάστημα της Τράπεζάς μας, έχοντας μαζί σας τα νομιμοποιητικά σας έγγραφα, ώστε να γίνει σύνδεση της πιστωτικής (ενεργής, ληγμένης ή και καταργημένης) με τη χρεωστική σας κάρτα.<br></p><p>Στη συνέχεια, θα μπορείτε να εκτελείτε τις πληρωμές σας, εισάγοντας στο ATM τη χρεωστική σας κάρτα.<br></p><p>Σημειώνουμε ότι σε περίπτωση ανάπλασης του αριθμού της κάρτας (π.χ. λόγω απώλειας) θα πρέπει να επαναληφθεί η διαδικασία σύνδεσης μέσω Καταστήματος Εθνικής Τράπεζας, ενώ η διαδικασία ισχύει και για ληγμένες ή καταργημένες πιστωτικές κάρτες.<br></p></div>\n</document>\n\n<document:   title='6359cf3a-57ff-4d09-b7aa-1336dd549d52.txt' original_title='' link=''>\nΣυνδρομή πιστωτικής κάρτας - Χρεώνεται το πρόσθετο μέλος;\n\n<div class=\"ExternalClass859B3D598C724DACBA7EFAD2816B5132\"><p>​​Σας ενημερώνουμε πως δεν προβλέπεται χρέωση ετήσιας συνδρομής για την πιστωτική κάρτα πρόσθετων μελών.<br></p></div>\n</document>\n\n<document:   title='6bacc978-ff67-4967-8e61-961e3ad0c41b.txt' original_title='' link=''>\nΕνεργοποίηση πιστωτικής κάρτας - Τρόπος\n\n<div class=\"ExternalClass21EDB5D7D9B441A180178EED9724FF1E\"><h4><span style=\"color&#58;rgb(68, 68, 68);font-weight&#58;normal;\"><span style=\"font-size&#58;11pt;\">Σας ενημερώνουμε ότι η ενεργοποίηση της πιστωτικής κάρτας πραγματοποιείται σε οποιοδήποτε ΑΤΜ του δικτύου της Εθνικής Τράπεζας, με την επιλογή από το μενού &quot;Ενεργοποίηση Κάρτας&quot;.</span><br></span></h4><h4><span style=\"color&#58;#444444;\"><span style=\"font-weight&#58;normal;font-size&#58;11pt;\">Αρχικά, θα πρέπει να εισάγετε την κάρτα σας στο ATM, στη συνέχεια&#160;να εισάγετε το PIN και τέλος να επιλέξετε&#160;&quot;ΕΝΕΡΓΟΠΟΙΗΣΗ ΚΑΡΤΑΣ&quot;.</span></span></h4><h4><span style=\"color&#58;rgb(68, 68, 68);font-weight&#58;normal;font-size&#58;11pt;\">Μετά την ολοκλήρωση της διαδικασίας, η&#160;κάρτα μπορεί&#160;να χρησιμοποιηθεί&#160;άμεσα&#160;για συναλλαγή.&#160;​</span></h4><p>​<br></p><p><br><br></p></div>\n</document>\n\n<document:   title='6ffba73f-0a3a-4498-92f0-f45166124f43.txt' original_title='' link=''>\nΑφαίρεση κάρτας από το Apple pay \n\n<div class=\"ExternalClass00AC3D294A624AA0BF8A5E1117780E6A\"><p>​​​Σας ενημερώνουμε πως μπορείτε να αφαιρέσετε την&#160;​​​κάρτα σας​​&#160;​​από το σχετικό&#160;μενού διαχείρισης της κάρτας. Συγκεκριμένα μεταβαίνετε στο Apple Pay, επιλέγετε την κάρτα που επιθυμείτε να καταργήσετε και&#160;πατάτε το κουμπί &quot;Αφαίρεση κάρτας​&quot;​​​.<br></p><p>​​<br><br></p></div>\n</document>\n\n<document:   title='420efc10-7468-4109-a424-ad9f7f8793f3.txt' original_title='' link=''>\nΔόσεις σε πιστωτική - Ποιο είναι το υπόλοιπο των μελλοντικών δόσεων;\n\n<div class=\"ExternalClass36311963D8234B6FA9696CBD2FA96F2D\"><p>Σας ενημερώνουμε πως έχετε τη δυνατότητα να ενημερώνεστε για το υπόλοιπο των μελλοντικών δόσεων που εκκρεμούν να χρεωθούν στην πιστωτική σας κάρτα, με τους εξής τρόπους&#58;</p><p></p><ul><li>μέσω των υπηρεσιών Digital Banking, από την ένδειξη &quot;Μελλοντικές Δόσεις&quot;<br></li><li>μέσω της&#160;υπηρεσίας&#160;Phone Banking<br></li><li>μέσω του τηλεφωνικού κέντρου της Εθνικής Τράπεζας, καλώντας στο 2104848484, καθημερινά 08&#58;00 - 22&#58;00<br></li></ul><br><br><p></p></div>\n</document>\n\n<document:   title='274b97c0-4fba-4614-aab0-e8e811151343.txt' original_title='' link=''>\nΠροϋποθέσεις αίτησης μεταφοράς υπολοίπου πιστωτικής κάρτας άλλης Τράπεζας\n\n<div class=\"ExternalClass8B38B44050CB45DD9323B87AA2295413\"><p>​Σας ενημερώνουμε πως προκειμένου να καταχωρηθεί επιτυχώς αίτηση μεταφοράς υπολοίπου πιστωτικής κάρτας άλλης Τράπεζας, θα πρέπει να ισχύουν σωρευτικά οι παρακάτω&#160;προϋποθέσεις για την πιστωτική κάρτα που τηρείτε στην Εθνική Τράπεζα&#58;<br></p><ul><li>να είναι ενεργή<br></li><li>να έχει διαθέσιμο υπόλοιπο<br></li><li>να είναι ενήμερη<br></li><li>να είναι η κύρια κάρτα (όχι πρόσθετο μέλος).<br></li></ul><div>Σε περίπτωση που δεν ισχύει&#160;κάποια από τις παραπάνω προϋποθέσεις, η διαδικασία καταχώρησης της αίτησης δεν ολοκληρώνεται και εμφανίζεται αντίστοιχα ενημερωτικό μήνυμα που αναφέρει την αιτιολογία.<br></div></div>\n</document>\n\n<document:   title='27d2e6d1-1b83-4e51-8ca5-9f527caf00c4.txt' original_title='' link=''>\nΠιστωτική κάρτα - Ποιο είναι το διαθέσιμο υπόλοιπο;\n\n<div class=\"ExternalClassF8A008684A5849DE88230B2290382602\"><p><span style=\"color&#58;rgb(0, 0, 0);\">​​Σας ενημερώνουμε πως έχετε τη δυνατότητα να πληροφορηθείτε το διαθέσιμο υπόλοιπο της πιστωτικής σας κάρτας με τους εξής τρόπους&#58;</span></p><ul><li><span style=\"color&#58;rgb(0, 0, 0);\">μέσω των υπηρεσιών Digital/Phone Banking, εφόσον είστε εγγεγραμμένος χρήστης</span></li><li><span style=\"color&#58;rgb(0, 0, 0);\">μέσω του Κέντρου Τηλεφωνικής Εξυπηρέτησης&#160;στο τηλέφωνο 2104848484, καθημερινά 08&#58;00 - 22&#58;00</span><br></li></ul><p><br></p></div>\n</document>\n\n<document:   title='ec5ccad7-b814-4271-bdef-ebb551629e7a.txt' original_title='' link=''>\nΠάγια εντολή εξόφλησης πιστωτικής κάρτας - Θέλω να αφαιρεθεί\n\n<div class=\"ExternalClass08B8BF6CE41B4151B78041DDCEA602B9\"><p>​Σας ενημερώνουμε ότι&#160;<span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">​η&#160;σύνδεση πιστωτικής κάρτας με καταθετικό λογαριασμό για την εξόφλησή της&#160;είναι&#160;</span><strong style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">υποχρεωτική</strong><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">.&#160;</span><br></p><p><br></p></div>\n</document>\n\n<document:   title='ecbc8695-7347-4919-b003-fc83fdae7e24.txt' original_title='' link=''>\nΑίτηση για πιστωτική κάρτα πρόσθετου μέλος - Κάτοχος Dual \n\n<div class=\"ExternalClass434C2119286C45D0BE544F3235037ADF\"><p>​Σας ενημερώνουμε πως δεν υπάρχει η δυνατότητα έκδοσης πιστωτικής κάρτας Dual&#160;πρόσθετου μέλους.<br></p></div>\n</document>\n\n<document:   title='e3d5ad70-02b3-4881-bd53-2e775a122439.txt' original_title='' link=''>\nΘέλω να κάνω αίτηση για πιστωτική κάρτα - Θα εγκριθεί;\n\n<div class=\"ExternalClass6700BE2AE00B4C8DB84DC46836795402\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><p><span style=\"font-size&#58;11pt;color&#58;rgb(0, 0, 0);\">​Σας ενημερώνουμε ότι δεν μπορούμε να γνωρίζουμε εκ των προτέρων αν η αίτησή σας για έκδοση πιστωτικής κάρτας θα εγκριθεί. </span></p></span></div><div class=\"ExternalClass6700BE2AE00B4C8DB84DC46836795402\"><p><span style=\"font-size&#58;11pt;color&#58;rgb(0, 0, 0);\">Θα σας προτείναμε να υποβάλλετε το αίτημά σας και να αναμείνετε το αποτέλεσμα του ελέγχου του.</span><br></p></div>\n</document>\n\n<document:   title='a39ce70a-c69a-4528-9493-4ffe69b02244.txt' original_title='' link=''>\nΠιστωτική κάρτα - Πόσες μπορώ να εκδώσω;\n\n<div class=\"ExternalClassEE925891EC004BCAB175E45088BE6B7B\"><div><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(0, 0, 0);\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"></span></div><h4><span style=\"color&#58;rgb(0, 0, 0);font-weight&#58;normal;font-size&#58;11pt;\">Σας ενημερώνουμε ότι επιτρέπεται&#160;να έχετε στην κατοχή σας&#160;έως και&#160;7 πιστωτικές κάρτες (κύριες ή πρόσθετες)&#160;συνολικά. Σε αυτές μπορούν να&#160;συμπεριλαμβάνονται κάρτες τόσο από τα νέα προϊοντικά πακέτα, Silver, Gold, Black, όσο και από τα παλαιότερα πακέτα πιστωτικών καρτών της ΕθνικήςΤράπεζας (Ma​stercard, Gold Mastercard, Platinum Mastercard, Visa,Toyota Visa ή My Club Card (ΙΑΣΩ) Visa). Επιπλέον σε αυτές μπορούν να συμπεριλαμβάνονται οι κάρτες Dual Credit και η κάρτα Flexy.</span></h4><div><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;color&#58;#333333;\"><br></span></div><div><br style=\"color&#58;#333333;\"></div><div><br></div><div><br></div></span></div></div>\n</document>\n\n<document:   title='935173f0-fed6-4290-bc09-9fdf9e672b72.txt' original_title='' link=''>\nΑίτηση για πιστωτική κάρτα - Τρόποι έκδοσης\n\n<div class=\"ExternalClassEAB3B9306CE8443B91663232F96881D8\"><p class=\"ExternalClassAC2BB63905C94CA8A87168CF4D8968B3\"><font face=\"Segoe UI, Tahoma\">Σας ενημερώνουμε ότι μπορείτε να αιτηθείτε την έκδοση πιστωτικής κάρτας&#58;</font></p><div class=\"ExternalClassAC2BB63905C94CA8A87168CF4D8968B3\"><ul><li><font face=\"Segoe UI, Tahoma\">Μέσω των υπηρεσιών Digital&#160;Banking</font></li><li><font face=\"Segoe UI, Tahoma\">Τηλεφωνικά, καλώντας στο 2104848484, από Δευτέρα έως Παρασκευή 08&#58;00 έως 16&#58;00</font></li><li><span class=\"ms-rteFontFace-12\">Μέσω Καταστήματος Εθνικής Τράπεζας.</span></li></ul><div>Διευκρινίζουμε ότι σε περίπτωση που το αίτημά σας καταχωρηθεί μέσω του τηλεφωνικού μας κέντρου, στη συνέχεια, απαιτείται από μέρους σας η υπογραφή της σύμβασης είτε μεταβαίνοντας σε Κατάστημα της επιλογής σας είτε μέσω courier.&#160;</div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><br></div></div></div>\n</document>\n\n<document:   title='95c143fb-a7b4-4263-a8a3-f924558843c3.txt' original_title='' link=''>\nΑίτηση για μεταφορά υπολοίπου πιστωτικής κάρτας άλλης Τράπεζας\n\n<div class=\"ExternalClassD2ED7E8C1B984A5089C8DE4C0FD9CDF3\"><p>Σας ενημερώνουμε πως εφόσον τηρείτε ενεργή πιστωτική κάρτα στην Εθνική Τράπεζα,&#160;έχετε τη δυνατότητα να πραγματοποιήσετε μεταφορά υπολοίπου από πιστωτικές κάρτες άλλων Τραπεζών με τους εξής τρόπους&#58;</p><ul><li>μέσω της υπηρεσίας Internet Banking</li><li>μέσω καταστήματος Εθνικής Τράπεζας<br></li></ul><p>Έχετε τη δυνατότητα να επωφεληθείτε από επιτόκιο μεταφοράς σταθερό και ίσο με 9,90% (πλέον εισφοράς 0,6% του Ν. 128/75), μέχρι την πλήρη αποπληρωμή του υπολοίπου που μεταφέρεται.<br></p><p>Σημειώνουμε πως στην υπηρεσία συμμετέχουν όλες οι πιστωτικές κάρτες έκδοσης Εθνικής Τράπεζας συμπεριλαμβανομένης της κάρτας Dual εφόσον έχει ενεργοποιηθεί η πιστωτικής της λειτουργικότητα.<br></p><p>Μπορείτε να μάθετε περισσότερα σχετικά με το πρόγραμμα μέσα από την ιστοσελίδα μας <a href=\"https&#58;//www.nbg.gr/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/programma-metaforas-ypoloipou-pistwtikwn-kartwn\">Πρόγραμμα Μεταφοράς Υπολοίπου | Εθνική Τράπεζα (nbg.gr)</a><br></p><p>​​<br></p><p><br></p></div>\n</document>\n\n<document:   title='9957fca2-9cbc-4d3d-9fed-bb4600c710d9.txt' original_title='' link=''>\nΠως αποσυνδέω λογαριασμό από χρεωστική κάρτα;\n\n<div class=\"ExternalClassA453CFD7D44445C3B4D72423C79ABDD1\"><div><p><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Σας ενημερώνουμε ότι&#160;έχετε τη δυνατότητα&#160;να αποσυνδέσετε από τη χρεωστική σας κάρτα,&#160;λογαριασμό στον οποίο είστε δικαιούχος ή συνδικαιούχος. Η διαδικασία μπορεί να γίνει&#58;</span></p><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω των υπηρεσιών&#160;Digital/ Phone Banking, εφόσον είστε ενεργός χρήστης.</span></li><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω του δικτύου των καταστημάτων μας<br></span></li></ul><br><br></div><p>​​​<br></p></div>\n</document>\n\n<document:   title='9ed750f4-02bb-4b2d-b7a0-c20a1ca8e004.txt' original_title='' link=''>\nStatement χρεωστικής κάρτας - Θέλω να λαμβάνω\n\n<div class=\"ExternalClass0CCDFFC18A00482683540ACA76AEB145\"><p>Σας ενημερώνουμε πως για τις χρεωστικές κάρτες δεν παράγεται stat​ement.<br></p></div>\n</document>\n\n<document:   title='c16d0c04-98ce-477e-9af1-0b558d9cb009.txt' original_title='' link=''>\nΘέλω έκδοση πιστωτικής κάρτας - Θα μεταφέρω τη μισθοδοσία μου\n\n<div class=\"ExternalClassDED028BC63694ED8A96064F5857A6B9E\"><p>​Βρείτε την απάντηση για τη δυνατότητα&#160;έκδοσης πιστωτικής&#160;<a href=\"/sites/CC_KnowledgeBaseComProd/Lists/FAQs1/DispForm.aspx?ID=684&amp;Source=http%3a//mynbgportal/sites/cc1/site6/Lists/FAQs1/view.aspx&amp;ContentTypeId=0x01008A274A5E630EF8428D0913EC7C6A7909\">εδώ</a>.<br></p><p>​Βρείτε την απάντηση για τη μεταφορά μισθοδοσίας&#160;<a href=\"/sites/CC_KnowledgeBaseComProd/Lists/FAQs2/DispForm.aspx?ID=33&amp;Source=http%3a//mynbgportal/sites/cc1/site6/Lists/FAQs2/view.aspx&amp;ContentTypeId=0x010074A137ED02B23B4586D58E1AF83F9D0F\">εδώ</a>.<br></p></div>\n</document>\n\n<document:   title='c855249a-df2a-49e2-b934-fd0d00807a6a.txt' original_title='' link=''>\nΠώς συνδέω λογαριασμό σε χρεωστική κάρτα;\n\n<div class=\"ExternalClass4FF87F4E85C241D299B9576711F9F75C\"><p>​Σας ενημερώνουμε ότι στη χρεωστική σας<span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">&#160;κάρτα μπορείτε να συνδέσετε&#160;λογαριασμό, στον οποίο είστε δικαιούχος ή συνδικαιούχος. Η διαδικασία μπορεί να γίνει&#58;</span></p><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω των υπηρεσιών&#160;Internet Banking&#160;/ Phone Βanking, εφόσον είστε ενεργός χρήστης.</span></li><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω του δικτύου των καταστημάτων μας</span></li></ul><p>&#160;</p><p>​​​<br></p></div>\n</document>\n\n<document:   title='c991b2e6-3954-4c73-a50f-aa64b22a9bed.txt' original_title='' link=''>\nΠως κάνω πληρωμή πιστωτικής κάρτας μέσω APS;\n\n<div class=\"ExternalClass78ADDF690432419DAF36CE699EF15614\"><p><span style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">​Σας ενημερώνουμε ότι για πληρωμή της πιστωτικής σας κάρτας θα χρειαστεί&#160;να έχετε μαζί σας τον αριθμό της κάρτας ή το αντίγραφο λογαριασμού ή την ίδια την κάρτα.&#160;</span></p><p><span style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Τα Κέντρα Αυτόματων Πληρωμών με απλές διαδικασίες, σας κατευθύνουν βήμα προς βήμα, ώστε να ολοκληρώσετε τις συναλλαγές σας γρήγορα και με ασφάλεια με τους εξής&#160;τρόπους&#58;</span></p><div><ul><li><font style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω της οθόνης αφής, με εισαγωγή του αριθμού πιστωτικής κάρτας&#160;Εθνικής Τράπεζας. &#160;</font></li><li><font style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Με χρήση της συσκευής ανάγνωσης γραμμικού κώδικα (barcode reader) του μηχανήματος, εάν έχετε μαζί σας αντίγραφο λογαριασμού.</font></li><li><font style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Με χρήση της πιστωτικής σας κάρτας της Εθνικής Τράπεζας, για την πληρωμή του λογαριασμού της.​</font></li></ul></div></div>\n</document>\n\n<document:   title='8a4ee326-421a-4e44-b315-219d44133b2b.txt' original_title='' link=''>\nΑπόρριψη αιτήματος ανανέωσης πιστωτικής καρτας - Μη ανανεωθείσα πιστωτική κάρτα - Αδυναμία πληρωμής σε ΑΤΜ\n\n<div class=\"ExternalClassB98BE5C8DF6D40178746C69316DAD617\"><p>Σας ενημερώνουμε με τους εναλλακτικούς τρόπους εξόφλησης&#160;της πιστωτικής σας&#160;κάρτας&#58;</p><ul><li><p>μέσω των υπηρεσιών Digital/Phone&#160;Banking<br></p></li><li><p>με αυτόματη χρέωση λογαριασμού καταθέσεων που τηρείτε στην Εθνική Τράπεζα (αφού&#160;συμπληρώσετε την ειδική εξουσιοδότηση σε οποιοδήποτε Κατάστημα)<br></p></li><li><p>με χρήση της χρεωστικής σας&#160;κάρτας&#160;από&#160;ΑΤΜ ΕΤΕ&#160;(θα&#160;πρέπει να προηγηθεί&#160;σύνδεση των πιστωτικών καρτών με τη χρεωστική,&#160;μέσω Καταστήματος Εθνικής Τράπεζας)<br></p></li><li><p>μέσω των ΕΛΤΑ με χρήση της ταχυπληρωμής που υπάρχει στο μηνιαίο λογαριασμό (η&#160;πληρωμή εμφανίζεται μετά από 7 εργάσιμες ημέρες)<br></p></li><li><p>Μέσω ταμείου Καταστήματος Εθνικής Τράπεζας&#160;<br></p></li></ul></div>\n</document>\n\n<document:   title='20dad5ad-5a23-4b85-a7b7-0f008519b03d.txt' original_title='' link=''>\nΠιστωτική κάρτα - Ποιο είναι το χρεωστικό υπόλοιπο;\n\n<div class=\"ExternalClass5E7F44789C04427A85FA316465D837ED\"><p>Σας ενημερώνουμε πως έχετε τη δυνατότητα να πληροφορηθείτε το υπόλοιπο της οφειλής σας με τους εξής τρόπους&#58;<br></p><ul><li>μέσω των υπηρεσιών Digital/Phone Banking, εφόσον είστε εγγεγραμμένος χρήστης</li><li>μέσω του Κέντρου Τηλεφωνικής Εξυπηρέτησης&#160;στο τηλέφωνο 2104848484 μέσω εκπροσώπου<br></li></ul><div><br></div><div><br></div><div><br></div></div>\n</document>\n\n<document:   title='b08060da-13fa-4432-ae59-3df26ef5c3e3.txt' original_title='' link=''>\nΠληρωμή πιστωτικής κάρτας - Έγινε δύο φορές\n\n<div class=\"ExternalClass7D646015018248A4856C7427E6C8E48C\"><p>​<span style=\"color&#58;#4c4c4c;font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;\">Σε περίπτωση που επιθυμείτε να αιτηθείτε το<span style=\"color&#58;#444444;\">ν αντιλογισμό του&#160;</span></span><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;color&#58;#444444;\">πλεονάζοντος</span><span style=\"color&#58;#4c4c4c;font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;\"><span style=\"color&#58;#444444;\">&#160;ποσού, παρα</span>καλούμε όπως μας αναφέρετε τα τελευταία τέσσερα ψηφία ενός&#160;αριθμού λογαριασμού σας, προκειμένου να πραγματοποιήσουμε την πίστωση.&#160;&#160;</span></p><p><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\"><strong>​</strong></span></p><p><br></p></div>\n</document>\n\n<document:   title='b1f6fc0b-46fc-4a8a-b04c-567ec640de75.txt' original_title='' link=''>\nΑφαίρεση κάρτας από wearable συσκευές \n\n<div class=\"ExternalClass4C9C1007FE8143E8B807E9549C6C7A31\"><p>Μπορείτε να&#160;αφαιρέσετε την&#160;​κάρτα σας&#160;μέσα από το σχετικό μενού διαχείρισης της κάρτας, ακολουθώντας τα εξής βήματα&#58;</p><p></p><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\">μεταβαίνετε&#160;στην εφαρμογή Garmin Connect /&#160;Mi Fitness /&#160;&#160;Zepp&#160;που έχετε&#160;εγκατεστημένη στο κινητό σας&#160;</span></li><li>επιλέγετε&#160;Garmin Pay/&#160;Mi Pay /&#160;Zepp Pay<br></li><li>επιλέγετε&#160;την κάρτα που επιθυμείτε να αφαιρέσετε<br></li><li>επιλέγετε&#160;το μενού στην επάνω δεξιά γωνία της οθόνης &#160;</li><li>πατάτε&#160;το κουμπί «Αφαίρεση αυτής της κάρτας».<br></li></ul><div><br></div> <p></p></div>\n</document>\n\n<document:   title='b8fe6a2c-5eb4-4845-ae8c-bf1772502931.txt' original_title='' link=''>\nΕπιστροφή πιστωτικής κάρτας - Πως;\n\n<div class=\"ExternalClass45280710D4254FAEA68C02C45E5C0B4D\"><div style=\"margin-top&#58;14px;margin-bottom&#58;14px;\"><span style=\"color&#58;rgb(0, 0, 0);\">Σε περίπτωση που έχετε στην κατοχή σας την πιστωτική σας καρτα και δεν την επιθυμείτε πλέον, έχετε τη δυνατότητα να την ακυρώσετε μέσω των υπηρεσιών Digital Βanking ή καλώντας καθημερινά στο τηλεφωνικό μας κ</span><span style=\"color&#58;rgb(0, 0, 0);font-size&#58;11pt;\">​</span><span style=\"color&#58;rgb(0, 0, 0);\">έντρο στο +30 2104848484.&#160;&#160;</span></div></div>\n</document>\n\n<document:   title='4eeacd35-3d38-4fa1-93aa-c7599da243c1.txt' original_title='' link=''>\nΑφαίρεση κάρτας από το Google Wallet\n\n<div class=\"ExternalClassB1AAFC2D4F084D6E80EB2A266D845C95\"><p>​Σας ενημερώνουμε πως μπορείτε να αφαιρέσετε την&#160;​​​κάρτα σας​​&#160;​​από το σχετικό&#160;μενού διαχείρισης της κάρτας. Συγκεκριμένα μεταβαίνετε στο Google Wallet, επιλέγετε την κάρτα που επιθυμείτε να καταργήσετε, επιλέγετε το μενού στην επάνω δεξιά γωνία της οθόνης (τρεις κουκίδες) και από τις διαθέσιμες επιλογές πατάτε το κουμπί &quot;Κατάργηση τρόπου πληρωμής​&quot;​​.<br></p></div>\n</document>\n\n<document:   title='502f68d0-6d11-4299-8fb9-8f84f41b5eef.txt' original_title='' link=''>\nΠως μπορώ να κάνω επιστροφή του επιδόματος που πιστώθηκε στην κάρτα Prepaid ΚΑ ;\n\n<div class=\"ExternalClass2E15CBE0ABD847EBB8256FC0B1A60A0D\"><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(50, 49, 48);background-color&#58;transparent;\"><span style=\"font-family&#58;&quot;segoe ui&quot;;color&#58;rgb(0, 0, 0);\">Σας ενημερώνουμε </span><span style=\"color&#58;rgb(0, 0, 0);font-family&#58;&quot;segoe ui&quot;;font-size&#58;11pt;text-align&#58;justify;display&#58;inline !important;\">ότι </span><span style=\"color&#58;rgb(0, 0, 0);font-family&#58;&quot;segoe ui&quot;;font-size&#58;11pt;text-align&#58;justify;display&#58;inline !important;\">για να επιστρέψετε επίδομα που έχει πιστωθεί στην προπληρωμένη κάρτα Prepaid Mastercard ΚΑ, θα πρέπει να απευθυνθείτε στον φορέα πίστωσης του επιδόματος, προκειμένου να λάβετε οδηγίες και διευκρινίσεις σχετικά με τη διαδικασία.</span></div><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(50, 49, 48);background-color&#58;transparent;\"><span style=\"color&#58;rgb(0, 0, 0);font-family&#58;&quot;segoe ui&quot;;font-size&#58;13.3333px;text-align&#58;justify;display&#58;inline !important;\"><p><span style=\"font-size&#58;11pt;color&#58;rgb(0, 0, 0);\">Διευκρινίζουμε πως η Τράπεζα δεν εμπλέκεται στις ενέργειες που απαιτούνται για τη διαδικασία επιστροφής επιδόματος στον φορέα που το πίστωσε.</span></p></span></div></div>\n</document>\n\n<document:   title='5cd320f3-6f82-4d96-ac3b-43dd587f616e.txt' original_title='' link=''>\nΠως αφαιρώ τις ανέπαφες συναλλαγές από την κάρτα μου;\n\n<div class=\"ExternalClassEF8A653B09D7491F857DE5EEBD3C0119\"><p>​Σας ενημερώνουμε ότι μπορείτε να προχωρήσετε σε&#160;απενεργοποίηση των ανέπαφων συναλλαγών, μέσω των&#160;υπηρεσιών Digital&#160;Banking για κάρτες&#58;<br></p><ul><li>Χρεωστικές&#160;<br></li><li>Προπληρωμένες&#160;<br></li><li>Πιστωτικές<br></li></ul><div><br></div><div><br></div><div><br></div><div><br></div></div>\n</document>\n\n<document:   title='a7709d60-b5a9-4047-96b6-cf284727a850.txt' original_title='' link=''>\nΠως κάνω πληρωμή πιστωτικής κάρτας μέσω ATM ;\n\n<div class=\"ExternalClass07A7AB19FFED4F29977B2976E94A4EF9\"><p>​Σας ενημερώνουμε ότι μπορείτε να προχωρήσετε σε πληρωμή της πιστωτικής σας κάρτα μέσω του δικτύου ATM της Εθνικής Τράπεζας, εισάγοντας την κάρτα και επιλέγοντας &quot;Πληρωμή&quot; από το αρχικό menu.&#160;<br></p><p>Για την καλύτερη εξυπηρέτησή σας διευκρινίζουμε&#160;ότι εφόσον επιλέξετε να πληρώσετε την&#160;οφειλή&#160;της πιστωτικής σας κάρτας μέσω δικτύου ATMs, παρακαλείσθε όπως πραγματοποιήσετε&#160;την πληρωμή το αργότερο μέχρι τις 18&#58;00 της ορισθείσας ημερομηνίας πληρωμής (δήλης ημερομηνίας).</p><p>Σε διαφορετική περίπτωση και λόγω σχετικών συστημικών περιορισμών, η συναλλαγή πληρωμής θα λογιστεί στο σύστημα της Τράπεζας&#160;την επόμενη εργάσιμη ημέρα, έχοντας ως συνέπεια τη χρέωση τόκων υπερημερίας στην κάρτα σας.<br></p><p><strong style=\"color&#58;#ff0000;\"><br></strong></p><p><strong style=\"color&#58;#ff0000;\">Σημείωση</strong><span style=\"color&#58;#ff0000;\"><strong>&#58;</strong></span><br></p><p>Η πληρωμή μπορεί να πραγματοποιηθεί και με χρήση κάρτας πρόσθετου μέλους.<br></p><p><br></p></div>\n</document>\n\n<document:   title='d8bd0ee5-b3ea-4a6c-898c-aefff3aecc62.txt' original_title='' link=''>\nΠόσα CVC έχει η κάρτα Dual ;\n\n<div class=\"ExternalClass976C0E9CD9624537955449681B205191\"><p>Σας ενημερώνουμε πως η κάρτα Dual Mastercard έχει 2 ξεχωριστούς κωδικούς ασφαλείας CVC, έναν για κάθε μία από τις δύο λειτουργικότητες (χρεωστική, πιστωτική).<br><br></p></div>\n</document>\n\n<document:   title='de8c968b-94cf-4bba-81b5-491af1968ec3.txt' original_title='' link=''>\nΚάρτα πιστωτική - Αποστολή - Πρόσθετη - Πως;\n\n<div class=\"ExternalClass76F036EDC00347518FD7C2724DBE3549\"><p>Σας ενημερώνουμε ότι η εμφακέλωση γίνεται ξεχωριστά για κάθε κάρτα (κύρια και τυχόν&#160;πρόσθετες), ενώ ο<span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">&#160;καθένας παραλαμβάνει την κάρτα του με απλή αλληλογραφία στη διεύθυνση του.&#160;</span><br></p><p><br></p></div>\n</document>\n\n<document:   title='212.md' original_title='' link=''>\nμου χωρίς τη χρήση pin; \n\nΕφόσον το επιθυμείτε μπορείτε είτε να μηδενίσετε είτε να επαναφέρετε το εκάστοτε ισχύον όριο ανέπαφων συναλλαγών που διενεργούνται χωρίς τη χρήση pin, είτε μέσω των εφαρμογών Internet & Mobile Banking, εφόσον είστε εγγεγραμμένος χρήστης, είτε υποβάλλοντας σχετικό αίτημα στο Κατάστημα εξυπηρέτησής σας ή στο Contact Center της Εθνικής Τράπεζας.\n\nΠόσο άμεσα μπορώ να παραλάβω την κάρτα μου;\n\nΜπορείτε να αποκτήσετε την κάρτα σας άμεσα, με μια επίσκεψή σας σε ένα κατάστημα.\n\nΕναλλακτικά, μπορείτε να ζητήσετε έκδοση της κάρτας μέσω των ψηφιακών καναλιών Internet και Mobile Banking.\n\nΣε διάστημα λίγων ημερών θα παραλάβετε την κάρτα σας ταχυδρομικά, στη διεύθυνση που έχετε δηλώσει. Στην επιστολή παράδοσης της κάρτας περιλαμβάνονται και οι οδηγίες ενεργοποίησής της καθώς και ο τρόπος απόκτησης του PIN.\n\nΠοια είναι τα όρια χρήσης της κάρτας μου;\n\nΜπορείτε να ενημερωθείτε για τα όρια συναλλαγών της κάρτας σας [εδώ](https://www.nbg.gr/-/jssmedia/Files/Idiwtes/Kathimerines-sunallages/kartes/xrewstikes/xrewstikes-new-prosymvatikh-enhmerwsh/Prosymbatikh-Enhmerosh-Debit-Mastercard-Private.pdf).\n\nΑν χάσω ή μου κλέψουν την κάρτα μου τι πρέπει να κάνω;\n\nΜπορείτε να επικοινωνήσετε με το Κέντρο Τηλεφωνικής Εξυπηρέτησης της Εθνικής τράπεζας καλώντας στο +30 210 48 48 484, για δήλωση απώλειας ή κλοπής 24 ώρες το 24ωρο.\n\nΕναλλακτικά μέσω της εφαρμογής Internet / Mobile Banking εφόσον είστε εγγεγραμμένος χρήστης, μπορείτε να:\n\n  * Δηλώσετε ''Πάγωμα'' για προσωρινή διακοπή της λειτουργίας της κάρτας.\n  * Δηλώσετε απώλεια/κλοπή της κάρτας σας.\n  * Ζητήσετε επανέκδοση της κάρτας σας σε περίπτωση κλοπής ή απώλειας.\n\nΑκόμη, σε περίπτωση που η κάρτα σας βρεθεί , μπορείτε να την «ξεπαγώσετε» το ίδιο εύκολα.\n\n## Τι δικαιολογητικά θα χρειαστώ;\n\n  * Δελτίο ταυτότητας ή διαβατήριο\n\nΗ ταυτότητα ή το διαβατήριο θα πρέπει να είναι εν ισχύ. \n\n[Μαθαίνω περισσότερα](https://www.nbg.gr/-/jssmedia/Files/Idiwtes/generic/Sistithikate.pdf)\n\n  * Το πιο πρόσφατο εκκαθαριστικό\n</document>\n\n<document:   title='103.md' original_title='' link=''>\n---\n            url: https://www.nbg.gr/el/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/pistwtiki-karta-online\n            title: Αποκτήστε Πιστωτική Κάρτα Online | Εθνική Τράπεζα\n            description: Μάθετε πως μπορείτε να αποκτήσετε μια πιστωτική κάρτα online. Μπείτε στο site της Εθνικής Τράπεζας για περισσότερες πληροφορίες!\n            scraped_at: 2026-02-13T07:30:27.740669\n            status_code: 200\n            ---\n\n            # Αποκτήστε Πιστωτική Κάρτα Online | Εθνική Τράπεζα\n\n[Close Button](#)\n\nΣύνδεση στο Digital Banking\n\n[Ιδιώτης](https://ebanking.nbg.gr/web)[Επιχείρηση](https://business.ebanking.nbg.gr)\n\n[Έχω την τράπεζα στον υπολογιστή μου](/el/idiwtes/kathimerines-sunallages/digital-banking/internet-banking)[Έχω την τράπεζα σε μία εφαρμογή](/el/idiwtes/kathimerines-sunallages/digital-banking/mobile-banking)[Αποκτώ κωδικούς Digital Banking](/el/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/ekdosi-kwdikwn-digital-banking)[Ξεκινώ με την Εθνική online](/el/idiwtes/kathimerines-sunallages/digital-banking/ksekiniste-me-thn-ethniki-online)\n\n# Αποκτήστε πιστωτική κάρτα online \n\nΠραγματοποιήστε τις συναλλαγές σας εύκολα, γρήγορα και με ασφάλεια.\n\n![Αποκτήστε Πιστωτική Κάρτα Online](https://www.nbg.gr/-/jssmedia/Images/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/NBG-laptop-and-hand-800x800-dynatothtes-internet-mobile-GR-rev.png?h=800&iar=0&w=800&hash=C108BDF0219940455E5309CC5EA7811E)\n\n  * [Ιδιώτες](/el/idiwtes)\n  * [Καθημερινές Συναλλαγές](/el/idiwtes/kathimerines-sunallages)\n  * [Digital Banking](/el/idiwtes/kathimerines-sunallages/digital-banking)\n  * Δυνατότητες Internet & Mobile Banking \n\n## Πιστωτικές κάρτες για εσάς\n\nΚάντε τις αγορές σας εύκολα και γρήγορα, αποπληρώστε αργότερα εφάπαξ ή σε δόσεις, εξασφαλίστε καθημερινή επιβράβευση, προσωποποιημένη εξυπηρέτηση και πολλά άλλα προνόμια.\n</document>\n\n<document:   title='103.md' original_title='' link=''>\n* [Ιδιώτες](/el/idiwtes)\n  * [Καθημερινές Συναλλαγές](/el/idiwtes/kathimerines-sunallages)\n  * [Digital Banking](/el/idiwtes/kathimerines-sunallages/digital-banking)\n  * Δυνατότητες Internet & Mobile Banking \n\n## Πιστωτικές κάρτες για εσάς\n\nΚάντε τις αγορές σας εύκολα και γρήγορα, αποπληρώστε αργότερα εφάπαξ ή σε δόσεις, εξασφαλίστε καθημερινή επιβράβευση, προσωποποιημένη εξυπηρέτηση και πολλά άλλα προνόμια. Απλά, επιλέξτε την πιστωτική κάρτα που σας ταιριάζει.\n\n### Silver\n\nΓια εσάς που θέλετε αναβαθμισμένη τραπεζική καθημερινότητα με προνόμια και ανεκτίμητες εμπειρίες!\n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/silver)\n\n### Gold\n\nΓια εσάς που επιθυμείτε προσωποποιημένη εξυπηρέτηση, ανεκτίμητες εμπειρίες και προνόμια, καθημερινά! \n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/gold)\n\n### Black\n\nΓια εσάς που θέλετε προνόμια κάθε μέρα, προσωποποιημένη εξυπηρέτηση, και μεγαλύτερη επιβράβευση με το πρόγραμμα Premium **Go For More**.\n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/black)\n\n## Πιστωτική κάρτα σε λίγα βήματα\n\nΕίσοδος χρήστη\n\nΑν είστε εγγεγραμμένος χρήστης, μπαίνετε στο Digital Banking και από την αρχική σελίδα μεταβαίνετε στην ενότητα \"Κάρτες\", επιλέγετε την πιστωτική κάρτα που επιθυμείτε και επιλέγετε \"Απόκτηση νέας κάρτας\".\n\nΕπιλογή ορίου\n\nΈπειτα, ενημερώνεστε και αποδέχεστε την προσυμβατική ενημέρωση του προϊόντος και επιλέγετε το όριο της πιστωτικής κάρτας για την οποία θέλετε να κάνετε αίτηση.\n\nΕπιβεβαίωση στοιχείων\n\nΣτη συνέχεια, επιβεβαιώνετε τα στοιχεία απασχόλησης, διεύθυνσης κατοικίας, ταυτότητας και φορολογίας (ανεβάζοντας το πιο πρόσφατο εκκαθαριστικό σας σημείωμα).\n\nΕπιλογή τρόπου πληρωμής\n</document>\n\n<document:   title='14452dfe-1d26-4db5-936b-4bd08c555c2d.txt' original_title='' link=''>\nΠιστωτική κάρτα - Μπορώ να ζητήσω μερική απόδοση πιστωτικού υπολοίπου;\n\n<div class=\"ExternalClass1699789D57B44F6BAC4BC2826BBE2E28\"><p>Σας ενημερώνουμε πως δεν&#160;υπάρχει η δυνατότητα για μερική απόδοση πιστωτικού&#160;υπολοίπου.​<br><br></p><p><br></p><p><br></p><p><br><br></p><p><strong style=\"color&#58;#ff0000;\"><br></strong></p></div>\n</document>",
+        "routing_action": "retrieve_and_respond",
+        "routing_reasoning": "The user is asking how to obtain a credit card, which is a banking procedure question. There is no indication that this information was previously provided in the conversation, so a fresh search in the bank's knowledge base is appropriate.",
+        "routing_confidence": 1,
+        "retrieved_docs_list": [
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "0d60c22e-3cf0-4192-9925-361d429fffd0.txt",
+              "chunk_id": "05c545852bb0_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vMGQ2MGMyMmUtM2NmMC00MTkyLTk5MjUtMzYxZDQyOWZmZmQwLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πιστωτική κάρτα - Πως επηρεάζεται το διαθέσιμο υπόλοιπο από τις δόσεις;\n\n<div class=\"ExternalClass9227B3AEB8D04DEC80A0376D8B6BF40F\"><p>Σας ενημερώνουμε ότι το ποσό μελλοντικών δόσεων δεσμεύει αντίστοιχα&#160;το διαθέσιμο υπόλοιπο της πιστωτικής σας κάρτας.&#160;<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "128.md",
+              "chunk_id": "23c00c3a713b_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9Qb3J0YWwvMTI4Lm1k0_pages_1",
+              "original_title": ""
+            },
+            "page_content": "Συγκρίνω\n\n### Πιστωτική κάρτα Black\n\nΞεχωρίστε με την κάρτα που σας προσφέρει μοναδικές εμπειρίες και αποκλειστικά προνόμια.\n\nΚατάλληλη για\n\nεσάς που θέλετε αποκλειστικά προνόμια, προσωποποιημένη εξυπηρέτηση, και μεγαλύτερη επιβράβευση με το πρόγραμμα **Premium Go For More**.\n\n[Μαθαίνω περισσότερα](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/black)\n\nΣυγκρίνω\n\n\\+ Επιλέγω κάρτα\n\n\\+ Επιλέγω κάρτα\n\n\\+ Επιλέγω κάρτα\n\nΣυγκρίνωκάρτες\n\n\\+ Επιλέγω κάρτα\n\n### Κάρτα Dual\n\nΜπορείτε τώρα να επιλέγετε κάθε φορά τη χρήση της χρεωστικής ή πιστωτικής λειτουργικότητάς της, χαρίζοντάς σας ελευθερία και ευελιξία στην πραγματοποίηση συναλλαγών. \n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/karta-dual)\n\n## Γνωρίζατε ότι μπορείτε να εξοφλήσετε τα τέλη κυκλοφορίας και τις οφειλές δημοσίου σε έως και 12 άτοκες δόσεις;\n\n### \n\nΗ πιστωτική σας κάρτα δεν είναι απλώς ένα μέσο πληρωμής, αλλά κι ένας έξυπνος τρόπος να διαχειρίζεστε τα οικονομικά σας ακόμα πιο εύκολα. \n\nΜε τη δυνατότητα εξόφλησης τελών κυκλοφορίας και οφειλών δημοσίου σε έως και 12* άτοκες δόσεις, απολαμβάνετε την ευελιξία να προγραμματίζετε τις πληρωμές σας και να διευκολύνετε την καθημερινότητά σας!\n\n[Πληρώνω με δόσεις](https://ibank.nbg.gr/identity/login?ReturnUrl=https%3A%2F%2Fibank.nbg.gr%2Fidentity%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DECE343FC-EE83-430C-97DA-7BB07764390F%26redirect_uri%3Dhttps%253A%252F%252Fibank.nbg.gr%252Fweb%252F%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520ibank_profile%2520ibank-proxy-api-v1%26code_challenge%3DL97imST5TbSh4IcavcbxajAMousP5yP2EUKac5PMhnw%26code_challenge_method%3DS256%26response_mode%3Dform_post%26nonce%3D638689115959158433."
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "131.md",
+              "chunk_id": "2f556a8aefbe_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9Qb3J0YWwvMTMxLm1k0_pages_11",
+              "original_title": ""
+            },
+            "page_content": "που δημιουργήσαμε για εσάς.\n\nTι να κάνω αν ξεχάσω ή αν μπλοκάρω το PIN της κάρτας μου;\n\nΣε περίπτωση που ξεχάσατε ή μπλοκάρατε το PIN σας μπορείτε εύκολα να το ανακτήσετε:  \n\n  * Μέσω Internet Banking, από τη Διαχείριση ΡΙΝ επιλέγοντας Ξεκλείδωμα ΡΙΝ\n  * Μέσω Μobile Βanking, από τη Διαχείριση Κάρτας επιλέγοντας Ξεκλείδωμα ΡΙΝ\n  * Καλώντας στο 210 48 48 484  \n\nΤι να κάνω αν μου κλέψουν ή χάσω την κάρτα μου;\n\nΑν είστε χρήστης τουDigital Banking μπορείτε να:  \n\n  * «Παγώσετε» την κάρτα σας για προσωρινή διακοπή της λειτουργίας της και σε περίπτωση που βρεθεί να την επαναφέρετε επιλέγοντας «Ξεπάγωμα κάρτας»\n  * Δηλώσετε απώλεια/κλοπή  \n\nΕναλλακτικά, θα πρέπει να επικοινωνήσετε άμεσα με το κέντρο τηλεφωνικής εξυπηρέτησης της τράπεζας στο 210 48 48 484, 24 ώρες το 24ωρο. \n\nΠώς μπορώ να διαχειριστώ την κάρτα μου μέσω Digital Banking;\n\nΜπορείτε εύκολα να διαχειριστείτε την πιστωτική σας κάρτα μέσω Digital Banking και να κάνετε τις παρακάτω ενέργειες:\n\n  * Ενεργοποίηση/απενεργοποίηση ανάληψης μετρητών, διενέργεια ανέπαφων ή/και online συναλλαγών, συναλλαγές στο εξωτερικό κτλ.\n  * Πάγωμα/ξεπάγωμα\n  * Δήλωση απώλειας/κλοπής\n  * Αλλαγή τρόπου πληρωμής (μερική ή ολική)\n  * Σύνδεση λογαριασμού εξόφλησης\n\nΠόσες πρόσθετες κάρτες μπορώ να έχω ταυτόχρονα;\n\nΈχετε τη δυνατότητα να εκδώσετε έως και 3 δωρεάν πρόσθετες κάρτες και να μοιράζεστε τα προνόμια της κάρτας σας με τους δικούς σας ανθρώπους.\n\nΠερισσότερα\n\n## Υπηρεσία Mastercard Concierge\n\n### \n\nΞεκλειδώστε έναν κόσμο μοναδικών προνομίων και ζήστε αξέχαστες εμπειρίες, μέσα από την προσωποποιημένη εξυπηρέτηση της υπηρεσίας Mastercard Concierge και τις κάρτες της Εθνικής Τράπεζας!\n\n[Μαθαίνω περισσότερα.](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/mastercard-concierge)\n\n[Περισσότερα]()[Λιγότερα]()\n\n### Πρόγραμμα Μεταφοράς Υπολοίπου"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "133.md",
+              "chunk_id": "2f556a8aefbe_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9Qb3J0YWwvMTMzLm1k0_pages_0",
+              "original_title": ""
+            },
+            "page_content": "---\n            url: https://www.nbg.gr/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/silver\n            title: Πιστωτική Κάρτα Silver  | Εθνική Τράπεζα\n            description: Ανακαλύψτε την πιστωτική κάρτα Silver και όλα τα προνόμια που σας προσφέρει. Μπείτε στο site της Εθνικής Τράπεζας για περισσότερες πληροφορίες!\n            scraped_at: 2026-02-13T07:31:01.957812\n            status_code: 200\n            ---\n\n            # Πιστωτική Κάρτα Silver  | Εθνική Τράπεζα\n\n![Jumbo image background](https://www.nbg.gr/-/jssmedia/Images/idiwtes/kathimerines-sunallages/trapezikes-kartes/new-credit-cards/2560x600-silver.png?h=600&iar=0&w=2560&hash=867484A5B49B4F21249EA4F5F1169FCE)\n\nΠιστωτικές κάρτες\n\n# Πιστωτική κάρτα Silver\n\nΗ κάρτα για όλες σας τις στιγμές.\n\n  * [Ιδιώτες](/el/idiwtes)\n  * [Καθημερινές Συναλλαγές](/el/idiwtes/kathimerines-sunallages)\n  * [Τραπεζικές Κάρτες](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes)\n  * [Πιστωτικές Κάρτες](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes)\n  * Πιστωτική κάρτα Silver \n\nΜε χαμηλή συνδρομή και εύκολη online απόκτηση και διαχείριση, μπορείτε να κάνετε τις αγορές σας σε φυσικά και ηλεκτρονικά καταστήματα με μια πιστωτική κάρτα που σας προσφέρει καθημερινή επιβράβευση, ανεκτίμητες εμπειρίες και σειρά από μοναδικά προνόμια! \n\n**Συγκεκριμένα μπορείτε να:**\n\n  * Διαχειρίζεστε έξυπνα τις αγορές σας με άτοκες δόσεις σε χιλιάδες επιχειρήσεις σε όλη την Ελλάδα\n  * Έχετε ευελιξία στην αποπληρωμή των οφειλών σας στο Δημόσιο με έως και 12 άτοκες δόσεις.\n  * Κάνετε αναλήψεις μετρητών εάν έχετε άμεση ανάγκη από μετρητά\n  * Απολαμβάνετε πρόσθετες συναλλαγές, όπως πάγιες εντολές για την εξόφληση των λογαριασμών σας \n  * Χτίζετε το αφορολόγητό σας \n\n## Με 2 λόγια:\n\n  * Δώρο 500 πόντοι **Go For More**\n  * Δωρεάν ταξιδιωτική ασφάλιση\n  * Επιβράβευση **Go For More**   \n\nΕτήσια συνδρομή\n\n### €12\n\n**Δωρεάν συνδρομή τον 1 ο χρόνο**\n\n[Αποκτώ κάρτα Silver](https://ibank.nbg.gr/)"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "0d77d302-7e63-45a9-b1e6-3b661d72ea45.txt",
+              "chunk_id": "5d80ba9bb220_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19EaWdpdGFsX0JhbmtpbmcvMGQ3N2QzMDItN2U2My00NWE5LWIxZTYtM2I2NjFkNzJlYTQ1LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Έκδοση Skroutz Plus Mastercard\n\n<div class=\"ExternalClassE8D57698965347C8BA406BC5EF2FE710\"><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(0, 0, 0);\"><span style=\"background-color&#58;rgb(250, 249, 248);color&#58;rgb(0, 0, 0);font-size&#58;11pt;font-family&#58;&quot;segoe ui&quot;;\">Σας ενημερώνουμε ότι μπορείτε να εκδώσετε την άυλη πιστωτική κάρτα Skroutz Plus Mastercard μέσω του Internet Banking, επιλέγοντας το μενού &quot;Κάρτες&quot; και την ενότητα &quot;Διαλέξτε την κατάλληλη κάρτα για εσάς&quot;.&#160;</span></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "793e1d06-64d7-40ad-9d57-cfd3b3b1edc0.txt",
+              "chunk_id": "786d3e80d98a_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNzkzZTFkMDYtNjRkNy00MGFkLTlkNTctY2ZkM2IzYjFlZGMwLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αίτηση για πιστωτική κάρτα - Είμαι στο εξωτερικό!\n\n<div class=\"ExternalClass8A132220B1F146D8B50D8DA485CE309A\"><p class=\"ExternalClass9B66CCDA7523431DADD29C075F6A7CB3\"><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Η</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\"> αίτηση&#160;για πιστωτική&#160;κάρτα,&#160;μπορεί να υποβληθεί&#58;</span></p><div class=\"ExternalClass9B66CCDA7523431DADD29C075F6A7CB3\"><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω των υπηρεσιών Digital&#160;Banking (εφόσον έχετε δηλώσει στην Τράπεζα τη διεύθυνση εξωτερικού) ή</span></li><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">τηλεφωνικά καλώντας στο +30 210 48 48 48 4, καθημερινά 8&#58;00-16&#58;00. Λάβετε υπόψη σε αυτή την περίπτωση θα πρέπει να παρευρεθείτε σε ένα κατάστημά μας στην Ελλάδα προκειμένου να υπογράψετε την αίτησή σας.</span></li></ul></div><p><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Σημειώνουμε ότι&#160;</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">για να καταχ</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">ωρηθεί αίτηση για πιστωτική κάρτα, θα πρέπει να δηλώνετε εισόδημα στη</span><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">ν Ελλάδα.</span></p><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "79d2e131-15d6-4887-bc5b-6e922dadf0a9.txt",
+              "chunk_id": "786d3e80d98a_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNzlkMmUxMzEtMTVkNi00ODg3LWJjNWItNmU5MjJkYWRmMGE5LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πρόσθετο μέλος σε πιστωτική κάρτα - Δεν θέλω πλέον να είμαι πρόσθετο μέλος\n\n<div class=\"ExternalClassD1F22102731440608411ED1249EB7DD8\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><p><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\">​Εφόσον δεν επιθυμείτε πλέον να είστε κάτοχος πιστωτικής κάρτας ως&#160;πρόσθετο&#160;μέλος, παρακαλούμε όπως&#160;προχωρήσετε σε καταγραφή του&#160;αιτήματος για την απεμπλοκή σας από το προϊόν,&#160;μέσω της&#160;<a href=\"https&#58;//www.nbg.gr/el/footer/epikoinwnia\">φόρμας επικοινωνίας</a>.&#160;<br></span></p><p><br></p><p><span style=\"color&#58;#ff0000;font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><strong>ΣΗΜΕΙΩΣΗ&#58;</strong></span></p><p><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\">Εάν επιμένει προχωρούμε σε καταχώρηση αιτήματος CMT<br></span></p><p><br></p><p><br></p></span></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "813f0ef6-0a10-4082-9cfc-8d6955a7698b.txt",
+              "chunk_id": "786d3e80d98a_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vODEzZjBlZjYtMGExMC00MDgyLTljZmMtOGQ2OTU1YTc2OThiLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πως κάνω πληρωμή πιστωτικής κάρτας μέσω ATM με χρεωστική;\n\n<div class=\"ExternalClass205791FDB3134F59BCD26538720995C7\"><p>​Σας ενημερώνουμε ότι υπάρχει δυνατότητα πληρωμής της πιστωτικής σας κάρτας με χρήση της χρεωστικής κάρτας&#160;που διαθέτετε.&#160;<br></p><p>Προκειμένου να μπορείτε να εκτελέσετε την παραπάνω διαδικασία θα πρέπει να απευθυνθείτε σε Κατάστημα της Τράπεζάς μας, έχοντας μαζί σας τα νομιμοποιητικά σας έγγραφα, ώστε να γίνει σύνδεση της πιστωτικής (ενεργής, ληγμένης ή και καταργημένης) με τη χρεωστική σας κάρτα.<br></p><p>Στη συνέχεια, θα μπορείτε να εκτελείτε τις πληρωμές σας, εισάγοντας στο ATM τη χρεωστική σας κάρτα.<br></p><p>Σημειώνουμε ότι σε περίπτωση ανάπλασης του αριθμού της κάρτας (π.χ. λόγω απώλειας) θα πρέπει να επαναληφθεί η διαδικασία σύνδεσης μέσω Καταστήματος Εθνικής Τράπεζας, ενώ η διαδικασία ισχύει και για ληγμένες ή καταργημένες πιστωτικές κάρτες.<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "6359cf3a-57ff-4d09-b7aa-1336dd549d52.txt",
+              "chunk_id": "7deb776e9015_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNjM1OWNmM2EtNTdmZi00ZDA5LWI3YWEtMTMzNmRkNTQ5ZDUyLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Συνδρομή πιστωτικής κάρτας - Χρεώνεται το πρόσθετο μέλος;\n\n<div class=\"ExternalClass859B3D598C724DACBA7EFAD2816B5132\"><p>​​Σας ενημερώνουμε πως δεν προβλέπεται χρέωση ετήσιας συνδρομής για την πιστωτική κάρτα πρόσθετων μελών.<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "6bacc978-ff67-4967-8e61-961e3ad0c41b.txt",
+              "chunk_id": "7deb776e9015_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNmJhY2M5NzgtZmY2Ny00OTY3LThlNjEtOTYxZTNhZDBjNDFiLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Ενεργοποίηση πιστωτικής κάρτας - Τρόπος\n\n<div class=\"ExternalClass21EDB5D7D9B441A180178EED9724FF1E\"><h4><span style=\"color&#58;rgb(68, 68, 68);font-weight&#58;normal;\"><span style=\"font-size&#58;11pt;\">Σας ενημερώνουμε ότι η ενεργοποίηση της πιστωτικής κάρτας πραγματοποιείται σε οποιοδήποτε ΑΤΜ του δικτύου της Εθνικής Τράπεζας, με την επιλογή από το μενού &quot;Ενεργοποίηση Κάρτας&quot;.</span><br></span></h4><h4><span style=\"color&#58;#444444;\"><span style=\"font-weight&#58;normal;font-size&#58;11pt;\">Αρχικά, θα πρέπει να εισάγετε την κάρτα σας στο ATM, στη συνέχεια&#160;να εισάγετε το PIN και τέλος να επιλέξετε&#160;&quot;ΕΝΕΡΓΟΠΟΙΗΣΗ ΚΑΡΤΑΣ&quot;.</span></span></h4><h4><span style=\"color&#58;rgb(68, 68, 68);font-weight&#58;normal;font-size&#58;11pt;\">Μετά την ολοκλήρωση της διαδικασίας, η&#160;κάρτα μπορεί&#160;να χρησιμοποιηθεί&#160;άμεσα&#160;για συναλλαγή.&#160;​</span></h4><p>​<br></p><p><br><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "6ffba73f-0a3a-4498-92f0-f45166124f43.txt",
+              "chunk_id": "7deb776e9015_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNmZmYmE3M2YtMGEzYS00NDk4LTkyZjAtZjQ1MTY2MTI0ZjQzLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αφαίρεση κάρτας από το Apple pay \n\n<div class=\"ExternalClass00AC3D294A624AA0BF8A5E1117780E6A\"><p>​​​Σας ενημερώνουμε πως μπορείτε να αφαιρέσετε την&#160;​​​κάρτα σας​​&#160;​​από το σχετικό&#160;μενού διαχείρισης της κάρτας. Συγκεκριμένα μεταβαίνετε στο Apple Pay, επιλέγετε την κάρτα που επιθυμείτε να καταργήσετε και&#160;πατάτε το κουμπί &quot;Αφαίρεση κάρτας​&quot;​​​.<br></p><p>​​<br><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "420efc10-7468-4109-a424-ad9f7f8793f3.txt",
+              "chunk_id": "85719923f4b9_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNDIwZWZjMTAtNzQ2OC00MTA5LWE0MjQtYWQ5ZjdmODc5M2YzLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Δόσεις σε πιστωτική - Ποιο είναι το υπόλοιπο των μελλοντικών δόσεων;\n\n<div class=\"ExternalClass36311963D8234B6FA9696CBD2FA96F2D\"><p>Σας ενημερώνουμε πως έχετε τη δυνατότητα να ενημερώνεστε για το υπόλοιπο των μελλοντικών δόσεων που εκκρεμούν να χρεωθούν στην πιστωτική σας κάρτα, με τους εξής τρόπους&#58;</p><p></p><ul><li>μέσω των υπηρεσιών Digital Banking, από την ένδειξη &quot;Μελλοντικές Δόσεις&quot;<br></li><li>μέσω της&#160;υπηρεσίας&#160;Phone Banking<br></li><li>μέσω του τηλεφωνικού κέντρου της Εθνικής Τράπεζας, καλώντας στο 2104848484, καθημερινά 08&#58;00 - 22&#58;00<br></li></ul><br><br><p></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "274b97c0-4fba-4614-aab0-e8e811151343.txt",
+              "chunk_id": "867b7ef2c031_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vMjc0Yjk3YzAtNGZiYS00NjE0LWFhYjAtZThlODExMTUxMzQzLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Προϋποθέσεις αίτησης μεταφοράς υπολοίπου πιστωτικής κάρτας άλλης Τράπεζας\n\n<div class=\"ExternalClass8B38B44050CB45DD9323B87AA2295413\"><p>​Σας ενημερώνουμε πως προκειμένου να καταχωρηθεί επιτυχώς αίτηση μεταφοράς υπολοίπου πιστωτικής κάρτας άλλης Τράπεζας, θα πρέπει να ισχύουν σωρευτικά οι παρακάτω&#160;προϋποθέσεις για την πιστωτική κάρτα που τηρείτε στην Εθνική Τράπεζα&#58;<br></p><ul><li>να είναι ενεργή<br></li><li>να έχει διαθέσιμο υπόλοιπο<br></li><li>να είναι ενήμερη<br></li><li>να είναι η κύρια κάρτα (όχι πρόσθετο μέλος).<br></li></ul><div>Σε περίπτωση που δεν ισχύει&#160;κάποια από τις παραπάνω προϋποθέσεις, η διαδικασία καταχώρησης της αίτησης δεν ολοκληρώνεται και εμφανίζεται αντίστοιχα ενημερωτικό μήνυμα που αναφέρει την αιτιολογία.<br></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "27d2e6d1-1b83-4e51-8ca5-9f527caf00c4.txt",
+              "chunk_id": "867b7ef2c031_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vMjdkMmU2ZDEtMWI4My00ZTUxLThjYTUtOWY1MjdjYWYwMGM0LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πιστωτική κάρτα - Ποιο είναι το διαθέσιμο υπόλοιπο;\n\n<div class=\"ExternalClassF8A008684A5849DE88230B2290382602\"><p><span style=\"color&#58;rgb(0, 0, 0);\">​​Σας ενημερώνουμε πως έχετε τη δυνατότητα να πληροφορηθείτε το διαθέσιμο υπόλοιπο της πιστωτικής σας κάρτας με τους εξής τρόπους&#58;</span></p><ul><li><span style=\"color&#58;rgb(0, 0, 0);\">μέσω των υπηρεσιών Digital/Phone Banking, εφόσον είστε εγγεγραμμένος χρήστης</span></li><li><span style=\"color&#58;rgb(0, 0, 0);\">μέσω του Κέντρου Τηλεφωνικής Εξυπηρέτησης&#160;στο τηλέφωνο 2104848484, καθημερινά 08&#58;00 - 22&#58;00</span><br></li></ul><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "ec5ccad7-b814-4271-bdef-ebb551629e7a.txt",
+              "chunk_id": "8d7bcceefa4b_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vZWM1Y2NhZDctYjgxNC00MjcxLWJkZWYtZWJiNTUxNjI5ZTdhLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πάγια εντολή εξόφλησης πιστωτικής κάρτας - Θέλω να αφαιρεθεί\n\n<div class=\"ExternalClass08B8BF6CE41B4151B78041DDCEA602B9\"><p>​Σας ενημερώνουμε ότι&#160;<span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">​η&#160;σύνδεση πιστωτικής κάρτας με καταθετικό λογαριασμό για την εξόφλησή της&#160;είναι&#160;</span><strong style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">υποχρεωτική</strong><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">.&#160;</span><br></p><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "ecbc8695-7347-4919-b003-fc83fdae7e24.txt",
+              "chunk_id": "8d7bcceefa4b_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vZWNiYzg2OTUtNzM0Ny00OTE5LWIwMDMtZmM4M2ZkYWU3ZTI0LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αίτηση για πιστωτική κάρτα πρόσθετου μέλος - Κάτοχος Dual \n\n<div class=\"ExternalClass434C2119286C45D0BE544F3235037ADF\"><p>​Σας ενημερώνουμε πως δεν υπάρχει η δυνατότητα έκδοσης πιστωτικής κάρτας Dual&#160;πρόσθετου μέλους.<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "e3d5ad70-02b3-4881-bd53-2e775a122439.txt",
+              "chunk_id": "905f063b3092_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vZTNkNWFkNzAtMDJiMy00ODgxLWJkNTMtMmU3NzVhMTIyNDM5LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Θέλω να κάνω αίτηση για πιστωτική κάρτα - Θα εγκριθεί;\n\n<div class=\"ExternalClass6700BE2AE00B4C8DB84DC46836795402\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><p><span style=\"font-size&#58;11pt;color&#58;rgb(0, 0, 0);\">​Σας ενημερώνουμε ότι δεν μπορούμε να γνωρίζουμε εκ των προτέρων αν η αίτησή σας για έκδοση πιστωτικής κάρτας θα εγκριθεί. </span></p></span></div><div class=\"ExternalClass6700BE2AE00B4C8DB84DC46836795402\"><p><span style=\"font-size&#58;11pt;color&#58;rgb(0, 0, 0);\">Θα σας προτείναμε να υποβάλλετε το αίτημά σας και να αναμείνετε το αποτέλεσμα του ελέγχου του.</span><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "a39ce70a-c69a-4528-9493-4ffe69b02244.txt",
+              "chunk_id": "94af30f238ea_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYTM5Y2U3MGEtYzY5YS00NTI4LTk0OTMtNGZmZTY5YjAyMjQ0LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πιστωτική κάρτα - Πόσες μπορώ να εκδώσω;\n\n<div class=\"ExternalClassEE925891EC004BCAB175E45088BE6B7B\"><div><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(0, 0, 0);\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\"></span></div><h4><span style=\"color&#58;rgb(0, 0, 0);font-weight&#58;normal;font-size&#58;11pt;\">Σας ενημερώνουμε ότι επιτρέπεται&#160;να έχετε στην κατοχή σας&#160;έως και&#160;7 πιστωτικές κάρτες (κύριες ή πρόσθετες)&#160;συνολικά. Σε αυτές μπορούν να&#160;συμπεριλαμβάνονται κάρτες τόσο από τα νέα προϊοντικά πακέτα, Silver, Gold, Black, όσο και από τα παλαιότερα πακέτα πιστωτικών καρτών της ΕθνικήςΤράπεζας (Ma​stercard, Gold Mastercard, Platinum Mastercard, Visa,Toyota Visa ή My Club Card (ΙΑΣΩ) Visa). Επιπλέον σε αυτές μπορούν να συμπεριλαμβάνονται οι κάρτες Dual Credit και η κάρτα Flexy.</span></h4><div><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;color&#58;#333333;\"><br></span></div><div><br style=\"color&#58;#333333;\"></div><div><br></div><div><br></div></span></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "935173f0-fed6-4290-bc09-9fdf9e672b72.txt",
+              "chunk_id": "958f59ce4dd4_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vOTM1MTczZjAtZmVkNi00MjkwLWJjMDktOWZkZjllNjcyYjcyLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αίτηση για πιστωτική κάρτα - Τρόποι έκδοσης\n\n<div class=\"ExternalClassEAB3B9306CE8443B91663232F96881D8\"><p class=\"ExternalClassAC2BB63905C94CA8A87168CF4D8968B3\"><font face=\"Segoe UI, Tahoma\">Σας ενημερώνουμε ότι μπορείτε να αιτηθείτε την έκδοση πιστωτικής κάρτας&#58;</font></p><div class=\"ExternalClassAC2BB63905C94CA8A87168CF4D8968B3\"><ul><li><font face=\"Segoe UI, Tahoma\">Μέσω των υπηρεσιών Digital&#160;Banking</font></li><li><font face=\"Segoe UI, Tahoma\">Τηλεφωνικά, καλώντας στο 2104848484, από Δευτέρα έως Παρασκευή 08&#58;00 έως 16&#58;00</font></li><li><span class=\"ms-rteFontFace-12\">Μέσω Καταστήματος Εθνικής Τράπεζας.</span></li></ul><div>Διευκρινίζουμε ότι σε περίπτωση που το αίτημά σας καταχωρηθεί μέσω του τηλεφωνικού μας κέντρου, στη συνέχεια, απαιτείται από μέρους σας η υπογραφή της σύμβασης είτε μεταβαίνοντας σε Κατάστημα της επιλογής σας είτε μέσω courier.&#160;</div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><font face=\"Segoe UI, Tahoma\"><br></font></div><div><br></div></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "95c143fb-a7b4-4263-a8a3-f924558843c3.txt",
+              "chunk_id": "958f59ce4dd4_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vOTVjMTQzZmItYTdiNC00MjYzLWE4YTMtZjkyNDU1ODg0M2MzLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αίτηση για μεταφορά υπολοίπου πιστωτικής κάρτας άλλης Τράπεζας\n\n<div class=\"ExternalClassD2ED7E8C1B984A5089C8DE4C0FD9CDF3\"><p>Σας ενημερώνουμε πως εφόσον τηρείτε ενεργή πιστωτική κάρτα στην Εθνική Τράπεζα,&#160;έχετε τη δυνατότητα να πραγματοποιήσετε μεταφορά υπολοίπου από πιστωτικές κάρτες άλλων Τραπεζών με τους εξής τρόπους&#58;</p><ul><li>μέσω της υπηρεσίας Internet Banking</li><li>μέσω καταστήματος Εθνικής Τράπεζας<br></li></ul><p>Έχετε τη δυνατότητα να επωφεληθείτε από επιτόκιο μεταφοράς σταθερό και ίσο με 9,90% (πλέον εισφοράς 0,6% του Ν. 128/75), μέχρι την πλήρη αποπληρωμή του υπολοίπου που μεταφέρεται.<br></p><p>Σημειώνουμε πως στην υπηρεσία συμμετέχουν όλες οι πιστωτικές κάρτες έκδοσης Εθνικής Τράπεζας συμπεριλαμβανομένης της κάρτας Dual εφόσον έχει ενεργοποιηθεί η πιστωτικής της λειτουργικότητα.<br></p><p>Μπορείτε να μάθετε περισσότερα σχετικά με το πρόγραμμα μέσα από την ιστοσελίδα μας <a href=\"https&#58;//www.nbg.gr/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/programma-metaforas-ypoloipou-pistwtikwn-kartwn\">Πρόγραμμα Μεταφοράς Υπολοίπου | Εθνική Τράπεζα (nbg.gr)</a><br></p><p>​​<br></p><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "9957fca2-9cbc-4d3d-9fed-bb4600c710d9.txt",
+              "chunk_id": "af581b1add01_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vOTk1N2ZjYTItOWNiYy00ZDNkLTlmZWQtYmI0NjAwYzcxMGQ5LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πως αποσυνδέω λογαριασμό από χρεωστική κάρτα;\n\n<div class=\"ExternalClassA453CFD7D44445C3B4D72423C79ABDD1\"><div><p><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Σας ενημερώνουμε ότι&#160;έχετε τη δυνατότητα&#160;να αποσυνδέσετε από τη χρεωστική σας κάρτα,&#160;λογαριασμό στον οποίο είστε δικαιούχος ή συνδικαιούχος. Η διαδικασία μπορεί να γίνει&#58;</span></p><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω των υπηρεσιών&#160;Digital/ Phone Banking, εφόσον είστε ενεργός χρήστης.</span></li><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω του δικτύου των καταστημάτων μας<br></span></li></ul><br><br></div><p>​​​<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "9ed750f4-02bb-4b2d-b7a0-c20a1ca8e004.txt",
+              "chunk_id": "af581b1add01_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vOWVkNzUwZjQtMDJiYi00YjJkLWI3YTAtYzIwYTFjYThlMDA0LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Statement χρεωστικής κάρτας - Θέλω να λαμβάνω\n\n<div class=\"ExternalClass0CCDFFC18A00482683540ACA76AEB145\"><p>Σας ενημερώνουμε πως για τις χρεωστικές κάρτες δεν παράγεται stat​ement.<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "c16d0c04-98ce-477e-9af1-0b558d9cb009.txt",
+              "chunk_id": "b41540e0af3c_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYzE2ZDBjMDQtOThjZS00NzdlLTlhZjEtMGI1NThkOWNiMDA5LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Θέλω έκδοση πιστωτικής κάρτας - Θα μεταφέρω τη μισθοδοσία μου\n\n<div class=\"ExternalClassDED028BC63694ED8A96064F5857A6B9E\"><p>​Βρείτε την απάντηση για τη δυνατότητα&#160;έκδοσης πιστωτικής&#160;<a href=\"/sites/CC_KnowledgeBaseComProd/Lists/FAQs1/DispForm.aspx?ID=684&amp;Source=http%3a//mynbgportal/sites/cc1/site6/Lists/FAQs1/view.aspx&amp;ContentTypeId=0x01008A274A5E630EF8428D0913EC7C6A7909\">εδώ</a>.<br></p><p>​Βρείτε την απάντηση για τη μεταφορά μισθοδοσίας&#160;<a href=\"/sites/CC_KnowledgeBaseComProd/Lists/FAQs2/DispForm.aspx?ID=33&amp;Source=http%3a//mynbgportal/sites/cc1/site6/Lists/FAQs2/view.aspx&amp;ContentTypeId=0x010074A137ED02B23B4586D58E1AF83F9D0F\">εδώ</a>.<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "c855249a-df2a-49e2-b934-fd0d00807a6a.txt",
+              "chunk_id": "b41540e0af3c_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYzg1NTI0OWEtZGYyYS00OWUyLWI5MzQtZmQwZDAwODA3YTZhLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πώς συνδέω λογαριασμό σε χρεωστική κάρτα;\n\n<div class=\"ExternalClass4FF87F4E85C241D299B9576711F9F75C\"><p>​Σας ενημερώνουμε ότι στη χρεωστική σας<span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">&#160;κάρτα μπορείτε να συνδέσετε&#160;λογαριασμό, στον οποίο είστε δικαιούχος ή συνδικαιούχος. Η διαδικασία μπορεί να γίνει&#58;</span></p><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω των υπηρεσιών&#160;Internet Banking&#160;/ Phone Βanking, εφόσον είστε ενεργός χρήστης.</span></li><li><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω του δικτύου των καταστημάτων μας</span></li></ul><p>&#160;</p><p>​​​<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "c991b2e6-3954-4c73-a50f-aa64b22a9bed.txt",
+              "chunk_id": "b41540e0af3c_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYzk5MWIyZTYtMzk1NC00YzczLWE1MGYtYWE2NGIyMmE5YmVkLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πως κάνω πληρωμή πιστωτικής κάρτας μέσω APS;\n\n<div class=\"ExternalClass78ADDF690432419DAF36CE699EF15614\"><p><span style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">​Σας ενημερώνουμε ότι για πληρωμή της πιστωτικής σας κάρτας θα χρειαστεί&#160;να έχετε μαζί σας τον αριθμό της κάρτας ή το αντίγραφο λογαριασμού ή την ίδια την κάρτα.&#160;</span></p><p><span style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Τα Κέντρα Αυτόματων Πληρωμών με απλές διαδικασίες, σας κατευθύνουν βήμα προς βήμα, ώστε να ολοκληρώσετε τις συναλλαγές σας γρήγορα και με ασφάλεια με τους εξής&#160;τρόπους&#58;</span></p><div><ul><li><font style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Μέσω της οθόνης αφής, με εισαγωγή του αριθμού πιστωτικής κάρτας&#160;Εθνικής Τράπεζας. &#160;</font></li><li><font style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Με χρήση της συσκευής ανάγνωσης γραμμικού κώδικα (barcode reader) του μηχανήματος, εάν έχετε μαζί σας αντίγραφο λογαριασμού.</font></li><li><font style=\"color&#58;#333333;font-family&#58;&quot;segoe ui&quot;, tahoma;\">Με χρήση της πιστωτικής σας κάρτας της Εθνικής Τράπεζας, για την πληρωμή του λογαριασμού της.​</font></li></ul></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "8a4ee326-421a-4e44-b315-219d44133b2b.txt",
+              "chunk_id": "b8db81f5299e_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vOGE0ZWUzMjYtNDIxYS00ZTQ0LWIzMTUtMjE5ZDQ0MTMzYjJiLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Απόρριψη αιτήματος ανανέωσης πιστωτικής καρτας - Μη ανανεωθείσα πιστωτική κάρτα - Αδυναμία πληρωμής σε ΑΤΜ\n\n<div class=\"ExternalClassB98BE5C8DF6D40178746C69316DAD617\"><p>Σας ενημερώνουμε με τους εναλλακτικούς τρόπους εξόφλησης&#160;της πιστωτικής σας&#160;κάρτας&#58;</p><ul><li><p>μέσω των υπηρεσιών Digital/Phone&#160;Banking<br></p></li><li><p>με αυτόματη χρέωση λογαριασμού καταθέσεων που τηρείτε στην Εθνική Τράπεζα (αφού&#160;συμπληρώσετε την ειδική εξουσιοδότηση σε οποιοδήποτε Κατάστημα)<br></p></li><li><p>με χρήση της χρεωστικής σας&#160;κάρτας&#160;από&#160;ΑΤΜ ΕΤΕ&#160;(θα&#160;πρέπει να προηγηθεί&#160;σύνδεση των πιστωτικών καρτών με τη χρεωστική,&#160;μέσω Καταστήματος Εθνικής Τράπεζας)<br></p></li><li><p>μέσω των ΕΛΤΑ με χρήση της ταχυπληρωμής που υπάρχει στο μηνιαίο λογαριασμό (η&#160;πληρωμή εμφανίζεται μετά από 7 εργάσιμες ημέρες)<br></p></li><li><p>Μέσω ταμείου Καταστήματος Εθνικής Τράπεζας&#160;<br></p></li></ul></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "20dad5ad-5a23-4b85-a7b7-0f008519b03d.txt",
+              "chunk_id": "bc40b860fdd1_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vMjBkYWQ1YWQtNWEyMy00Yjg1LWE3YjctMGYwMDg1MTliMDNkLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πιστωτική κάρτα - Ποιο είναι το χρεωστικό υπόλοιπο;\n\n<div class=\"ExternalClass5E7F44789C04427A85FA316465D837ED\"><p>Σας ενημερώνουμε πως έχετε τη δυνατότητα να πληροφορηθείτε το υπόλοιπο της οφειλής σας με τους εξής τρόπους&#58;<br></p><ul><li>μέσω των υπηρεσιών Digital/Phone Banking, εφόσον είστε εγγεγραμμένος χρήστης</li><li>μέσω του Κέντρου Τηλεφωνικής Εξυπηρέτησης&#160;στο τηλέφωνο 2104848484 μέσω εκπροσώπου<br></li></ul><div><br></div><div><br></div><div><br></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "b08060da-13fa-4432-ae59-3df26ef5c3e3.txt",
+              "chunk_id": "bea1f2a0cc4d_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYjA4MDYwZGEtMTNmYS00NDMyLWFlNTktM2RmMjZlZjVjM2UzLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πληρωμή πιστωτικής κάρτας - Έγινε δύο φορές\n\n<div class=\"ExternalClass7D646015018248A4856C7427E6C8E48C\"><p>​<span style=\"color&#58;#4c4c4c;font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;\">Σε περίπτωση που επιθυμείτε να αιτηθείτε το<span style=\"color&#58;#444444;\">ν αντιλογισμό του&#160;</span></span><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;color&#58;#444444;\">πλεονάζοντος</span><span style=\"color&#58;#4c4c4c;font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;\"><span style=\"color&#58;#444444;\">&#160;ποσού, παρα</span>καλούμε όπως μας αναφέρετε τα τελευταία τέσσερα ψηφία ενός&#160;αριθμού λογαριασμού σας, προκειμένου να πραγματοποιήσουμε την πίστωση.&#160;&#160;</span></p><p><span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\"><strong>​</strong></span></p><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "b1f6fc0b-46fc-4a8a-b04c-567ec640de75.txt",
+              "chunk_id": "bea1f2a0cc4d_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYjFmNmZjMGItNDZmYy00YThhLWIwNGMtNTY3ZWM2NDBkZTc1LnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αφαίρεση κάρτας από wearable συσκευές \n\n<div class=\"ExternalClass4C9C1007FE8143E8B807E9549C6C7A31\"><p>Μπορείτε να&#160;αφαιρέσετε την&#160;​κάρτα σας&#160;μέσα από το σχετικό μενού διαχείρισης της κάρτας, ακολουθώντας τα εξής βήματα&#58;</p><p></p><ul><li><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;font-size&#58;13px;\">μεταβαίνετε&#160;στην εφαρμογή Garmin Connect /&#160;Mi Fitness /&#160;&#160;Zepp&#160;που έχετε&#160;εγκατεστημένη στο κινητό σας&#160;</span></li><li>επιλέγετε&#160;Garmin Pay/&#160;Mi Pay /&#160;Zepp Pay<br></li><li>επιλέγετε&#160;την κάρτα που επιθυμείτε να αφαιρέσετε<br></li><li>επιλέγετε&#160;το μενού στην επάνω δεξιά γωνία της οθόνης &#160;</li><li>πατάτε&#160;το κουμπί «Αφαίρεση αυτής της κάρτας».<br></li></ul><div><br></div> <p></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "b8fe6a2c-5eb4-4845-ae8c-bf1772502931.txt",
+              "chunk_id": "bea1f2a0cc4d_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYjhmZTZhMmMtNWViNC00ODQ1LWFlOGMtYmYxNzcyNTAyOTMxLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Επιστροφή πιστωτικής κάρτας - Πως;\n\n<div class=\"ExternalClass45280710D4254FAEA68C02C45E5C0B4D\"><div style=\"margin-top&#58;14px;margin-bottom&#58;14px;\"><span style=\"color&#58;rgb(0, 0, 0);\">Σε περίπτωση που έχετε στην κατοχή σας την πιστωτική σας καρτα και δεν την επιθυμείτε πλέον, έχετε τη δυνατότητα να την ακυρώσετε μέσω των υπηρεσιών Digital Βanking ή καλώντας καθημερινά στο τηλεφωνικό μας κ</span><span style=\"color&#58;rgb(0, 0, 0);font-size&#58;11pt;\">​</span><span style=\"color&#58;rgb(0, 0, 0);\">έντρο στο +30 2104848484.&#160;&#160;</span></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "4eeacd35-3d38-4fa1-93aa-c7599da243c1.txt",
+              "chunk_id": "e8a1358b258d_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNGVlYWNkMzUtM2QzOC00ZmExLTkzYWEtYzc1OTlkYTI0M2MxLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Αφαίρεση κάρτας από το Google Wallet\n\n<div class=\"ExternalClassB1AAFC2D4F084D6E80EB2A266D845C95\"><p>​Σας ενημερώνουμε πως μπορείτε να αφαιρέσετε την&#160;​​​κάρτα σας​​&#160;​​από το σχετικό&#160;μενού διαχείρισης της κάρτας. Συγκεκριμένα μεταβαίνετε στο Google Wallet, επιλέγετε την κάρτα που επιθυμείτε να καταργήσετε, επιλέγετε το μενού στην επάνω δεξιά γωνία της οθόνης (τρεις κουκίδες) και από τις διαθέσιμες επιλογές πατάτε το κουμπί &quot;Κατάργηση τρόπου πληρωμής​&quot;​​.<br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "502f68d0-6d11-4299-8fb9-8f84f41b5eef.txt",
+              "chunk_id": "e8a1358b258d_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNTAyZjY4ZDAtNmQxMS00Mjk5LThmYjktOGY4NGY0MWI1ZWVmLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πως μπορώ να κάνω επιστροφή του επιδόματος που πιστώθηκε στην κάρτα Prepaid ΚΑ ;\n\n<div class=\"ExternalClass2E15CBE0ABD847EBB8256FC0B1A60A0D\"><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(50, 49, 48);background-color&#58;transparent;\"><span style=\"font-family&#58;&quot;segoe ui&quot;;color&#58;rgb(0, 0, 0);\">Σας ενημερώνουμε </span><span style=\"color&#58;rgb(0, 0, 0);font-family&#58;&quot;segoe ui&quot;;font-size&#58;11pt;text-align&#58;justify;display&#58;inline !important;\">ότι </span><span style=\"color&#58;rgb(0, 0, 0);font-family&#58;&quot;segoe ui&quot;;font-size&#58;11pt;text-align&#58;justify;display&#58;inline !important;\">για να επιστρέψετε επίδομα που έχει πιστωθεί στην προπληρωμένη κάρτα Prepaid Mastercard ΚΑ, θα πρέπει να απευθυνθείτε στον φορέα πίστωσης του επιδόματος, προκειμένου να λάβετε οδηγίες και διευκρινίσεις σχετικά με τη διαδικασία.</span></div><div style=\"font-family&#58;Calibri, Arial, Helvetica, sans-serif;font-size&#58;11pt;color&#58;rgb(50, 49, 48);background-color&#58;transparent;\"><span style=\"color&#58;rgb(0, 0, 0);font-family&#58;&quot;segoe ui&quot;;font-size&#58;13.3333px;text-align&#58;justify;display&#58;inline !important;\"><p><span style=\"font-size&#58;11pt;color&#58;rgb(0, 0, 0);\">Διευκρινίζουμε πως η Τράπεζα δεν εμπλέκεται στις ενέργειες που απαιτούνται για τη διαδικασία επιστροφής επιδόματος στον φορέα που το πίστωσε.</span></p></span></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "5cd320f3-6f82-4d96-ac3b-43dd587f616e.txt",
+              "chunk_id": "e8a1358b258d_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vNWNkMzIwZjMtNmY4Mi00ZDk2LWFjM2ItNDNkZDU4N2Y2MTZlLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πως αφαιρώ τις ανέπαφες συναλλαγές από την κάρτα μου;\n\n<div class=\"ExternalClassEF8A653B09D7491F857DE5EEBD3C0119\"><p>​Σας ενημερώνουμε ότι μπορείτε να προχωρήσετε σε&#160;απενεργοποίηση των ανέπαφων συναλλαγών, μέσω των&#160;υπηρεσιών Digital&#160;Banking για κάρτες&#58;<br></p><ul><li>Χρεωστικές&#160;<br></li><li>Προπληρωμένες&#160;<br></li><li>Πιστωτικές<br></li></ul><div><br></div><div><br></div><div><br></div><div><br></div></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "a7709d60-b5a9-4047-96b6-cf284727a850.txt",
+              "chunk_id": "e9cd13009079_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vYTc3MDlkNjAtYjVhOS00MDQ3LTk2YjYtY2YyODQ3MjdhODUwLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πως κάνω πληρωμή πιστωτικής κάρτας μέσω ATM ;\n\n<div class=\"ExternalClass07A7AB19FFED4F29977B2976E94A4EF9\"><p>​Σας ενημερώνουμε ότι μπορείτε να προχωρήσετε σε πληρωμή της πιστωτικής σας κάρτα μέσω του δικτύου ATM της Εθνικής Τράπεζας, εισάγοντας την κάρτα και επιλέγοντας &quot;Πληρωμή&quot; από το αρχικό menu.&#160;<br></p><p>Για την καλύτερη εξυπηρέτησή σας διευκρινίζουμε&#160;ότι εφόσον επιλέξετε να πληρώσετε την&#160;οφειλή&#160;της πιστωτικής σας κάρτας μέσω δικτύου ATMs, παρακαλείσθε όπως πραγματοποιήσετε&#160;την πληρωμή το αργότερο μέχρι τις 18&#58;00 της ορισθείσας ημερομηνίας πληρωμής (δήλης ημερομηνίας).</p><p>Σε διαφορετική περίπτωση και λόγω σχετικών συστημικών περιορισμών, η συναλλαγή πληρωμής θα λογιστεί στο σύστημα της Τράπεζας&#160;την επόμενη εργάσιμη ημέρα, έχοντας ως συνέπεια τη χρέωση τόκων υπερημερίας στην κάρτα σας.<br></p><p><strong style=\"color&#58;#ff0000;\"><br></strong></p><p><strong style=\"color&#58;#ff0000;\">Σημείωση</strong><span style=\"color&#58;#ff0000;\"><strong>&#58;</strong></span><br></p><p>Η πληρωμή μπορεί να πραγματοποιηθεί και με χρήση κάρτας πρόσθετου μέλους.<br></p><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "d8bd0ee5-b3ea-4a6c-898c-aefff3aecc62.txt",
+              "chunk_id": "ecc0400cbfa4_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vZDhiZDBlZTUtYjNlYS00YTZjLTg5OGMtYWVmZmYzYWVjYzYyLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πόσα CVC έχει η κάρτα Dual ;\n\n<div class=\"ExternalClass976C0E9CD9624537955449681B205191\"><p>Σας ενημερώνουμε πως η κάρτα Dual Mastercard έχει 2 ξεχωριστούς κωδικούς ασφαλείας CVC, έναν για κάθε μία από τις δύο λειτουργικότητες (χρεωστική, πιστωτική).<br><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "de8c968b-94cf-4bba-81b5-491af1968ec3.txt",
+              "chunk_id": "ecc0400cbfa4_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vZGU4Yzk2OGItOTRjZi00YmJhLTgxYjUtNDkxYWYxOTY4ZWMzLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Κάρτα πιστωτική - Αποστολή - Πρόσθετη - Πως;\n\n<div class=\"ExternalClass76F036EDC00347518FD7C2724DBE3549\"><p>Σας ενημερώνουμε ότι η εμφακέλωση γίνεται ξεχωριστά για κάθε κάρτα (κύρια και τυχόν&#160;πρόσθετες), ενώ ο<span style=\"font-family&#58;&quot;segoe ui&quot;, tahoma;\">&#160;καθένας παραλαμβάνει την κάρτα του με απλή αλληλογραφία στη διεύθυνση του.&#160;</span><br></p><p><br></p></div>"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "212.md",
+              "chunk_id": "ed68cfbd47f5_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9Qb3J0YWwvMjEyLm1k0_pages_5",
+              "original_title": ""
+            },
+            "page_content": "μου χωρίς τη χρήση pin; \n\nΕφόσον το επιθυμείτε μπορείτε είτε να μηδενίσετε είτε να επαναφέρετε το εκάστοτε ισχύον όριο ανέπαφων συναλλαγών που διενεργούνται χωρίς τη χρήση pin, είτε μέσω των εφαρμογών Internet & Mobile Banking, εφόσον είστε εγγεγραμμένος χρήστης, είτε υποβάλλοντας σχετικό αίτημα στο Κατάστημα εξυπηρέτησής σας ή στο Contact Center της Εθνικής Τράπεζας.\n\nΠόσο άμεσα μπορώ να παραλάβω την κάρτα μου;\n\nΜπορείτε να αποκτήσετε την κάρτα σας άμεσα, με μια επίσκεψή σας σε ένα κατάστημα.\n\nΕναλλακτικά, μπορείτε να ζητήσετε έκδοση της κάρτας μέσω των ψηφιακών καναλιών Internet και Mobile Banking.\n\nΣε διάστημα λίγων ημερών θα παραλάβετε την κάρτα σας ταχυδρομικά, στη διεύθυνση που έχετε δηλώσει. Στην επιστολή παράδοσης της κάρτας περιλαμβάνονται και οι οδηγίες ενεργοποίησής της καθώς και ο τρόπος απόκτησης του PIN.\n\nΠοια είναι τα όρια χρήσης της κάρτας μου;\n\nΜπορείτε να ενημερωθείτε για τα όρια συναλλαγών της κάρτας σας [εδώ](https://www.nbg.gr/-/jssmedia/Files/Idiwtes/Kathimerines-sunallages/kartes/xrewstikes/xrewstikes-new-prosymvatikh-enhmerwsh/Prosymbatikh-Enhmerosh-Debit-Mastercard-Private.pdf).\n\nΑν χάσω ή μου κλέψουν την κάρτα μου τι πρέπει να κάνω;\n\nΜπορείτε να επικοινωνήσετε με το Κέντρο Τηλεφωνικής Εξυπηρέτησης της Εθνικής τράπεζας καλώντας στο +30 210 48 48 484, για δήλωση απώλειας ή κλοπής 24 ώρες το 24ωρο.\n\nΕναλλακτικά μέσω της εφαρμογής Internet / Mobile Banking εφόσον είστε εγγεγραμμένος χρήστης, μπορείτε να:\n\n  * Δηλώσετε ''Πάγωμα'' για προσωρινή διακοπή της λειτουργίας της κάρτας.\n  * Δηλώσετε απώλεια/κλοπή της κάρτας σας.\n  * Ζητήσετε επανέκδοση της κάρτας σας σε περίπτωση κλοπής ή απώλειας.\n\nΑκόμη, σε περίπτωση που η κάρτα σας βρεθεί , μπορείτε να την «ξεπαγώσετε» το ίδιο εύκολα.\n\n## Τι δικαιολογητικά θα χρειαστώ;\n\n  * Δελτίο ταυτότητας ή διαβατήριο\n\nΗ ταυτότητα ή το διαβατήριο θα πρέπει να είναι εν ισχύ. \n\n[Μαθαίνω περισσότερα](https://www.nbg.gr/-/jssmedia/Files/Idiwtes/generic/Sistithikate.pdf)\n\n  * Το πιο πρόσφατο εκκαθαριστικό"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "103.md",
+              "chunk_id": "f8cbbf14df19_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9Qb3J0YWwvMTAzLm1k0_pages_0",
+              "original_title": ""
+            },
+            "page_content": "---\n            url: https://www.nbg.gr/el/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/pistwtiki-karta-online\n            title: Αποκτήστε Πιστωτική Κάρτα Online | Εθνική Τράπεζα\n            description: Μάθετε πως μπορείτε να αποκτήσετε μια πιστωτική κάρτα online. Μπείτε στο site της Εθνικής Τράπεζας για περισσότερες πληροφορίες!\n            scraped_at: 2026-02-13T07:30:27.740669\n            status_code: 200\n            ---\n\n            # Αποκτήστε Πιστωτική Κάρτα Online | Εθνική Τράπεζα\n\n[Close Button](#)\n\nΣύνδεση στο Digital Banking\n\n[Ιδιώτης](https://ebanking.nbg.gr/web)[Επιχείρηση](https://business.ebanking.nbg.gr)\n\n[Έχω την τράπεζα στον υπολογιστή μου](/el/idiwtes/kathimerines-sunallages/digital-banking/internet-banking)[Έχω την τράπεζα σε μία εφαρμογή](/el/idiwtes/kathimerines-sunallages/digital-banking/mobile-banking)[Αποκτώ κωδικούς Digital Banking](/el/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/ekdosi-kwdikwn-digital-banking)[Ξεκινώ με την Εθνική online](/el/idiwtes/kathimerines-sunallages/digital-banking/ksekiniste-me-thn-ethniki-online)\n\n# Αποκτήστε πιστωτική κάρτα online \n\nΠραγματοποιήστε τις συναλλαγές σας εύκολα, γρήγορα και με ασφάλεια.\n\n![Αποκτήστε Πιστωτική Κάρτα Online](https://www.nbg.gr/-/jssmedia/Images/idiwtes/kathimerines-sunallages/digital-banking/dunatotites-internet-mobile-banking/NBG-laptop-and-hand-800x800-dynatothtes-internet-mobile-GR-rev.png?h=800&iar=0&w=800&hash=C108BDF0219940455E5309CC5EA7811E)\n\n  * [Ιδιώτες](/el/idiwtes)\n  * [Καθημερινές Συναλλαγές](/el/idiwtes/kathimerines-sunallages)\n  * [Digital Banking](/el/idiwtes/kathimerines-sunallages/digital-banking)\n  * Δυνατότητες Internet & Mobile Banking \n\n## Πιστωτικές κάρτες για εσάς\n\nΚάντε τις αγορές σας εύκολα και γρήγορα, αποπληρώστε αργότερα εφάπαξ ή σε δόσεις, εξασφαλίστε καθημερινή επιβράβευση, προσωποποιημένη εξυπηρέτηση και πολλά άλλα προνόμια."
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "103.md",
+              "chunk_id": "f8cbbf14df19_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9Qb3J0YWwvMTAzLm1k0_pages_1",
+              "original_title": ""
+            },
+            "page_content": "* [Ιδιώτες](/el/idiwtes)\n  * [Καθημερινές Συναλλαγές](/el/idiwtes/kathimerines-sunallages)\n  * [Digital Banking](/el/idiwtes/kathimerines-sunallages/digital-banking)\n  * Δυνατότητες Internet & Mobile Banking \n\n## Πιστωτικές κάρτες για εσάς\n\nΚάντε τις αγορές σας εύκολα και γρήγορα, αποπληρώστε αργότερα εφάπαξ ή σε δόσεις, εξασφαλίστε καθημερινή επιβράβευση, προσωποποιημένη εξυπηρέτηση και πολλά άλλα προνόμια. Απλά, επιλέξτε την πιστωτική κάρτα που σας ταιριάζει.\n\n### Silver\n\nΓια εσάς που θέλετε αναβαθμισμένη τραπεζική καθημερινότητα με προνόμια και ανεκτίμητες εμπειρίες!\n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/silver)\n\n### Gold\n\nΓια εσάς που επιθυμείτε προσωποποιημένη εξυπηρέτηση, ανεκτίμητες εμπειρίες και προνόμια, καθημερινά! \n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/gold)\n\n### Black\n\nΓια εσάς που θέλετε προνόμια κάθε μέρα, προσωποποιημένη εξυπηρέτηση, και μεγαλύτερη επιβράβευση με το πρόγραμμα Premium **Go For More**.\n\n[ Μαθαίνω περισσότερα ](/el/idiwtes/kathimerines-sunallages/trapezikes-kartes/pistwtikes-kartes/black)\n\n## Πιστωτική κάρτα σε λίγα βήματα\n\nΕίσοδος χρήστη\n\nΑν είστε εγγεγραμμένος χρήστης, μπαίνετε στο Digital Banking και από την αρχική σελίδα μεταβαίνετε στην ενότητα \"Κάρτες\", επιλέγετε την πιστωτική κάρτα που επιθυμείτε και επιλέγετε \"Απόκτηση νέας κάρτας\".\n\nΕπιλογή ορίου\n\nΈπειτα, ενημερώνεστε και αποδέχεστε την προσυμβατική ενημέρωση του προϊόντος και επιλέγετε το όριο της πιστωτικής κάρτας για την οποία θέλετε να κάνετε αίτηση.\n\nΕπιβεβαίωση στοιχείων\n\nΣτη συνέχεια, επιβεβαιώνετε τα στοιχεία απασχόλησης, διεύθυνσης κατοικίας, ταυτότητας και φορολογίας (ανεβάζοντας το πιο πρόσφατο εκκαθαριστικό σας σημείωμα).\n\nΕπιλογή τρόπου πληρωμής"
+          },
+          {
+            "id": null,
+            "type": "Document",
+            "metadata": {
+              "url": "",
+              "link": "",
+              "title": "14452dfe-1d26-4db5-936b-4bd08c555c2d.txt",
+              "chunk_id": "fe824ec7e2ad_aHR0cHM6Ly9zYXJhZ2NvbnRlbnQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2NjcG9ydGFsLWNvbnRhaW5lci9DdXN0b21lcl9GYWNpbmdfU2hhcmVQb2ludF9Tb3VyY2UvTGlzdHMvRkFRc19LYXJ0b24vMTQ0NTJkZmUtMWQyNi00ZGI1LTkzNmItNGJkMDhjNTU1YzJkLnR4dA2_pages_0",
+              "original_title": ""
+            },
+            "page_content": "Πιστωτική κάρτα - Μπορώ να ζητήσω μερική απόδοση πιστωτικού υπολοίπου;\n\n<div class=\"ExternalClass1699789D57B44F6BAC4BC2826BBE2E28\"><p>Σας ενημερώνουμε πως δεν&#160;υπάρχει η δυνατότητα για μερική απόδοση πιστωτικού&#160;υπολοίπου.​<br><br></p><p><br></p><p><br></p><p><br><br></p><p><strong style=\"color&#58;#ff0000;\"><br></strong></p></div>"
+          }
+        ],
+        "outside_business_hours": false,
+        "latest_messages_formatted_5": "human: πως να βγάλω πιστωτική κάρτα",
+        "past_conversation_formatted": ""
+      },
+      "interrupts": {},
+      "error": null,
+      "state_updated_at": "2026-04-16T13:51:08.837Z"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+      "created_at": "2026-04-16T13:51:01.657Z",
+      "updated_at": "2026-04-16T13:51:08.837Z",
+      "metadata": {
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca"
+      },
+      "status": "success",
+      "kwargs": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "πως να βγάλω πιστωτική κάρτα"
+            }
+          ]
+        },
+        "config": {
+          "metadata": {
+            "created_by": "system",
+            "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca"
+          },
+          "configurable": {
+            "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+            "user_id": "",
+            "graph_id": "agent",
+            "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+            "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+            "__after_seconds__": 0,
+            "langgraph_auth_user": null,
+            "langgraph_request_id": "9dd7cc09-321f-4e3c-a653-3fae7fadb329",
+            "langgraph_auth_user_id": "",
+            "__request_start_time_ms__": 1776347461627,
+            "langgraph_auth_permissions": []
+          }
+        },
+        "command": null,
+        "context": {},
+        "webhook": null,
+        "resumable": false,
+        "subgraphs": false,
+        "temporary": false,
+        "durability": "async",
+        "stream_mode": [
+          "values"
+        ],
+        "feedback_keys": null,
+        "interrupt_after": null,
+        "interrupt_before": null,
+        "checkpoint_during": true
+      },
+      "multitask_strategy": "enqueue"
+    }
+  ],
+  "checkpoints": [
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0eb-6632-bfff-f211fa7c57a0",
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "parent_checkpoint_id": null,
+      "checkpoint_ns": "",
+      "metadata": {
+        "step": -1,
+        "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+        "source": "input",
+        "parents": {},
+        "user_id": "",
+        "graph_id": "agent",
+        "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+        "created_by": "system",
+        "run_attempt": 1,
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+        "langgraph_host": "self-hosted",
+        "langgraph_plan": "developer",
+        "langgraph_api_url": null,
+        "langgraph_version": "1.1.3",
+        "langgraph_api_version": "0.7.89"
+      }
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "parent_checkpoint_id": "1f1399b4-e0eb-6632-bfff-f211fa7c57a0",
+      "checkpoint_ns": "",
+      "metadata": {
+        "step": 0,
+        "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+        "source": "loop",
+        "parents": {},
+        "user_id": "",
+        "graph_id": "agent",
+        "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+        "created_by": "system",
+        "run_attempt": 1,
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+        "langgraph_host": "self-hosted",
+        "langgraph_plan": "developer",
+        "langgraph_api_url": null,
+        "langgraph_version": "1.1.3",
+        "langgraph_api_version": "0.7.89"
+      }
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9ed-6ab1-8001-4310c4570159",
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "parent_checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "checkpoint_ns": "",
+      "metadata": {
+        "step": 1,
+        "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+        "source": "loop",
+        "parents": {},
+        "user_id": "",
+        "graph_id": "agent",
+        "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+        "created_by": "system",
+        "run_attempt": 1,
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+        "langgraph_host": "self-hosted",
+        "langgraph_plan": "developer",
+        "langgraph_api_url": null,
+        "langgraph_version": "1.1.3",
+        "langgraph_api_version": "0.7.89"
+      }
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9fc-63b2-8002-bfa864bd3467",
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "parent_checkpoint_id": "1f1399b4-e9ed-6ab1-8001-4310c4570159",
+      "checkpoint_ns": "",
+      "metadata": {
+        "step": 2,
+        "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+        "source": "loop",
+        "parents": {},
+        "user_id": "",
+        "graph_id": "agent",
+        "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+        "created_by": "system",
+        "run_attempt": 1,
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+        "langgraph_host": "self-hosted",
+        "langgraph_plan": "developer",
+        "langgraph_api_url": null,
+        "langgraph_version": "1.1.3",
+        "langgraph_api_version": "0.7.89"
+      }
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b5-041b-6072-8003-e778b5b8023f",
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "parent_checkpoint_id": "1f1399b4-e9fc-63b2-8002-bfa864bd3467",
+      "checkpoint_ns": "",
+      "metadata": {
+        "step": 3,
+        "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+        "source": "loop",
+        "parents": {},
+        "user_id": "",
+        "graph_id": "agent",
+        "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+        "created_by": "system",
+        "run_attempt": 1,
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+        "langgraph_host": "self-hosted",
+        "langgraph_plan": "developer",
+        "langgraph_api_url": null,
+        "langgraph_version": "1.1.3",
+        "langgraph_api_version": "0.7.89"
+      }
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b5-2422-6231-8004-e1a63661ac27",
+      "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+      "parent_checkpoint_id": "1f1399b5-041b-6072-8003-e778b5b8023f",
+      "checkpoint_ns": "",
+      "metadata": {
+        "step": 4,
+        "run_id": "019d968f-37fb-77f1-8c66-916d276563b2",
+        "source": "loop",
+        "parents": {},
+        "user_id": "",
+        "graph_id": "agent",
+        "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+        "created_by": "system",
+        "run_attempt": 1,
+        "assistant_id": "fe096781-5601-53d2-b2f6-0d3403f7e9ca",
+        "langgraph_host": "self-hosted",
+        "langgraph_plan": "developer",
+        "langgraph_api_url": null,
+        "langgraph_version": "1.1.3",
+        "langgraph_api_version": "0.7.89"
+      }
+    }
+  ],
+  "checkpoint_writes": [
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0eb-6632-bfff-f211fa7c57a0",
+      "task_id": "67cd8f05-3c5f-e0ec-d3a1-69fb2886284e",
+      "idx": 0,
+      "channel": "messages",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0eb-6632-bfff-f211fa7c57a0",
+      "task_id": "67cd8f05-3c5f-e0ec-d3a1-69fb2886284e",
+      "idx": 1,
+      "channel": "branch:to:unified_router",
+      "type": "null",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 0,
+      "channel": "system_time",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 1,
+      "channel": "routing_action",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 2,
+      "channel": "routing_reasoning",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 3,
+      "channel": "routing_confidence",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 4,
+      "channel": "latest_request",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 5,
+      "channel": "past_conversation_formatted",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 6,
+      "channel": "latest_messages_formatted_5",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 7,
+      "channel": "outside_business_hours",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e0f0-6714-8000-d43354d18ac0",
+      "task_id": "015e0404-5d7f-5c90-00d8-901be28734ec",
+      "idx": 8,
+      "channel": "branch:to:generate_query",
+      "type": "null",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9ed-6ab1-8001-4310c4570159",
+      "task_id": "866bd5d9-8e96-ac7f-53be-a4a5b449ebdb",
+      "idx": 0,
+      "channel": "system_time",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9ed-6ab1-8001-4310c4570159",
+      "task_id": "866bd5d9-8e96-ac7f-53be-a4a5b449ebdb",
+      "idx": 1,
+      "channel": "queries",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9ed-6ab1-8001-4310c4570159",
+      "task_id": "866bd5d9-8e96-ac7f-53be-a4a5b449ebdb",
+      "idx": 2,
+      "channel": "branch:to:retrieval",
+      "type": "null",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9fc-63b2-8002-bfa864bd3467",
+      "task_id": "7b154b0b-2c08-5296-19ca-ae56f5bd99d4",
+      "idx": 0,
+      "channel": "system_time",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9fc-63b2-8002-bfa864bd3467",
+      "task_id": "7b154b0b-2c08-5296-19ca-ae56f5bd99d4",
+      "idx": 1,
+      "channel": "retrieved_docs",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9fc-63b2-8002-bfa864bd3467",
+      "task_id": "7b154b0b-2c08-5296-19ca-ae56f5bd99d4",
+      "idx": 2,
+      "channel": "retrieved_docs_list",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b4-e9fc-63b2-8002-bfa864bd3467",
+      "task_id": "7b154b0b-2c08-5296-19ca-ae56f5bd99d4",
+      "idx": 3,
+      "channel": "branch:to:respond",
+      "type": "null",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b5-041b-6072-8003-e778b5b8023f",
+      "task_id": "f87225ae-5e02-0a82-5357-5d08dfc60866",
+      "idx": 0,
+      "channel": "system_time",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b5-041b-6072-8003-e778b5b8023f",
+      "task_id": "f87225ae-5e02-0a82-5357-5d08dfc60866",
+      "idx": 1,
+      "channel": "outside_business_hours",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "checkpoint_id": "1f1399b5-041b-6072-8003-e778b5b8023f",
+      "task_id": "f87225ae-5e02-0a82-5357-5d08dfc60866",
+      "idx": 2,
+      "channel": "messages",
+      "type": "msgpack",
+      "checkpoint_ns": ""
+    }
+  ],
+  "checkpoint_blobs": [
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "channel": "messages",
+      "version": "00000000000000000000000000000002.0.7289423833149523",
+      "type": "msgpack"
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "channel": "messages",
+      "version": "00000000000000000000000000000006.0.0599121520668786",
+      "type": "msgpack"
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "channel": "queries",
+      "version": "00000000000000000000000000000004.0.4691914245648329",
+      "type": "msgpack"
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "channel": "retrieved_docs_list",
+      "version": "00000000000000000000000000000005.0.2770736052732231",
+      "type": "msgpack"
+    },
+    {
+      "thread_id": "69d46eea-c6fe-4d82-817d-13ce97dc67f7",
+      "channel": "__start__",
+      "version": "00000000000000000000000000000001.0.1893281814436849",
+      "type": "msgpack"
+    }
+  ]
+}

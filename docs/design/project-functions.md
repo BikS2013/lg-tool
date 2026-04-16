@@ -99,6 +99,43 @@
 
 ---
 
+## FR-5: Extract Retrieved Documents from a Thread's RAG Pipeline
+
+**Command**: `langgraph-investigator documents --thread <thread_id> [--output <file>]`
+
+**Description**: Connect directly to the PostgreSQL database backing the LangGraph server and extract the documents retrieved by a RAG agent during a thread's execution. Documents are read from the `retrieved_docs` channel stored in `checkpoint_writes` and parsed from `<document title='…' original_title='…' link='…'>…</document>` blocks.
+
+**Behavior**:
+- Connect to the PostgreSQL database using `LANGGRAPH_POSTGRES_URL`
+- Query `checkpoint_writes` rows whose channel is `retrieved_docs` for the specified `thread_id`
+- Parse each row's payload, extracting `title`, `original_title`, `link`, and content for every `<document>` block found
+- Compile results into a structured JSON document with a per-document `content_preview` (first line, truncated)
+- If `--output` is supplied, write the JSON document to that file; otherwise print a human-readable list of documents (title, link, original_title, preview) to stdout
+- If no documents are found, print an informational message and exit successfully
+
+**Input**:
+- `--thread` (required): UUID of the thread to extract documents for (validated)
+- `--output` (optional): File path to write the JSON output to
+
+**Output**: JSON document structured as:
+```json
+{
+  "thread_id": "<uuid>",
+  "extracted_at": "<ISO datetime>",
+  "document_count": <number>,
+  "documents": [
+    {
+      "title": "<string>",
+      "original_title": "<string>",
+      "link": "<string>",
+      "content_preview": "<string>"
+    }
+  ]
+}
+```
+
+---
+
 ## Non-Functional Requirements
 
 ### NFR-1: Configuration
